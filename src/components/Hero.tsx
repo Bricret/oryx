@@ -121,7 +121,7 @@ const Hero = () => {
 					</div>
 				</div>
 
-				<div className='relative max-w-5xl mx-auto'>
+				{/* <div className='relative max-w-5xl mx-auto'>
 					<div className='aspect-[16/9] rounded-lg overflow-hidden shadow-2xl border-gradient'>
 						<div className='glass-card w-full h-full flex items-center justify-center bg-gradient-to-br from-white/80 via-white/90 to-white/80'>
 							<div className='grid grid-cols-2 sm:grid-cols-3 gap-4 p-6 w-full'>
@@ -148,7 +148,7 @@ const Hero = () => {
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> */}
 			</div>
 		</div>
 	)
