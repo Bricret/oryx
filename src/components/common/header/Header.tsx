@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'motion/react'
 import Link from 'next/link'
-import { Button } from '../../ui/button'
+import { Button } from '@/components/ui/button'
 import SelectedLenguage from './SelectedLenguage'
 import { useDictionary } from '@/context/LanguageContext'
 

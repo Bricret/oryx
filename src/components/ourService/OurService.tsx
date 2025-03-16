@@ -1,6 +1,6 @@
 'use client'
 
-import { useScrollAnimation } from '../hooks/useScrollAnimation'
+import { useScrollAnimation } from '@/components/hooks/useScrollAnimation'
 import { BentoServices } from './BentoServices'
 
 export const OurService = () => {
