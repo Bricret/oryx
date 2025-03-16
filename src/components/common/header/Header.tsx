@@ -50,9 +50,9 @@ export const Header = () => {
 							href={'/'}
 							className='font-normal flex space-x-2 items-center text-sm text-black px-2 relative z-20'
 						>
-							<text className='text-[28px] font-bold text-first uppercase tracking-wide'>
+							<p className='text-[28px] font-bold text-first uppercase tracking-wide'>
 								O r y x
-							</text>
+							</p>
 						</Link>
 					</div>
 					<div className='flex space-x-2 items-center'>
