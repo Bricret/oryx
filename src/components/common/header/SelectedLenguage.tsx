@@ -44,7 +44,7 @@ export default function SelectedLenguage({
 				<SelectTrigger
 					id={id}
 					aria-label={`${dictionary.header.labelSelectLanguage}`}
-					className='[&>span_svg]:text-muted-foreground/80 [&>span]:flex [&>span]:items-center [&>span]:gap-2 [&>span_svg]:shrink-0 py-5 bg-white rounded-lg shadow-md border border-[#4A4A4A]/30'
+					className='cursor-pointer [&>span_svg]:text-muted-foreground/80 rounded-sm [&>span]:flex [&>span]:items-center [&>span]:gap-2 [&>span_svg]:shrink-0 py-5 bg-white shadow-md border border-[#4A4A4A]/30'
 				>
 					<SelectValue
 						placeholder={`${dictionary.header.labelSelectLanguage}`}

@@ -59,7 +59,7 @@ export const Header = () => {
 						<Button
 							variant='secondary'
 							size='default'
-							className='text-[#4A4A4A] bg-white text-sm font-medium hover:bg-first/80 py-5 shadow-md border border-[#4A4A4A]/30'
+							className='cursor-pointer rounded-sm bg-white text-sm font-medium hover:bg-first/80 py-5 shadow-md border border-[#4A4A4A]/30'
 						>
 							{dictionary.header.button}
 						</Button>
