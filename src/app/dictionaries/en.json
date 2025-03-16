@@ -1,0 +1,17 @@
+ {
+    "header": {
+        "banner": "Custom Software Development",
+        "button": "Contact us",
+        "subtitle": "This is an example application",
+        "labelSelectLanguage": "Select a language"
+    },
+    "hero": {
+        "banner": "Custom Software Development",
+        "title_First": "We build",
+        "title_Second": "robust software",
+        "title_Third": "that empowers your business",
+        "subtitle": "From concept to deployment, we create custom web and mobile solutions with precision and excellence for businesses that demand quality.",
+        "btn_contactUs": "Learn more",
+        "btn_explore": "Explore our services"
+    }
+}
