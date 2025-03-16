@@ -1,6 +1,7 @@
 'use client'
 
-import { animate, motion } from 'framer-motion'
+import { animate } from 'motion'
+import { motion } from 'motion/react'
 import { useEffect } from 'react'
 import { cn } from '@/lib/utils'
 import Nextjs from '@/assets/icons/next'
