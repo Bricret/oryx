@@ -1,14 +1,14 @@
 'use client'
 
+import Expo from '@/assets/icons/Expo'
+import TailwindCSS from '@/assets/icons/Tailwindcss'
+import Vercel from '@/assets/icons/Vercel'
+import Nextjs from '@/assets/icons/next'
+import TypeScript from '@/assets/icons/typescript'
+import { cn } from '@/lib/utils'
 import { animate } from 'motion'
 import { motion } from 'motion/react'
 import { useEffect } from 'react'
-import { cn } from '@/lib/utils'
-import Nextjs from '@/assets/icons/next'
-import TypeScript from '@/assets/icons/typescript'
-import TailwindCSS from '@/assets/icons/Tailwindcss'
-import Vercel from '@/assets/icons/Vercel'
-import Expo from '@/assets/icons/Expo'
 
 export function TechCard() {
 	return (

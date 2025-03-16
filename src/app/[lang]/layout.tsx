@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Sora, Big_Shoulders_Stencil_Display } from 'next/font/google'
+import { Big_Shoulders_Stencil_Display, Sora } from 'next/font/google'
 import '../globals.css'
 import { LanguageProvider } from '@/components/common/LanguageProvider'
 

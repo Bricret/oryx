@@ -1,11 +1,11 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { Button } from '@/components/ui/button'
+import { useDictionary } from '@/context/LanguageContext'
 import { motion } from 'motion/react'
 import Link from 'next/link'
-import { Button } from '@/components/ui/button'
+import { useEffect, useState } from 'react'
 import SelectedLenguage from './SelectedLenguage'
-import { useDictionary } from '@/context/LanguageContext'
 
 export const Header = () => {
 	const [scrolled, setScrolled] = useState(false)

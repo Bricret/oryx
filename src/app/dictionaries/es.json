@@ -1,17 +1,17 @@
- {
-    "header": {
-        "banner": "Desarrollo de software personalizado",
-        "button": "Agenda una cita",
-        "subtitle": "Esta es una aplicación de ejemplo",
-        "labelSelectLanguage": "Selecciona un idioma"
-    },
-    "hero": {
-        "banner": "Desarrollo de software personalizado",
-        "title_First": "Transformamos tus",
-        "title_Second": "ideas",
-        "title_Third": "en soluciones digitales",
-        "subtitle": "Desde el concepto hasta la implementación, creamos soluciones web y móviles personalizadas con precisión y excelencia para empresas que exigen calidad.",
-        "btn_contactUs": "Agenda una cita",
-        "btn_explore": "Explora nuestros servicios"
-    }
- }
+{
+	"header": {
+		"banner": "Desarrollo de software personalizado",
+		"button": "Agenda una cita",
+		"subtitle": "Esta es una aplicación de ejemplo",
+		"labelSelectLanguage": "Selecciona un idioma"
+	},
+	"hero": {
+		"banner": "Desarrollo de software personalizado",
+		"title_First": "Transformamos tus",
+		"title_Second": "ideas",
+		"title_Third": "en soluciones digitales",
+		"subtitle": "Desde el concepto hasta la implementación, creamos soluciones web y móviles personalizadas con precisión y excelencia para empresas que exigen calidad.",
+		"btn_contactUs": "Agenda una cita",
+		"btn_explore": "Explora nuestros servicios"
+	}
+}

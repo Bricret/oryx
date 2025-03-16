@@ -1,7 +1,7 @@
 'use client'
 
-import { Shield, Lock, Code, Server } from 'lucide-react'
-import { useState, useEffect } from 'react'
+import { Code, Lock, Server, Shield } from 'lucide-react'
+import { useEffect, useState } from 'react'
 
 export default function SecurityVisualization() {
 	const [activeLayer, setActiveLayer] = useState(0)

@@ -1,9 +1,9 @@
 'use client'
 
-import { Globe } from 'lucide-react'
 import { useScrollAnimation } from '@/components/hooks/useScrollAnimation'
-import { WorldGlobe } from './WorldGlobe'
 import { HoverBorderGradient } from '@/components/ui/hover-border-gradient'
+import { Globe } from 'lucide-react'
+import { WorldGlobe } from './WorldGlobe'
 
 export const WorldWideSection = () => {
 	const contentRef = useScrollAnimation()

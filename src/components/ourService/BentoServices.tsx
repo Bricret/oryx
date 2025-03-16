@@ -1,11 +1,11 @@
 'use client'
 
-import dynamic from 'next/dynamic'
-import { BentoGrid, BentoGridItem } from '@/components/ui/bento-grid'
-import { ImageDisplay } from './ImageDisplay'
-import softwareImage from '@/assets/image/software-image.webp'
 import mobileImage from '@/assets/image/mobile-image.png'
+import softwareImage from '@/assets/image/software-image.webp'
+import { BentoGrid, BentoGridItem } from '@/components/ui/bento-grid'
+import dynamic from 'next/dynamic'
 import Image from 'next/image'
+import { ImageDisplay } from './ImageDisplay'
 import SecurityVisualization from './Security-visualization'
 const CardDemo = dynamic(
 	() => import('./TechCard').then((mod) => mod.TechCard),

@@ -1,9 +1,9 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
-import { ArrowRight, Sparkles } from 'lucide-react'
-import { useScrollAnimation } from './hooks/useScrollAnimation'
 import { useDictionary } from '@/context/LanguageContext'
+import { ArrowRight, Sparkles } from 'lucide-react'
+import { useEffect, useRef } from 'react'
+import { useScrollAnimation } from './hooks/useScrollAnimation'
 import { HoverBorderGradient } from './ui/hover-border-gradient'
 
 const Hero = () => {

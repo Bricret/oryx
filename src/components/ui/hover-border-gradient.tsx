@@ -1,7 +1,7 @@
 'use client'
-import { useState, useEffect } from 'react'
-import { motion } from 'motion/react'
 import { cn } from '@/lib/utils'
+import { motion } from 'motion/react'
+import { useEffect, useState } from 'react'
 
 type Direction = 'TOP' | 'LEFT' | 'BOTTOM' | 'RIGHT'
 
