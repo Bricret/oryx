@@ -1,6 +1,7 @@
-import Hero from '@/components/Hero'
 import { Header } from '@/components/common/header/Header'
+import Hero from '@/components/Hero'
 import { OurService } from '@/components/ourService/OurService'
+import Process from '@/components/process/Process'
 import { WorldWideSection } from '@/components/worldwide/WorldWideSection'
 
 export default async function HomePage() {
@@ -8,8 +9,9 @@ export default async function HomePage() {
 		<main>
 			<Header />
 			<Hero />
-			<WorldWideSection />
 			<OurService />
+			<WorldWideSection />
+			<Process />
 		</main>
 	)
 }

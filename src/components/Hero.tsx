@@ -66,9 +66,6 @@ const Hero = () => {
 					ref={sectionRef as React.RefObject<HTMLDivElement>}
 					className='max-w-3xl mx-auto text-center mb-16 stagger-animation'
 				>
-					{/* <div className='inline-flex items-center px-4 py-2 mb-8 text-sm font-medium text-primary rounded-full bg-primary/10 shadow-sm'>
-					</div> */}
-
 					<HoverBorderGradient
 						containerClassName='rounded-full inline-flex items-center mb-8'
 						className='bg-secondary-background text-black/80 flex items-center space-x-2'
