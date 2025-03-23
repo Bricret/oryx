@@ -19,38 +19,50 @@
 		"title": "Comprehensive Solutions for Modern Businesses",
 		"subtitle": "We provide comprehensive software development services tailored to your specific needs, with a focus on quality, performance, and user experience."
 	},
-			"bentoServices": {
-			"customSoftware": {
-				"title": "Custom software development",
-				"description": "We build custom web platforms with modern technology to ensure scalability, security, and attractive design."
+	"bentoServices": {
+		"customSoftware": {
+			"title": "Custom software development",
+			"description": "We build custom web platforms with modern technology to ensure scalability, security, and attractive design."
+		},
+		"mobileApps": {
+			"title": "Scalable Mobile Applications",
+			"description": "Native, cross-platform apps that work seamlessly on any device."
+		},
+		"modernTech": {
+			"title": "Modern Technologies",
+			"description": "We use proven technologies to ensure high-quality products."
+		},
+		"security": {
+			"title": "High-security solutions with the best technology",
+			"description": "We integrate the best security practices into each stage of development to ensure that your product is secure and reliable.",
+			"firstLayer": {
+				"label": "Data Protection",
+				"desc": "End-to-end encryption"
 			},
-			"mobileApps": {
-				"title": "Scalable Mobile Applications",
-				"description": "Native, cross-platform apps that work seamlessly on any device."
+			"secondLayer": {
+				"label": "Secure Authentication",
+				"desc": "Multiple verification layers"
 			},
-			"modernTech": {
-				"title": "Modern Technologies",
-				"description": "We use proven technologies to ensure high-quality products."
+			"thirdLayer": {
+				"label": "Secure Code",
+				"desc": "OWASP implemented practices"
 			},
-			"security": {
-				"title": "High-security solutions with the best technology",
-				"description": "We integrate the best security practices into each stage of development to ensure that your product is secure and reliable.",
-				"firstLayer": {
-					"label": "Data Protection",
-					"desc": "End-to-end encryption"
-				},
-				"secondLayer": {
-					"label": "Secure Authentication",
-					"desc": "Multiple verification layers"
-				},
-				"thirdLayer": {
-					"label": "Secure Code",
-					"desc": "OWASP implemented practices"
-				},
-				"fourthLayer": {
-					"label": "Infrastructure",
-					"desc": "ISO certified servers"
-				}
+			"fourthLayer": {
+				"label": "Infrastructure",
+				"desc": "ISO certified servers"
 			}
+		}
+	},
+	"globalReach": {
+		"banner": "Global Reach",
+		"title_First": "Work with us from",
+		"title_Second": "anywhere in the world",
+		"description": "Our distributed team of senior developers works across all time zones, delivering robust software solutions regardless of your location.",
+		"list": {
+			"text_First": "Seamless remote collaboration",
+			"text_Second": "Time zone flexibility",
+			"text_Third": "Global talent network",
+			"text_Fourth": "End-to-end project management"
+		}
 	}
 }

@@ -19,38 +19,50 @@
 		"title": "Soluciones completas para negocios modernos",
 		"subtitle": "Ofrecemos servicios de desarrollo de software personalizados para satisfacer tus necesidades específicas, con un enfoque en la calidad, el rendimiento y la experiencia del usuario."
 	},
-		"bentoServices": {
-			"customSoftware": {
-				"title": "Desarrollo de software a medida",
-				"description": "Construimos plataformas web personalizadas con tecnologia moderna para garantizar escalabilidad, seguridad y diseño atractivo."
+	"bentoServices": {
+		"customSoftware": {
+			"title": "Desarrollo de software a medida",
+			"description": "Construimos plataformas web personalizadas con tecnologia moderna para garantizar escalabilidad, seguridad y diseño atractivo."
+		},
+		"mobileApps": {
+			"title": "Aplicaciones Móviles Escalables",
+			"description": "Aplicaciones nativas y multiplataforma que funcionan a la perfección en cualquier dispositivo."
+		},
+		"modernTech": {
+			"title": "Tecnologías Modernas",
+			"description": "Utilizamos tecnologías modernas y probadas para garantizar que su producto sea de alta calidad."
+		},
+		"security": {
+			"title": "Soluciones con alta seguridad con la mejor tecnología",
+			"description": "Integramos las mejores prácticas de seguridad en cada etapa del desarrollo para garantizar que su producto sea seguro y confiable.",
+			"firstLayer": {
+				"label": "Protección de Datos",
+				"desc": "Cifrado de extremo a extremo"
 			},
-			"mobileApps": {
-				"title": "Aplicaciones Móviles Escalables",
-				"description": "Aplicaciones nativas y multiplataforma que funcionan a la perfección en cualquier dispositivo."
+			"secondLayer": {
+				"label": "Autenticación Segura",
+				"desc": "Múltiples capas de verificación"
 			},
-			"modernTech": {
-				"title": "Tecnologías Modernas",
-				"description": "Utilizamos tecnologías modernas y probadas para garantizar que su producto sea de alta calidad."
+			"thirdLayer": {
+				"label": "Código Seguro",
+				"desc": "Prácticas OWASP implementadas"
 			},
-			"security": {
-				"title": "Soluciones con alta seguridad con la mejor tecnología",
-				"description": "Integramos las mejores prácticas de seguridad en cada etapa del desarrollo para garantizar que su producto sea seguro y confiable.",
-				"firstLayer": {
-					"label": "Protección de Datos",
-					"desc": "Cifrado de extremo a extremo"
-				},
-				"secondLayer": {
-					"label": "Autenticación Segura",
-					"desc": "Múltiples capas de verificación"
-				},
-				"thirdLayer": {
-					"label": "Código Seguro",
-					"desc": "Prácticas OWASP implementadas"
-				},
-				"fourthLayer": {
-					"label": "Infraestructura",
-					"desc": "Servidores con certificación ISO"
-				}
+			"fourthLayer": {
+				"label": "Infraestructura",
+				"desc": "Servidores con certificación ISO"
 			}
+		}
+	},
+	"globalReach": {
+		"banner": "Alcance Global",
+		"title_First": "Trabaja con nosotros desde",
+		"title_Second": "cualquier parte del mundo",
+		"description": "Nuestro equipo distribuido de desarrolladores senior trabaja en todas las zonas horarias, entregando soluciones de software robustas sin importar tu ubicación.",
+		"list": {
+			"text_First": "Colaboración remota sin complicaciones",
+			"text_Second": "Flexibilidad horaria",
+			"text_Third": "Red global de talento",
+			"text_Fourth": "Gestión de proyectos sin complicaciones"
+		}
 	}
 }
