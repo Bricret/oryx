@@ -113,18 +113,18 @@ export default function Process() {
 	]
 	return (
 		<div className='bg-secondary/30'>
-			<div className='container px-4 pt-24 max-w-3xl mx-auto text-center mb-16 stagger-animation'>
+			<div className='container px-4 pt-24 max-w-3xl mx-auto text-center stagger-animation'>
 				<h2 className='text-3xl sm:text-4xl font-bold mb-4 tracking-tight'>
 					Our Development Process
 				</h2>
-				<p className='text-lg text-muted-foreground mb-8'>
+				<p className='text-lg text-muted-foreground pb-8'>
 					We follow a structured, transparent process to ensure your project is
 					delivered on time, on budget, and exceeds your expectations.
 				</p>
 			</div>
 			<Timeline data={data} />
-			<div className='container px-4 max-w-3xl mx-auto text-center mb-16 stagger-animation'>
-				<p className='text-base text-muted-foreground mb-8 pb-4'>
+			<div className='container px-4 mx-auto text-center stagger-animation'>
+				<p className='text-base text-muted-foreground pb-20'>
 					The software development process is iterative and may vary based on
 					project requirements, team structure, and development methodology
 					(Waterfall, Agile, DevOps, etc.).

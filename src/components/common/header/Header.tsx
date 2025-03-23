@@ -41,7 +41,7 @@ export const Header = () => {
 				duration: 0.3, // Duración de la transición
 				ease: 'easeInOut',
 			}}
-			className={`max-w-7xl fixed mx-auto inset-x-0 z-50 lg:w-full container ${scrolled ? 'top-4' : 'top-2'}`}
+			className={`max-w-full fixed mx-auto inset-x-0 z-50 lg:w-full container ${scrolled ? 'top-4' : 'top-2'}`}
 		>
 			<nav className='hidden lg:block w-full'>
 				<div className='w-full flex relative justify-between px-2 py-2 rounded-md mx-auto'>
