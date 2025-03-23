@@ -1,31 +1,34 @@
 'use client'
 
+import { useDictionary } from '@/context/LanguageContext'
 import { Code, Lock, Server, Shield } from 'lucide-react'
 import { useEffect, useState } from 'react'
 
 export default function SecurityVisualization() {
+	const dictionary = useDictionary()
+
 	const [activeLayer, setActiveLayer] = useState(0)
 
 	const layers = [
 		{
 			icon: Shield,
-			label: 'Protección de Datos',
-			desc: 'Cifrado de extremo a extremo',
+			label: dictionary.bentoServices.security.firstLayer.label,
+			desc: dictionary.bentoServices.security.firstLayer.desc,
 		},
 		{
 			icon: Lock,
-			label: 'Autenticación Segura',
-			desc: 'Múltiples capas de verificación',
+			label: dictionary.bentoServices.security.secondLayer.label,
+			desc: dictionary.bentoServices.security.secondLayer.desc,
 		},
 		{
 			icon: Code,
-			label: 'Código Seguro',
-			desc: 'Prácticas OWASP implementadas',
+			label: dictionary.bentoServices.security.thirdLayer.label,
+			desc: dictionary.bentoServices.security.thirdLayer.desc,
 		},
 		{
 			icon: Server,
-			label: 'Infraestructura',
-			desc: 'Servidores con certificación ISO',
+			label: dictionary.bentoServices.security.fourthLayer.label,
+			desc: dictionary.bentoServices.security.fourthLayer.desc,
 		},
 	]
 

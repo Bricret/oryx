@@ -124,7 +124,7 @@ export default function Process() {
 			</div>
 			<Timeline data={data} />
 			<div className='container px-4 max-w-3xl mx-auto text-center mb-16 stagger-animation'>
-				<p className='text-base text-muted-foreground mb-8'>
+				<p className='text-base text-muted-foreground mb-8 pb-4'>
 					The software development process is iterative and may vary based on
 					project requirements, team structure, and development methodology
 					(Waterfall, Agile, DevOps, etc.).

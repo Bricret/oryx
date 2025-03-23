@@ -13,5 +13,44 @@
 		"subtitle": "Desde el concepto hasta la implementación, creamos soluciones web y móviles personalizadas con precisión y excelencia para empresas que exigen calidad.",
 		"btn_contactUs": "Agenda una cita",
 		"btn_explore": "Explora nuestros servicios"
+	},
+	"ourService": {
+		"banner": "Nuestros Servicios",
+		"title": "Soluciones completas para negocios modernos",
+		"subtitle": "Ofrecemos servicios de desarrollo de software personalizados para satisfacer tus necesidades específicas, con un enfoque en la calidad, el rendimiento y la experiencia del usuario."
+	},
+		"bentoServices": {
+			"customSoftware": {
+				"title": "Desarrollo de software a medida",
+				"description": "Construimos plataformas web personalizadas con tecnologia moderna para garantizar escalabilidad, seguridad y diseño atractivo."
+			},
+			"mobileApps": {
+				"title": "Aplicaciones Móviles Escalables",
+				"description": "Aplicaciones nativas y multiplataforma que funcionan a la perfección en cualquier dispositivo."
+			},
+			"modernTech": {
+				"title": "Tecnologías Modernas",
+				"description": "Utilizamos tecnologías modernas y probadas para garantizar que su producto sea de alta calidad."
+			},
+			"security": {
+				"title": "Soluciones con alta seguridad con la mejor tecnología",
+				"description": "Integramos las mejores prácticas de seguridad en cada etapa del desarrollo para garantizar que su producto sea seguro y confiable.",
+				"firstLayer": {
+					"label": "Protección de Datos",
+					"desc": "Cifrado de extremo a extremo"
+				},
+				"secondLayer": {
+					"label": "Autenticación Segura",
+					"desc": "Múltiples capas de verificación"
+				},
+				"thirdLayer": {
+					"label": "Código Seguro",
+					"desc": "Prácticas OWASP implementadas"
+				},
+				"fourthLayer": {
+					"label": "Infraestructura",
+					"desc": "Servidores con certificación ISO"
+				}
+			}
 	}
 }

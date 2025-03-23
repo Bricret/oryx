@@ -111,12 +111,6 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 									</ul>
 								</div>
 							</div>
-
-							{index < data.length - 1 && (
-								<div className='flex justify-center my-4'>
-									<div className='h-8 w-0.5 bg-gray-300' />
-								</div>
-							)}
 						</div>
 					</div>
 				))}
