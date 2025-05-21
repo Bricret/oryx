@@ -1,19 +1,27 @@
 import { Header } from '@/components/common/header/Header'
+import Contact from '@/components/contact'
+import FAQSection from '@/components/faq/Faq-section'
 import Hero from '@/components/Hero'
-import { OurService } from '@/components/ourService/OurService'
-import Process from '@/components/process/Process'
+import ClientProcess from '@/components/process/Client-Process'
+import StatsSection from '@/components/process/Stats-Section'
 import ClientsApproached from '@/components/projectRelease/ClientsApproached'
+import Projects from '@/components/projects/Projects'
+import ServicesRedesigned from '@/components/service/Service'
 import { WorldWideSection } from '@/components/worldwide/WorldWideSection'
 
 export default async function HomePage() {
 	return (
-		<main>
+		<main className='relative'>
 			<Header />
 			<Hero />
-			<OurService />
+			<ServicesRedesigned />
 			<WorldWideSection />
-			<Process />
-			<ClientsApproached />
+			<Projects />
+			<ClientProcess />
+			<StatsSection />
+			<FAQSection />
+			<Contact />
+			{/* <ClientsApproached /> */}
 		</main>
 	)
 }
