@@ -5,6 +5,8 @@ import { ArrowRight, Sparkles } from 'lucide-react'
 import { useEffect, useRef } from 'react'
 import { useScrollAnimation } from './hooks/useScrollAnimation'
 import { HoverBorderGradient } from './ui/hover-border-gradient'
+import { motion } from 'motion/react'
+import Image from 'next/image'
 
 const Hero = () => {
 	const heroRef = useRef<HTMLDivElement>(null)
@@ -182,6 +184,13 @@ const Hero = () => {
 					ref={sectionRef as React.RefObject<HTMLDivElement>}
 					className='max-w-3xl mx-auto text-center mb-16 stagger-animation'
 				>
+					<Image
+						src='/images/logo.png'
+						alt='Logo'
+						width={100}
+						height={100}
+						className='mx-auto mb-4'
+					/>
 					<HoverBorderGradient
 						containerClassName='rounded-full inline-flex items-center mb-8'
 						className='bg-secondary-background text-black/80 flex items-center space-x-2'
@@ -233,35 +242,18 @@ const Hero = () => {
 						</a>
 					</div>
 				</div>
-
-				{/* <div className='relative max-w-5xl mx-auto'>
-					<div className='aspect-[16/9] rounded-lg overflow-hidden shadow-2xl border-gradient'>
-						<div className='glass-card w-full h-full flex items-center justify-center bg-gradient-to-br from-white/80 via-white/90 to-white/80'>
-							<div className='grid grid-cols-2 sm:grid-cols-3 gap-4 p-6 w-full'>
-								{[
-									{ id: 1, title: 'Web Apps', value: '200+' },
-									{ id: 2, title: 'Mobile Apps', value: '150+' },
-									{ id: 3, title: 'Client Satisfaction', value: '99%' },
-									{ id: 4, title: 'Projects Delivered', value: '500+' },
-									{ id: 5, title: 'Years Experience', value: '15+' },
-									{ id: 6, title: 'Team Members', value: '50+' },
-								].map((stat) => (
-									<div
-										key={stat.id}
-										className='text-center p-4 hover:scale-105 transition-transform duration-300'
-									>
-										<h3 className='text-3xl sm:text-4xl font-bold text-gradient'>
-											{stat.value}
-										</h3>
-										<p className='text-sm sm:text-base text-muted-foreground'>
-											{stat.title}
-										</p>
-									</div>
-								))}
-							</div>
-						</div>
+				<div className='flex flex-col items-center'>
+					<p className='text-sm text-muted-foreground mb-2'>
+						Scroll to explore
+					</p>
+					<div className='w-6 h-10 border-2 border-muted-foreground rounded-full flex justify-center'>
+						<motion.div
+							className='w-1 h-2 bg-primary rounded-full mt-2'
+							animate={{ y: [0, 12, 0] }}
+							transition={{ duration: 1.5, repeat: Number.POSITIVE_INFINITY }}
+						/>
 					</div>
-				</div> */}
+				</div>
 			</div>
 		</div>
 	)
