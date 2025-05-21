@@ -15,7 +15,7 @@ export const WorldWideSection = () => {
 			<div className='container mx-auto px-4'>
 				<div className='grid md:grid-cols-2 gap-12 items-center'>
 					<div className='order-2 md:order-1'>
-						<div className='relative h-[400px] rounded-lg overflow-hidden'>
+						<div className='relative h-[300px] md:h-[545px] rounded-lg overflow-hidden'>
 							<WorldGlobe />
 						</div>
 					</div>
