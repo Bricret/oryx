@@ -228,11 +228,15 @@ export const MobileNavToggle = ({
 	)
 }
 
-export const NavbarLogo = () => {
+export const NavbarLogo = ({
+	className,
+}: {
+	className?: string
+}) => {
 	return (
 		<a
 			href='/'
-			className='relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black'
+			className={`flex flex-row items-center justify-start space-x-2 ${className}`}
 		>
 			<motion.div
 				className='rounded-full p-1 mr-2'

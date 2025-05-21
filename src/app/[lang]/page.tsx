@@ -1,6 +1,7 @@
 import { Header } from '@/components/common/header/Header'
 import Contact from '@/components/contact'
 import FAQSection from '@/components/faq/Faq-section'
+import Footer from '@/components/footer'
 import Hero from '@/components/Hero'
 import ClientProcess from '@/components/process/Client-Process'
 import StatsSection from '@/components/process/Stats-Section'
@@ -21,6 +22,7 @@ export default async function HomePage() {
 			<StatsSection />
 			<FAQSection />
 			<Contact />
+			<Footer />
 			{/* <ClientsApproached /> */}
 		</main>
 	)
