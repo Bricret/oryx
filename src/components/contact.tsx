@@ -8,8 +8,10 @@ import { Mail, MapPin, Phone } from 'lucide-react'
 import { useRef } from 'react'
 import ScrollReveal from './projects/scroll-reveal'
 import { Textarea } from './ui/textarea'
+import { useDictionary } from '@/context/LanguageContext'
 
 export default function Contact() {
+	const dictionary = useDictionary()
 	const ref = useRef<HTMLElement>(null)
 	const { scrollYProgress } = useScroll({
 		target: ref,
@@ -31,18 +33,19 @@ export default function Contact() {
 					<ScrollReveal>
 						<div className='text-center mb-16'>
 							<h2 className='text-3xl md:text-4xl font-bold tracking-tight mb-4'>
-								Get in Touch
+								{dictionary.contact.title}
 							</h2>
 							<p className='text-muted-foreground text-lg max-w-2xl mx-auto'>
-								Ready to start your next project? Contact us today for a free
-								consultation
+								{dictionary.contact.subtitle}
 							</p>
 						</div>
 					</ScrollReveal>
 
 					<div className='grid md:grid-cols-2 gap-12'>
 						<ScrollReveal direction='left'>
-							<h3 className='text-2xl font-bold mb-6'>Contact Information</h3>
+							<h3 className='text-2xl font-bold mb-6'>
+								{dictionary.contact.infoTitle}
+							</h3>
 							<div className='space-y-6'>
 								<motion.div
 									whileHover={{ y: -5 }}
@@ -54,9 +57,11 @@ export default function Contact() {
 												<Mail className='h-5 w-5 text-primary' />
 											</div>
 											<div>
-												<h4 className='font-medium mb-1'>Email</h4>
+												<h4 className='font-medium mb-1'>
+													{dictionary.contact.emailLabel}
+												</h4>
 												<p className='text-muted-foreground'>
-													help@oryxdevelopment.com
+													{dictionary.contact.email}
 												</p>
 											</div>
 										</CardContent>
@@ -73,8 +78,12 @@ export default function Contact() {
 												<Phone className='h-5 w-5 text-primary' />
 											</div>
 											<div>
-												<h4 className='font-medium mb-1'>Phone</h4>
-												<p className='text-muted-foreground'>+505 5797 1984</p>
+												<h4 className='font-medium mb-1'>
+													{dictionary.contact.phoneLabel}
+												</h4>
+												<p className='text-muted-foreground'>
+													{dictionary.contact.phone}
+												</p>
 											</div>
 										</CardContent>
 									</Card>
@@ -90,12 +99,14 @@ export default function Contact() {
 												<MapPin className='h-5 w-5 text-primary' />
 											</div>
 											<div>
-												<h4 className='font-medium mb-1'>Office</h4>
+												<h4 className='font-medium mb-1'>
+													{dictionary.contact.officeLabel}
+												</h4>
 												<p className='text-muted-foreground'>
-													Parqueo Industrial Las Mercedes
+													{dictionary.contact.addressLine1}
 												</p>
 												<p className='text-muted-foreground'>
-													Chinandega, Nicaragua
+													{dictionary.contact.addressLine2}
 												</p>
 											</div>
 										</CardContent>
@@ -106,43 +117,55 @@ export default function Contact() {
 
 						<ScrollReveal direction='right'>
 							<motion.div style={{ y, opacity }}>
-								<h3 className='text-2xl font-bold mb-6'>Send us a Message</h3>
+								<h3 className='text-2xl font-bold mb-6'>
+									{dictionary.contact.formTitle}
+								</h3>
 								<form className='space-y-6'>
 									<div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
 										<div className='space-y-2'>
 											<label htmlFor='name' className='text-sm font-medium'>
-												Name
+												{dictionary.contact.formName}
 											</label>
-											<Input id='name' placeholder='Your name' />
+											<Input
+												id='name'
+												placeholder={dictionary.contact.formNamePlaceholder}
+											/>
 										</div>
 										<div className='space-y-2'>
 											<label htmlFor='email' className='text-sm font-medium'>
-												Email
+												{dictionary.contact.formEmail}
 											</label>
-											<Input id='email' type='email' placeholder='Your email' />
+											<Input
+												id='email'
+												type='email'
+												placeholder={dictionary.contact.formEmailPlaceholder}
+											/>
 										</div>
 									</div>
 
 									<div className='space-y-2'>
 										<label htmlFor='subject' className='text-sm font-medium'>
-											Subject
+											{dictionary.contact.formSubject}
 										</label>
-										<Input id='subject' placeholder='Project inquiry' />
+										<Input
+											id='subject'
+											placeholder={dictionary.contact.formSubjectPlaceholder}
+										/>
 									</div>
 
 									<div className='space-y-2'>
 										<label htmlFor='message' className='text-sm font-medium'>
-											Message
+											{dictionary.contact.formMessage}
 										</label>
 										<Textarea
 											id='message'
-											placeholder='Tell us about your project'
+											placeholder={dictionary.contact.formMessagePlaceholder}
 											rows={5}
 										/>
 									</div>
 
 									<Button type='submit' size='lg' className='w-full sm:w-auto'>
-										Send Message
+										{dictionary.contact.formSend}
 									</Button>
 								</form>
 							</motion.div>

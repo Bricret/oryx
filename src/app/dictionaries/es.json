@@ -14,10 +14,37 @@
 		"btn_contactUs": "Agenda una cita",
 		"btn_explore": "Explora nuestros servicios"
 	},
+	"services": {
+		"web": {
+			"title": "Desarrollo Web",
+			"description": "Sitios web y aplicaciones personalizadas con tecnologías modernas para un rendimiento y experiencia óptimos."
+		},
+		"mobile": {
+			"title": "Desarrollo de Apps Móviles",
+			"description": "Aplicaciones móviles nativas y multiplataforma que ofrecen experiencias excepcionales en todos los dispositivos."
+		},
+		"systems": {
+			"title": "Desarrollo de Sistemas Web",
+			"description": "Sistemas web escalables y seguros que optimizan operaciones y mejoran la productividad."
+		},
+		"uiux": {
+			"title": "Diseño UI/UX",
+			"description": "Soluciones de diseño centradas en el usuario para experiencias digitales intuitivas y accesibles."
+		},
+		"data": {
+			"title": "Ingeniería de Datos",
+			"description": "Soluciones robustas que transforman datos en información valiosa para la toma de decisiones."
+		},
+		"cyber": {
+			"title": "Ciberseguridad",
+			"description": "Soluciones integrales para proteger activos digitales, garantizar cumplimiento y mitigar riesgos."
+		}
+	},
 	"ourService": {
 		"banner": "Nuestros Servicios",
-		"title": "Soluciones completas para negocios modernos",
-		"subtitle": "Ofrecemos servicios de desarrollo de software personalizados para satisfacer tus necesidades específicas, con un enfoque en la calidad, el rendimiento y la experiencia del usuario."
+		"title": "Transformamos ideas en realidad digital",
+		"subtitle": "Ofrecemos soluciones digitales excepcionales adaptadas a tus necesidades, combinando experiencia técnica con innovación creativa para impulsar tu negocio.",
+		"button": "Ver todos los servicios"
 	},
 	"bentoServices": {
 		"customSoftware": {
@@ -64,5 +91,163 @@
 			"text_Third": "Red global de talento",
 			"text_Fourth": "Gestión de proyectos sin complicaciones"
 		}
+	},
+	"projects": {
+		"sectionTitle": "Nuestros Proyectos",
+		"sectionSubtitle": "Explora nuestro portafolio de proyectos exitosos en diversas industrias",
+		"categories": {
+			"all": "Todos los Proyectos",
+			"web": "Desarrollo Web",
+			"mobile": "Aplicaciones Móviles",
+			"systems": "Sistemas Web"
+		},
+		"list": [
+			{
+				"title": "Página Web Taxi Bargain",
+				"description": "Una página web para un servicio de reserva de taxis con una interfaz fácil de usar e integración de solicitudes."
+			},
+			{
+				"title": "Aplicación Taxi Bargain",
+				"description": "Una aplicación móvil para reservar taxis con seguimiento en tiempo real y estimación de tarifas."
+			},
+			{
+				"title": "Sistema de farmacia Hersis",
+				"description": "Un sistema web para gestionar las operaciones de la farmacia, incluyendo inventario, ventas y gestión contable."
+			},
+			{
+				"title": "Página Web Melissa Taxi",
+				"description": "Una página web para un servicio de taxi con funcionalidad de reserva y reseñas de usuarios."
+			},
+			{
+				"title": "Di que si Sistema Web",
+				"description": "Es un sistema que gestiona el inventario y los informes de ventas, así como una página para la visibilidad del producto y solicitudes por WhatsApp."
+			},
+			{
+				"title": "Sistema Web Sakura Coffee Shop",
+				"description": "Un sistema web para gestionar las operaciones de la cafetería, incluyendo inventario, ventas y gestión de informes."
+			}
+		],
+		"viewProject": "Ver Proyecto",
+		"code": "Código"
+	},
+	"clientProcess": {
+		"title": "Nuestro Proceso con el Cliente",
+		"subtitle": "Un enfoque optimizado para entregar resultados excepcionales",
+		"steps": [
+			{
+				"title": "Descubrimiento y Planificación",
+				"description": "Comenzamos entendiendo tus objetivos de negocio, público objetivo y requerimientos del proyecto para crear una hoja de ruta integral hacia el éxito.",
+				"details": [
+					"Consulta inicial",
+					"Levantamiento de requerimientos",
+					"Definición del alcance del proyecto",
+					"Planificación de tiempos y entregables"
+				]
+			},
+			{
+				"title": "Diseño y Desarrollo",
+				"description": "Nuestro equipo diseña y desarrolla tu solución enfocándose en la experiencia de usuario, el rendimiento y la escalabilidad.",
+				"details": [
+					"Diseño UI/UX",
+					"Desarrollo frontend",
+					"Implementación backend",
+					"Pruebas de aseguramiento de calidad"
+				]
+			},
+			{
+				"title": "Despliegue y Soporte",
+				"description": "Desplegamos tu solución y brindamos soporte continuo para asegurar el rendimiento óptimo y la satisfacción de los usuarios.",
+				"details": [
+					"Preparación para el despliegue",
+					"Ejecución del lanzamiento",
+					"Monitoreo post-lanzamiento",
+					"Mantenimiento y soporte continuo"
+				]
+			}
+		]
+	},
+	"statsSection": {
+		"title": "Nuestro Impacto",
+		"subtitle": "Cifras que reflejan nuestro compromiso con la excelencia y la satisfacción del cliente",
+		"stats": {
+			"clients": "Clientes Satisfechos",
+			"projects": "Proyectos Completados",
+			"associations": "Asociaciones",
+			"years": "Años de Experiencia"
+		}
+	},
+	"faqSection": {
+		"badge": "Preguntas Frecuentes",
+		"title": "¿Tienes preguntas? Tenemos respuestas",
+		"subtitle": "Encuentra respuestas a las preguntas más comunes sobre nuestros servicios, procesos y cómo podemos ayudar a tu negocio a tener éxito.",
+		"faqs": [
+			{
+				"question": "¿Cuál es su proceso de desarrollo?",
+				"answer": "Nuestro proceso de desarrollo sigue una metodología ágil con ciclos iterativos. Comenzamos con una fase de descubrimiento para entender tus requerimientos, seguida de diseño, desarrollo, pruebas y despliegue. Durante todo el proceso mantenemos una comunicación abierta y proporcionamos actualizaciones regulares para asegurar que tu proyecto cumpla con tus expectativas."
+			},
+			{
+				"question": "¿Cuánto tiempo suele tomar completar un proyecto?",
+				"answer": "El tiempo varía según la complejidad y el alcance. Un sitio web sencillo puede tomar de 4 a 6 semanas, mientras que una aplicación web o móvil compleja puede tomar de 3 a 6 meses. Durante la consulta inicial, te proporcionaremos un cronograma detallado basado en tus requerimientos y objetivos."
+			},
+			{
+				"question": "¿Ofrecen soporte continuo después de finalizar el proyecto?",
+				"answer": "Sí, ofrecemos varios paquetes de soporte y mantenimiento para asegurar que tu producto digital siga funcionando óptimamente. Incluyen actualizaciones regulares, parches de seguridad, monitoreo de rendimiento y soporte técnico. Podemos adaptar un plan de soporte a tus necesidades y presupuesto."
+			},
+			{
+				"question": "¿Cómo manejan la cotización de los proyectos?",
+				"answer": "Ofrecemos modelos de precios flexibles, incluyendo presupuestos fijos para proyectos bien definidos y facturación por tiempo y materiales para proyectos con requerimientos cambiantes. Durante la consulta inicial, discutiremos tus necesidades y recomendaremos la estructura de precios más adecuada. Proporcionamos estimaciones transparentes y actualizaciones regulares sobre el uso del presupuesto."
+			},
+			{
+				"question": "¿En qué tecnologías están especializados?",
+				"answer": "Estamos especializados en una amplia gama de tecnologías modernas como TypeScript, Next.js para frontend; Node.js, Nest.js y python para backend; React Native y Swift/Swift UI para desarrollo móvil; y bases de datos como MongoDB, PostgreSQL y MySQL. Siempre elegimos la tecnología según los requerimientos y objetivos de tu proyecto."
+			},
+			{
+				"question": "¿Pueden trabajar con nuestro equipo existente?",
+				"answer": "Tenemos experiencia colaborando con equipos internos y podemos adaptarnos a tus flujos de trabajo y herramientas. Ya sea que necesites que complementemos tu equipo con experiencia específica o que nos encarguemos de ciertos aspectos del desarrollo, somos flexibles para asegurar una integración fluida."
+			}
+		]
+	},
+	"contact": {
+		"title": "Contáctanos",
+		"subtitle": "¿Listo para comenzar tu próximo proyecto? Contáctanos hoy para una consulta gratuita.",
+		"infoTitle": "Información de Contacto",
+		"emailLabel": "Correo electrónico",
+		"email": "help@oryxdevelopment.com",
+		"phoneLabel": "Teléfono",
+		"phone": "+505 5797 1984",
+		"officeLabel": "Oficina",
+		"addressLine1": "Parqueo Industrial Las Mercedes",
+		"addressLine2": "Chinandega, Nicaragua",
+		"formTitle": "Envíanos un Mensaje",
+		"formName": "Nombre",
+		"formNamePlaceholder": "Tu nombre",
+		"formEmail": "Correo electrónico",
+		"formEmailPlaceholder": "Tu correo electrónico",
+		"formSubject": "Asunto",
+		"formSubjectPlaceholder": "Consulta de proyecto",
+		"formMessage": "Mensaje",
+		"formMessagePlaceholder": "Cuéntanos sobre tu proyecto",
+		"formSend": "Enviar Mensaje"
+	},
+	"footer": {
+		"description": "Creamos experiencias digitales excepcionales con soluciones innovadoras adaptadas a las necesidades de tu negocio.",
+		"servicesTitle": "Servicios",
+		"services": [
+			"Desarrollo Web",
+			"Desarrollo de Apps Móviles",
+			"Desarrollo de Sistemas Web",
+			"UI/UX Diseño",
+			"Consultoría"
+		],
+		"companyTitle": "Compañía",
+		"company": [
+			"Sobre Nosotros",
+			"Nuestro Equipo",
+			"Carreras",
+			"Blog",
+			"Contacto"
+		],
+		"rights": "Todos los derechos reservados.",
+		"legal": ["Política de Privacidad", "Términos de Servicio"]
 	}
 }

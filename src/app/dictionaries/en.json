@@ -14,10 +14,37 @@
 		"btn_contactUs": "Learn more",
 		"btn_explore": "Explore our services"
 	},
+	"services": {
+		"web": {
+			"title": "Web Development",
+			"description": "Custom websites and web applications built with modern technologies for optimal performance and user experience."
+		},
+		"mobile": {
+			"title": "Mobile App Development",
+			"description": "Native and cross-platform mobile applications that deliver exceptional user experiences across all devices."
+		},
+		"systems": {
+			"title": "Web Systems Development",
+			"description": "Scalable and secure web systems that streamline business operations and enhance productivity."
+		},
+		"uiux": {
+			"title": "UI/UX Design",
+			"description": "User-centered design solutions that create intuitive, engaging, and accessible digital experiences."
+		},
+		"data": {
+			"title": "Data Engineering",
+			"description": "Robust data solutions that transform raw data into valuable insights to drive business decisions."
+		},
+		"cyber": {
+			"title": "Cybersecurity",
+			"description": "Comprehensive security solutions to protect digital assets, ensure compliance, and mitigate risks."
+		}
+	},
 	"ourService": {
-		"banner": "Our Service",
-		"title": "Comprehensive Solutions for Modern Businesses",
-		"subtitle": "We provide comprehensive software development services tailored to your specific needs, with a focus on quality, performance, and user experience."
+		"banner": "Our Services",
+		"title": "Transforming Ideas Into Digital Reality",
+		"subtitle": "We deliver exceptional digital solutions tailored to your specific needs, combining technical expertise with creative innovation to drive your business forward.",
+		"button": "View All Services"
 	},
 	"bentoServices": {
 		"customSoftware": {
@@ -64,5 +91,157 @@
 			"text_Third": "Global talent network",
 			"text_Fourth": "End-to-end project management"
 		}
+	},
+	"projects": {
+		"sectionTitle": "Our Projects",
+		"sectionSubtitle": "Explore our portfolio of successful projects across various industries",
+		"categories": {
+			"all": "All Projects",
+			"web": "Web Development",
+			"mobile": "Mobile Apps",
+			"systems": "Web Systems"
+		},
+		"list": [
+			{
+				"title": "Taxi Bargain Web Page",
+				"description": "A web page for a taxi booking service with user-friendly interface and request integration."
+			},
+			{
+				"title": "Taxi Bargain App",
+				"description": "A mobile app for booking taxis with real-time tracking and fare estimation."
+			},
+			{
+				"title": "Hersis Pharmacy system",
+				"description": "A web system for managing pharmacy operations, including inventory, sales, and accounting management."
+			},
+			{
+				"title": "Melissa Taxi Web Page",
+				"description": "A web page for a taxi service with booking functionality and user reviews."
+			},
+			{
+				"title": "Di que si Web System",
+				"description": "It is a system that manages inventory and sales reports, as well as a page for product visibility and WhatsApp requests."
+			},
+			{
+				"title": "Sakura Coffee Shop Web System",
+				"description": "A web system for managing coffee shop operations, including inventory, sales, and reports management."
+			}
+		],
+		"viewProject": "View Project",
+		"code": "Code"
+	},
+	"clientProcess": {
+		"title": "Our Client Process",
+		"subtitle": "A streamlined approach to delivering exceptional results",
+		"steps": [
+			{
+				"title": "Discovery & Planning",
+				"description": "We begin by understanding your business goals, target audience, and project requirements to create a comprehensive roadmap for success.",
+				"details": [
+					"Initial consultation",
+					"Requirements gathering",
+					"Project scope definition",
+					"Timeline and milestone planning"
+				]
+			},
+			{
+				"title": "Design & Development",
+				"description": "Our team designs and develops your solution with a focus on user experience, performance, and scalability.",
+				"details": [
+					"UI/UX design",
+					"Frontend development",
+					"Backend implementation",
+					"Quality assurance testing"
+				]
+			},
+			{
+				"title": "Deployment & Support",
+				"description": "We deploy your solution and provide ongoing support to ensure optimal performance and user satisfaction.",
+				"details": [
+					"Deployment preparation",
+					"Launch execution",
+					"Post-launch monitoring",
+					"Ongoing maintenance and support"
+				]
+			}
+		]
+	},
+	"statsSection": {
+		"title": "Our Impact",
+		"subtitle": "Numbers that reflect our commitment to excellence and client satisfaction",
+		"stats": {
+			"clients": "Happy Clients",
+			"projects": "Projects Completed",
+			"associations": "Associations",
+			"years": "Years Experience"
+		}
+	},
+	"faqSection": {
+		"badge": "Frequently Asked Questions",
+		"title": "Got Questions? We've Got Answers",
+		"subtitle": "Find answers to common questions about our services, process, and how we can help your business succeed.",
+		"faqs": [
+			{
+				"question": "What is your development process?",
+				"answer": "Our development process follows an agile methodology with iterative cycles. We begin with a discovery phase to understand your requirements, followed by design, development, testing, and deployment. Throughout the process, we maintain open communication and provide regular updates to ensure your project meets your expectations."
+			},
+			{
+				"question": "How long does it typically take to complete a project?",
+				"answer": "Project timelines vary depending on complexity and scope. A simple website might take 4-6 weeks, while a complex web application or mobile app could take 3-6 months. During our initial consultation, we'll provide a detailed timeline based on your specific requirements and project goals."
+			},
+			{
+				"question": "Do you provide ongoing support after the project is completed?",
+				"answer": "Yes, we offer various support and maintenance packages to ensure your digital product continues to perform optimally. These include regular updates, security patches, performance monitoring, and technical support. We can tailor a support plan to meet your specific needs and budget."
+			},
+			{
+				"question": "How do you handle project pricing?",
+				"answer": "We offer flexible pricing models including fixed-price quotes for well-defined projects and time-and-materials billing for projects with evolving requirements. During our initial consultation, we'll discuss your project needs and recommend the most appropriate pricing structure. We provide transparent estimates and regular updates on budget utilization."
+			},
+			{
+				"question": "What technologies do you specialize in?",
+				"answer": "We specialize in a wide range of modern technologies including TypeScript, Next.js for frontend; Node.js, Nest.js y python for backend; React Native y Swift/Swift UI for mobile development; and various database technologies like MongoDB, PostgreSQL, and MySQL. Our technology choices are always guided by your specific project requirements and long-term goals."
+			},
+			{
+				"question": "Can you work with our existing team?",
+				"answer": "We're experienced in collaborating with in-house teams and can adapt to your existing workflows and tools. Whether you need us to augment your team with specific expertise or take ownership of certain aspects of development, we're flexible in our approach to ensure seamless integration with your team."
+			}
+		]
+	},
+	"contact": {
+		"title": "Get in Touch",
+		"subtitle": "Ready to start your next project? Contact us today for a free consultation.",
+		"infoTitle": "Contact Information",
+		"emailLabel": "Email",
+		"email": "help@oryxdevelopment.com",
+		"phoneLabel": "Phone",
+		"phone": "+505 5797 1984",
+		"officeLabel": "Office",
+		"addressLine1": "Parqueo Industrial Las Mercedes",
+		"addressLine2": "Chinandega, Nicaragua",
+		"formTitle": "Send us a Message",
+		"formName": "Name",
+		"formNamePlaceholder": "Your name",
+		"formEmail": "Email",
+		"formEmailPlaceholder": "Your email",
+		"formSubject": "Subject",
+		"formSubjectPlaceholder": "Project inquiry",
+		"formMessage": "Message",
+		"formMessagePlaceholder": "Tell us about your project",
+		"formSend": "Send Message"
+	},
+	"footer": {
+		"description": "We craft exceptional digital experiences with innovative solutions tailored to your business needs.",
+		"servicesTitle": "Services",
+		"services": [
+			"Web Development",
+			"Mobile App Development",
+			"Web Systems Development",
+			"UI/UX Design",
+			"Consulting Services"
+		],
+		"companyTitle": "Company",
+		"company": ["About Us", "Our Team", "Careers", "Blog", "Contact"],
+		"rights": "All rights reserved.",
+		"legal": ["Privacy Policy", "Terms of Service"]
 	}
 }

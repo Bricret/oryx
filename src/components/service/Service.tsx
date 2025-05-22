@@ -14,181 +14,10 @@ import {
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { HoverBorderGradient } from '../ui/hover-border-gradient'
-
-const services = [
-	{
-		icon: <Globe className='h-10 w-10' />,
-		color: 'from-violet-500 to-purple-700',
-		shadowColor: 'shadow-violet-500/20',
-		title: 'Web Development',
-		description:
-			'Custom websites and web applications built with modern technologies for optimal performance and user experience.',
-		features: [
-			'Responsive Design',
-			'CMS Integration',
-			'E-commerce Solutions',
-			'Progressive Web Apps',
-			'SEO Optimization',
-			'Performance Tuning',
-		],
-		technologies: [
-			'React',
-			'Next.js',
-			'Vue.js',
-			'Angular',
-			'WordPress',
-			'Shopify',
-		],
-		caseStudy: {
-			title: 'E-commerce Platform Redesign',
-			result: 'Increased conversion rate by 35% and reduced bounce rate by 42%',
-		},
-	},
-	{
-		icon: <Smartphone className='h-10 w-10' />,
-		color: 'from-blue-500 to-cyan-600',
-		shadowColor: 'shadow-blue-500/20',
-		title: 'Mobile App Development',
-		description:
-			'Native and cross-platform mobile applications that deliver exceptional user experiences across all devices.',
-		features: [
-			'iOS & Android Apps',
-			'Cross-platform Solutions',
-			'UI/UX Design',
-			'App Store Optimization',
-			'Push Notifications',
-			'Offline Functionality',
-		],
-		technologies: [
-			'React Native',
-			'Flutter',
-			'Swift',
-			'Kotlin',
-			'Firebase',
-			'AWS Amplify',
-		],
-		caseStudy: {
-			title: 'Health & Fitness App',
-			result: 'Over 100,000 downloads in the first month with 4.8 star rating',
-		},
-	},
-	{
-		icon: <Code className='h-10 w-10' />,
-		color: 'from-emerald-500 to-green-600',
-		shadowColor: 'shadow-emerald-500/20',
-		title: 'Web Systems Development',
-		description:
-			'Scalable and secure web systems that streamline business operations and enhance productivity.',
-		features: [
-			'Custom CRM Solutions',
-			'ERP Systems',
-			'API Development',
-			'Cloud Integration',
-			'Data Analytics',
-			'Automation Tools',
-		],
-		technologies: [
-			'Node.js',
-			'Python',
-			'Java',
-			'MongoDB',
-			'PostgreSQL',
-			'Docker',
-		],
-		caseStudy: {
-			title: 'Enterprise Resource Planning System',
-			result: 'Reduced operational costs by 28% and improved efficiency by 40%',
-		},
-	},
-	{
-		icon: <Layers className='h-10 w-10' />,
-		color: 'from-amber-500 to-orange-600',
-		shadowColor: 'shadow-amber-500/20',
-		title: 'UI/UX Design',
-		description:
-			'User-centered design solutions that create intuitive, engaging, and accessible digital experiences.',
-		features: [
-			'User Research',
-			'Wireframing & Prototyping',
-			'Visual Design',
-			'Usability Testing',
-			'Design Systems',
-			'Accessibility Compliance',
-		],
-		technologies: [
-			'Figma',
-			'Adobe XD',
-			'Sketch',
-			'InVision',
-			'Zeplin',
-			'Principle',
-		],
-		caseStudy: {
-			title: 'Financial Services App Redesign',
-			result:
-				'Improved user satisfaction by 52% and reduced support tickets by 38%',
-		},
-	},
-	{
-		icon: <Database className='h-10 w-10' />,
-		color: 'from-rose-500 to-red-600',
-		shadowColor: 'shadow-rose-500/20',
-		title: 'Data Engineering',
-		description:
-			'Robust data solutions that transform raw data into valuable insights to drive business decisions.',
-		features: [
-			'Data Warehousing',
-			'ETL Pipelines',
-			'Business Intelligence',
-			'Big Data Processing',
-			'Machine Learning Integration',
-			'Real-time Analytics',
-		],
-		technologies: [
-			'Python',
-			'Spark',
-			'Hadoop',
-			'Snowflake',
-			'Tableau',
-			'Power BI',
-		],
-		caseStudy: {
-			title: 'Retail Analytics Platform',
-			result: 'Enabled data-driven decisions that increased revenue by 22%',
-		},
-	},
-	{
-		icon: <Shield className='h-10 w-10' />,
-		color: 'from-indigo-500 to-blue-700',
-		shadowColor: 'shadow-indigo-500/20',
-		title: 'Cybersecurity',
-		description:
-			'Comprehensive security solutions to protect digital assets, ensure compliance, and mitigate risks.',
-		features: [
-			'Security Audits',
-			'Penetration Testing',
-			'Compliance Management',
-			'Secure DevOps',
-			'Incident Response',
-			'Security Training',
-		],
-		technologies: [
-			'OWASP',
-			'Nessus',
-			'Metasploit',
-			'Wireshark',
-			'Burp Suite',
-			'Kali Linux',
-		],
-		caseStudy: {
-			title: 'Financial Institution Security Overhaul',
-			result:
-				'Eliminated critical vulnerabilities and achieved regulatory compliance',
-		},
-	},
-]
+import { useDictionary } from '@/context/LanguageContext'
 
 export default function ServicesRedesigned() {
+	const dictionary = useDictionary()
 	const [hoveredService, setHoveredService] = useState<number | null>(null)
 	const ref = useRef<HTMLDivElement>(null)
 	const { scrollYProgress } = useScroll({
@@ -202,6 +31,52 @@ export default function ServicesRedesigned() {
 		[0, 0.5, 1],
 		[0, 0.2, 0],
 	)
+
+	// Servicios traducidos
+	const services = [
+		{
+			icon: <Globe className='h-10 w-10' />,
+			color: 'from-violet-500 to-purple-700',
+			shadowColor: 'shadow-violet-500/20',
+			title: dictionary.services?.web?.title ?? 'Web Development',
+			description: dictionary.services?.web?.description ?? '',
+		},
+		{
+			icon: <Smartphone className='h-10 w-10' />,
+			color: 'from-blue-500 to-cyan-600',
+			shadowColor: 'shadow-blue-500/20',
+			title: dictionary.services?.mobile?.title ?? 'Mobile App Development',
+			description: dictionary.services?.mobile?.description ?? '',
+		},
+		{
+			icon: <Code className='h-10 w-10' />,
+			color: 'from-emerald-500 to-green-600',
+			shadowColor: 'shadow-emerald-500/20',
+			title: dictionary.services?.systems?.title ?? 'Web Systems Development',
+			description: dictionary.services?.systems?.description ?? '',
+		},
+		{
+			icon: <Layers className='h-10 w-10' />,
+			color: 'from-amber-500 to-orange-600',
+			shadowColor: 'shadow-amber-500/20',
+			title: dictionary.services?.uiux?.title ?? 'UI/UX Design',
+			description: dictionary.services?.uiux?.description ?? '',
+		},
+		{
+			icon: <Database className='h-10 w-10' />,
+			color: 'from-rose-500 to-red-600',
+			shadowColor: 'shadow-rose-500/20',
+			title: dictionary.services?.data?.title ?? 'Data Engineering',
+			description: dictionary.services?.data?.description ?? '',
+		},
+		{
+			icon: <Shield className='h-10 w-10' />,
+			color: 'from-indigo-500 to-blue-700',
+			shadowColor: 'shadow-indigo-500/20',
+			title: dictionary.services?.cyber?.title ?? 'Cybersecurity',
+			description: dictionary.services?.cyber?.description ?? '',
+		},
+	]
 
 	return (
 		<section className='py-24 relative overflow-hidden'>
@@ -241,12 +116,17 @@ export default function ServicesRedesigned() {
 								className='bg-secondary-background text-black/80 flex items-center space-x-2'
 							>
 								<HandCoins className='w-6 h-6' />
-								<span className='text-sm font-medium'>Our Services</span>
+								<span className='text-sm font-medium'>
+									{dictionary.ourService?.banner ?? 'Our Services'}
+								</span>
 							</HoverBorderGradient>
 						</div>
 						<h2 className='text-4xl md:text-5xl font-bold tracking-tight mb-4'>
 							<span className='relative inline-block'>
-								<span className='relative z-10'>Transforming</span>
+								<span className='relative z-10'>
+									{dictionary.ourService?.title?.split(' ')[0] ??
+										'Transforming'}
+								</span>
 								<motion.span
 									className='absolute bottom-2 left-0 h-3 bg-primary/20 w-full'
 									initial={{ width: 0 }}
@@ -255,12 +135,14 @@ export default function ServicesRedesigned() {
 									transition={{ duration: 0.8, delay: 0.5 }}
 								/>
 							</span>{' '}
-							Ideas Into Digital Reality
+							{dictionary.ourService?.title?.replace(
+								dictionary.ourService?.title?.split(' ')[0],
+								'',
+							) ?? 'Ideas Into Digital Reality'}
 						</h2>
 						<p className='text-muted-foreground text-lg max-w-3xl mx-auto'>
-							We deliver exceptional digital solutions tailored to your specific
-							needs, combining technical expertise with creative innovation to
-							drive your business forward.
+							{dictionary.ourService?.subtitle ??
+								'We deliver exceptional digital solutions tailored to your specific needs, combining technical expertise with creative innovation to drive your business forward.'}
 						</p>
 					</motion.div>
 
@@ -379,7 +261,7 @@ export default function ServicesRedesigned() {
 							size='lg'
 							className='bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary'
 						>
-							View All Services
+							{dictionary.ourService?.button ?? 'View All Services'}
 						</Button>
 					</motion.div>
 				</div>

@@ -5,46 +5,47 @@ import { Card, CardContent } from '@/components/ui/card'
 import { Code, Users, Award, Clock } from 'lucide-react'
 import ScrollReveal from '../projects/scroll-reveal'
 import AnimatedCounter from './animated-counter'
-
-const stats = [
-	{
-		icon: <Users className='h-8 w-8 text-white' />,
-		value: 120,
-		label: 'Happy Clients',
-		suffix: '+',
-	},
-	{
-		icon: <Code className='h-8 w-8 text-white' />,
-		value: 250,
-		label: 'Projects Completed',
-		suffix: '+',
-	},
-	{
-		icon: <Award className='h-8 w-8 text-white' />,
-		value: 15,
-		label: 'Awards Won',
-		suffix: '',
-	},
-	{
-		icon: <Clock className='h-8 w-8 text-white' />,
-		value: 8,
-		label: 'Years Experience',
-		suffix: '+',
-	},
-]
+import { useDictionary } from '@/context/LanguageContext'
 
 export default function StatsSection() {
+	const dictionary = useDictionary()
+
+	const stats = [
+		{
+			icon: <Users className='h-8 w-8 text-white' />,
+			value: 10,
+			label: dictionary.statsSection.stats.clients,
+			suffix: '+',
+		},
+		{
+			icon: <Code className='h-8 w-8 text-white' />,
+			value: 20,
+			label: dictionary.statsSection.stats.projects,
+			suffix: '+',
+		},
+		{
+			icon: <Award className='h-8 w-8 text-white' />,
+			value: 2,
+			label: dictionary.statsSection.stats.associations,
+			suffix: '',
+		},
+		{
+			icon: <Clock className='h-8 w-8 text-white' />,
+			value: 3,
+			label: dictionary.statsSection.stats.years,
+			suffix: '+',
+		},
+	]
 	return (
 		<section className='py-24 relative overflow-hidden bg-[#1467D0]'>
 			<section className='container mx-auto px-4'>
 				<ScrollReveal>
 					<div className='text-center mb-16'>
 						<h2 className='text-3xl md:text-4xl font-bold tracking-tight mb-4 text-white'>
-							Our Impact
+							{dictionary.statsSection.title}
 						</h2>
 						<p className='text-lg max-w-2xl mx-auto text-zinc-300'>
-							Numbers that reflect our commitment to excellence and client
-							satisfaction
+							{dictionary.statsSection.subtitle}
 						</p>
 					</div>
 				</ScrollReveal>

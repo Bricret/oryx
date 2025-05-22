@@ -9,6 +9,7 @@ import { ExternalLink, Github } from 'lucide-react'
 import Image from 'next/image'
 import ScrollReveal from './scroll-reveal'
 import Link from 'next/link'
+import { useDictionary } from '@/context/LanguageContext'
 
 const categories = [
 	{ id: 'all', label: 'All Projects' },
@@ -17,91 +18,86 @@ const categories = [
 	{ id: 'systems', label: 'Web Systems' },
 ]
 
-const projects = [
-	{
-		id: 1,
-		title: 'Taxi Bargain Web Page',
-		description:
-			'A web page for a taxi booking service with user-friendly interface and request integration.',
-		image: '/images/taxibargain-mk.png',
-		category: 'web',
-		tags: ['Next.js', 'Tailwind CSS', 'Shadcn UI', 'Typescript'],
-		link: 'https://www.taxibargain.com/',
-	},
-	{
-		id: 2,
-		title: 'Taxi Bargain App',
-		description:
-			'A mobile app for booking taxis with real-time tracking and fare estimation.',
-		image: '/images/taxibargain-app.png',
-		category: 'mobile',
-		tags: [
-			'React Native',
-			'NestJS',
-			'WebSocket',
-			'PostgreSQL',
-			'Typescript',
-			'Expo',
-		],
-		link: '',
-	},
-	{
-		id: 3,
-		title: 'Hersis Pharmacy system',
-		description:
-			'A web system for managing pharmacy operations, including inventory, sales, and accounting management.',
-		image: '/images/hersis-mk.png',
-		category: 'systems',
-		tags: [
-			'Next.js',
-			'Nest.js',
-			'PostgreSQL',
-			'Typescript',
-			'Tailwind CSS',
-			'Tanstack Query',
-			'Shadcn UI',
-		],
-		link: '#',
-	},
-	{
-		id: 4,
-		title: 'Melissa Taxi Web Page',
-		description:
-			'A web page for a taxi service with booking functionality and user reviews.',
-		image: '/images/melissaTaxi-mk.png',
-		category: 'web',
-		tags: ['Next.js', 'Tailwind CSS', 'Shadcn UI', 'Typescript'],
-		link: 'https://melissataxipr.com/es',
-	},
-	{
-		id: 5,
-		title: 'Di que si Web System',
-		description:
-			'It is a system that manages inventory and sales reports, as well as a page for product visibility and WhatsApp requests.',
-		image: '/images/di-que-si.png',
-		category: 'systems',
-		tags: ['Flutter', 'Firebase', 'Google Maps API'],
-		link: '',
-	},
-	{
-		id: 6,
-		title: 'Sakura Coffee Shop Web System',
-		description:
-			'A web system for managing coffee shop operations, including inventory, sales, and reports management.',
-		image: '/images/SakuraCoffee.webp',
-		category: 'systems',
-		tags: ['Angular', 'Django', 'MySQL'],
-		link: '#',
-	},
-]
-
 export default function Projects() {
+	const dictionary = useDictionary()
 	const [activeCategory, setActiveCategory] = useState('all')
 	const ref = useRef<HTMLElement>(null)
 	const { scrollYProgress } = useScroll({
 		target: ref,
 		offset: ['start end', 'end start'],
 	})
+
+	const projects = [
+		{
+			id: 1,
+			title: dictionary.projects.list[0].title,
+			description: dictionary.projects.list[0].description,
+			image: '/images/taxibargain-mk.png',
+			category: 'web',
+			tags: ['Next.js', 'Tailwind CSS', 'Shadcn UI', 'Typescript'],
+			link: 'https://www.taxibargain.com/',
+		},
+		{
+			id: 2,
+			title: dictionary.projects.list[1].title,
+			description: dictionary.projects.list[1].description,
+			image: '/images/taxibargain-app.png',
+			category: 'mobile',
+			tags: [
+				'React Native',
+				'NestJS',
+				'WebSocket',
+				'PostgreSQL',
+				'Typescript',
+				'Expo',
+			],
+			link: '',
+		},
+		{
+			id: 3,
+			title: dictionary.projects.list[2].title,
+			description: dictionary.projects.list[2].description,
+			image: '/images/hersis-mk.png',
+			category: 'systems',
+			tags: [
+				'Next.js',
+				'Nest.js',
+				'PostgreSQL',
+				'Typescript',
+				'Tailwind CSS',
+				'Tanstack Query',
+				'Shadcn UI',
+			],
+			link: '#',
+		},
+		{
+			id: 4,
+			title: dictionary.projects.list[3].title,
+			description: dictionary.projects.list[3].description,
+			image: '/images/melissaTaxi-mk.png',
+			category: 'web',
+			tags: ['Next.js', 'Tailwind CSS', 'Shadcn UI', 'Typescript'],
+			link: 'https://melissataxipr.com/es',
+		},
+		{
+			id: 5,
+			title: dictionary.projects.list[4].title,
+			description: dictionary.projects.list[4].description,
+			image: '/images/di-que-si.png',
+			category: 'systems',
+			tags: ['Flutter', 'Firebase', 'Google Maps API'],
+			link: '',
+		},
+		{
+			id: 6,
+			title: dictionary.projects.list[5].title,
+			description: dictionary.projects.list[5].description,
+			image: '/images/SakuraCoffee.webp',
+			category: 'systems',
+			tags: ['Angular', 'Django', 'MySQL'],
+			link: '#',
+		},
+	]
 
 	const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '10%'])
 	const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0])
@@ -139,11 +135,10 @@ export default function Projects() {
 					<ScrollReveal>
 						<div className='text-center mb-16'>
 							<h2 className='text-3xl md:text-4xl font-bold tracking-tight mb-4'>
-								Our Projects
+								{dictionary.projects.sectionTitle}
 							</h2>
 							<p className='text-muted-foreground text-lg max-w-2xl mx-auto'>
-								Explore our portfolio of successful projects across various
-								industries
+								{dictionary.projects.sectionSubtitle}
 							</p>
 						</div>
 					</ScrollReveal>
@@ -162,7 +157,7 @@ export default function Projects() {
 											value={category.id}
 											className='text-sm md:text-base'
 										>
-											{category.label}
+											{dictionary.projects.categories[category.id]}
 										</TabsTrigger>
 									))}
 								</TabsList>
@@ -238,8 +233,8 @@ export default function Projects() {
 																			target='_blank'
 																			rel='noopener'
 																		>
-																			<ExternalLink className='h-4 w-4' /> View
-																			Project
+																			<ExternalLink className='h-4 w-4' />{' '}
+																			{dictionary.projects.viewProject}
 																		</Link>
 																	</Button>
 																	<Button
@@ -247,7 +242,8 @@ export default function Projects() {
 																		variant='ghost'
 																		className='gap-1'
 																	>
-																		<Github className='h-4 w-4' /> Code
+																		<Github className='h-4 w-4' />{' '}
+																		{dictionary.projects.code}
 																	</Button>
 																</div>
 															</CardContent>
