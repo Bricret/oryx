@@ -8,6 +8,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { ExternalLink, Github } from 'lucide-react'
 import Image from 'next/image'
 import ScrollReveal from './scroll-reveal'
+import Link from 'next/link'
 
 const categories = [
 	{ id: 'all', label: 'All Projects' },
@@ -22,29 +23,44 @@ const projects = [
 		title: 'Taxi Bargain Web Page',
 		description:
 			'A web page for a taxi booking service with user-friendly interface and request integration.',
-		image: '/placeholder.svg?height=600&width=800',
+		image: '/images/taxibargain-mk.png',
 		category: 'web',
-		tags: ['Next.js', 'Tailwind CSS', 'Stripe'],
-		link: '#',
+		tags: ['Next.js', 'Tailwind CSS', 'Shadcn UI', 'Typescript'],
+		link: 'https://www.taxibargain.com/',
 	},
 	{
 		id: 2,
 		title: 'Taxi Bargain App',
 		description:
 			'A mobile app for booking taxis with real-time tracking and fare estimation.',
-		image: '/placeholder.svg?height=600&width=800',
+		image: '/images/taxibargain-app.png',
 		category: 'mobile',
-		tags: ['React Native', 'Firebase', 'HealthKit'],
-		link: '#',
+		tags: [
+			'React Native',
+			'NestJS',
+			'WebSocket',
+			'PostgreSQL',
+			'Typescript',
+			'Expo',
+		],
+		link: '',
 	},
 	{
 		id: 3,
 		title: 'Hersis Pharmacy system',
 		description:
 			'A web system for managing pharmacy operations, including inventory, sales, and accounting management.',
-		image: '/placeholder.svg?height=600&width=800',
+		image: '/images/hersis-mk.png',
 		category: 'systems',
-		tags: ['React', 'Node.js', 'MongoDB'],
+		tags: [
+			'Next.js',
+			'Nest.js',
+			'PostgreSQL',
+			'Typescript',
+			'Tailwind CSS',
+			'Tanstack Query',
+			'Shadcn UI',
+		],
 		link: '#',
 	},
 	{
@@ -52,27 +68,27 @@ const projects = [
 		title: 'Melissa Taxi Web Page',
 		description:
 			'A web page for a taxi service with booking functionality and user reviews.',
-		image: '/placeholder.svg?height=600&width=800',
+		image: '/images/melissaTaxi-mk.png',
 		category: 'web',
-		tags: ['Vue.js', 'Express', 'PostgreSQL'],
-		link: '#',
+		tags: ['Next.js', 'Tailwind CSS', 'Shadcn UI', 'Typescript'],
+		link: 'https://melissataxipr.com/es',
 	},
 	{
 		id: 5,
 		title: 'Di que si Web System',
 		description:
 			'It is a system that manages inventory and sales reports, as well as a page for product visibility and WhatsApp requests.',
-		image: '/placeholder.svg?height=600&width=800',
+		image: '/images/di-que-si.png',
 		category: 'systems',
 		tags: ['Flutter', 'Firebase', 'Google Maps API'],
-		link: '#',
+		link: '',
 	},
 	{
 		id: 6,
 		title: 'Sakura Coffee Shop Web System',
 		description:
 			'A web system for managing coffee shop operations, including inventory, sales, and reports management.',
-		image: '/placeholder.svg?height=600&width=800',
+		image: '/images/SakuraCoffee.webp',
 		category: 'systems',
 		tags: ['Angular', 'Django', 'MySQL'],
 		link: '#',
@@ -179,7 +195,7 @@ export default function Projects() {
 														whileHover={{ y: -10 }}
 														className='h-full'
 													>
-														<Card className='overflow-hidden h-full border-2 hover:border-primary/50 transition-all duration-300'>
+														<Card className='overflow-hidden h-full border-2 hover:border-primary/50 transition-all duration-300 pt-0'>
 															<div className='relative aspect-video overflow-hidden'>
 																<Image
 																	src={project.image || '/placeholder.svg'}
@@ -215,9 +231,16 @@ export default function Projects() {
 																		size='sm'
 																		variant='outline'
 																		className='gap-1'
+																		asChild
 																	>
-																		<ExternalLink className='h-4 w-4' /> View
-																		Project
+																		<Link
+																			href={project.link}
+																			target='_blank'
+																			rel='noopener'
+																		>
+																			<ExternalLink className='h-4 w-4' /> View
+																			Project
+																		</Link>
 																	</Button>
 																	<Button
 																		size='sm'

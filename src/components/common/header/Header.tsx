@@ -11,8 +11,11 @@ import {
 	MobileNavMenu,
 } from '@/components/ui/resizable-navbar'
 import { useState } from 'react'
+import SelectedLenguage from './SelectedLenguage'
+import { useDictionary } from '@/context/LanguageContext'
 
 export function Header() {
+	const dictionary = useDictionary()
 	const navItems = [
 		{
 			name: 'Features',
@@ -38,7 +41,9 @@ export function Header() {
 					<NavbarLogo />
 					<NavItems items={navItems} />
 					<div className='flex items-center gap-4'>
-						<NavbarButton variant='secondary'>Login</NavbarButton>
+						<NavbarButton variant='secondary'>
+							<SelectedLenguage dictionary={dictionary} />
+						</NavbarButton>
 						<NavbarButton variant='primary'>Book a call</NavbarButton>
 					</div>
 				</NavBody>
@@ -73,7 +78,7 @@ export function Header() {
 								variant='primary'
 								className='w-full'
 							>
-								Login
+								<SelectedLenguage dictionary={dictionary} />
 							</NavbarButton>
 							<NavbarButton
 								onClick={() => setIsMobileMenuOpen(false)}
