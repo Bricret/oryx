@@ -1,12 +1,11 @@
 'use client'
 
 import { useState, useRef } from 'react'
-import { motion, useScroll, useTransform, AnimatePresence } from 'motion/react'
+import { motion, useScroll, useTransform } from 'motion/react'
 import {
-	Code,
-	Smartphone,
 	Globe,
-	ArrowRight,
+	Smartphone,
+	Code,
 	Layers,
 	Database,
 	Shield,
@@ -190,7 +189,6 @@ const services = [
 ]
 
 export default function ServicesRedesigned() {
-	const [activeService, setActiveService] = useState<number | null>(null)
 	const [hoveredService, setHoveredService] = useState<number | null>(null)
 	const ref = useRef<HTMLDivElement>(null)
 	const { scrollYProgress } = useScroll({
@@ -277,14 +275,11 @@ export default function ServicesRedesigned() {
 								className='relative'
 								onMouseEnter={() => setHoveredService(index)}
 								onMouseLeave={() => setHoveredService(null)}
-								onClick={() =>
-									setActiveService(activeService === index ? null : index)
-								}
 							>
 								<motion.div
 									className={cn(
 										'relative h-full rounded-xl overflow-hidden border-2 transition-all duration-500',
-										hoveredService === index || activeService === index
+										hoveredService === index
 											? 'border-transparent shadow-2xl scale-[1.02]'
 											: 'border-border shadow-lg',
 									)}
@@ -295,8 +290,7 @@ export default function ServicesRedesigned() {
 									<div
 										className={cn(
 											'absolute inset-0 opacity-0 transition-opacity duration-500',
-											(hoveredService === index || activeService === index) &&
-												'opacity-100',
+											hoveredService === index && 'opacity-100',
 										)}
 									>
 										<div
@@ -351,83 +345,7 @@ export default function ServicesRedesigned() {
 										<p className='text-muted-foreground mb-6 flex-grow'>
 											{service.description}
 										</p>
-
-										<div className='mt-auto'>
-											<Button
-												variant='ghost'
-												className='group p-0 h-auto font-medium hover:bg-transparent'
-												onClick={(e) => {
-													e.stopPropagation()
-													setActiveService(
-														activeService === index ? null : index,
-													)
-												}}
-											>
-												<span>Learn more</span>
-												<ArrowRight className='ml-2 h-4 w-4 transition-transform group-hover:translate-x-1' />
-											</Button>
-										</div>
 									</div>
-
-									{/* Expanded content */}
-									<AnimatePresence>
-										{activeService === index && (
-											<motion.div
-												initial={{ opacity: 0, height: 0 }}
-												animate={{ opacity: 1, height: 'auto' }}
-												exit={{ opacity: 0, height: 0 }}
-												transition={{ duration: 0.3 }}
-												className='relative z-10 px-6 pb-6'
-											>
-												<div className='pt-4 border-t border-border/30'>
-													<h4 className='font-semibold mb-3'>Key Features</h4>
-													<ul className='grid grid-cols-2 gap-x-4 gap-y-2 mb-6'>
-														{service.features.map((feature, i) => (
-															<motion.li
-																key={feature.toString()}
-																className='flex items-center text-sm'
-																initial={{ opacity: 0, x: -10 }}
-																animate={{ opacity: 1, x: 0 }}
-																transition={{ delay: i * 0.05 + 0.2 }}
-															>
-																<div className='mr-2 h-1.5 w-1.5 rounded-full bg-primary' />
-																<span>{feature}</span>
-															</motion.li>
-														))}
-													</ul>
-
-													<h4 className='font-semibold mb-3'>Technologies</h4>
-													<div className='flex flex-wrap gap-2 mb-6'>
-														{service.technologies.map((tech, i) => (
-															<motion.span
-																key={tech.toString()}
-																className='bg-background text-xs px-2 py-1 rounded-full border border-border'
-																initial={{ opacity: 0, scale: 0.8 }}
-																animate={{ opacity: 1, scale: 1 }}
-																transition={{ delay: i * 0.05 + 0.4 }}
-															>
-																{tech}
-															</motion.span>
-														))}
-													</div>
-
-													<motion.div
-														className='bg-muted/50 p-4 rounded-lg'
-														initial={{ opacity: 0, y: 10 }}
-														animate={{ opacity: 1, y: 0 }}
-														transition={{ delay: 0.6 }}
-													>
-														<h4 className='font-semibold text-sm'>
-															Case Study: {service.caseStudy.title}
-														</h4>
-														<p className='text-sm text-muted-foreground mt-1'>
-															{service.caseStudy.result}
-														</p>
-													</motion.div>
-												</div>
-											</motion.div>
-										)}
-									</AnimatePresence>
 								</motion.div>
 
 								{/* Decorative elements */}
@@ -436,8 +354,7 @@ export default function ServicesRedesigned() {
 										'absolute -z-10 rounded-xl',
 										service.shadowColor,
 										'opacity-0 transition-opacity duration-300',
-										(hoveredService === index || activeService === index) &&
-											'opacity-100',
+										hoveredService === index && 'opacity-100',
 									)}
 									style={{
 										top: -5,

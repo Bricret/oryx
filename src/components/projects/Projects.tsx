@@ -19,9 +19,9 @@ const categories = [
 const projects = [
 	{
 		id: 1,
-		title: 'E-commerce Platform',
+		title: 'Taxi Bargain Web Page',
 		description:
-			'A fully responsive e-commerce platform with advanced filtering, search, and payment integration.',
+			'A web page for a taxi booking service with user-friendly interface and request integration.',
 		image: '/placeholder.svg?height=600&width=800',
 		category: 'web',
 		tags: ['Next.js', 'Tailwind CSS', 'Stripe'],
@@ -29,9 +29,9 @@ const projects = [
 	},
 	{
 		id: 2,
-		title: 'Health & Fitness App',
+		title: 'Taxi Bargain App',
 		description:
-			'A mobile application for tracking workouts, nutrition, and health metrics with personalized recommendations.',
+			'A mobile app for booking taxis with real-time tracking and fare estimation.',
 		image: '/placeholder.svg?height=600&width=800',
 		category: 'mobile',
 		tags: ['React Native', 'Firebase', 'HealthKit'],
@@ -39,9 +39,9 @@ const projects = [
 	},
 	{
 		id: 3,
-		title: 'CRM System',
+		title: 'Hersis Pharmacy system',
 		description:
-			'A comprehensive customer relationship management system with analytics dashboard and automation features.',
+			'A web system for managing pharmacy operations, including inventory, sales, and accounting management.',
 		image: '/placeholder.svg?height=600&width=800',
 		category: 'systems',
 		tags: ['React', 'Node.js', 'MongoDB'],
@@ -49,9 +49,9 @@ const projects = [
 	},
 	{
 		id: 4,
-		title: 'Real Estate Platform',
+		title: 'Melissa Taxi Web Page',
 		description:
-			'A web platform for property listings with virtual tours, filtering, and agent communication.',
+			'A web page for a taxi service with booking functionality and user reviews.',
 		image: '/placeholder.svg?height=600&width=800',
 		category: 'web',
 		tags: ['Vue.js', 'Express', 'PostgreSQL'],
@@ -59,19 +59,19 @@ const projects = [
 	},
 	{
 		id: 5,
-		title: 'Food Delivery App',
+		title: 'Di que si Web System',
 		description:
-			'A mobile app for food ordering and delivery with real-time tracking and payment processing.',
+			'It is a system that manages inventory and sales reports, as well as a page for product visibility and WhatsApp requests.',
 		image: '/placeholder.svg?height=600&width=800',
-		category: 'mobile',
+		category: 'systems',
 		tags: ['Flutter', 'Firebase', 'Google Maps API'],
 		link: '#',
 	},
 	{
 		id: 6,
-		title: 'Inventory Management System',
+		title: 'Sakura Coffee Shop Web System',
 		description:
-			'A comprehensive system for tracking inventory, orders, and suppliers with reporting capabilities.',
+			'A web system for managing coffee shop operations, including inventory, sales, and reports management.',
 		image: '/placeholder.svg?height=600&width=800',
 		category: 'systems',
 		tags: ['Angular', 'Django', 'MySQL'],

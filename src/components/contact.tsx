@@ -56,7 +56,7 @@ export default function Contact() {
 											<div>
 												<h4 className='font-medium mb-1'>Email</h4>
 												<p className='text-muted-foreground'>
-													hello@oryxdevelopment.com
+													help@oryxdevelopment.com
 												</p>
 											</div>
 										</CardContent>
@@ -74,9 +74,7 @@ export default function Contact() {
 											</div>
 											<div>
 												<h4 className='font-medium mb-1'>Phone</h4>
-												<p className='text-muted-foreground'>
-													+1 (555) 123-4567
-												</p>
+												<p className='text-muted-foreground'>+505 5797 1984</p>
 											</div>
 										</CardContent>
 									</Card>
@@ -94,10 +92,10 @@ export default function Contact() {
 											<div>
 												<h4 className='font-medium mb-1'>Office</h4>
 												<p className='text-muted-foreground'>
-													123 Tech Boulevard, Innovation District
+													Parqueo Industrial Las Mercedes
 												</p>
 												<p className='text-muted-foreground'>
-													San Francisco, CA 94105
+													Chinandega, Nicaragua
 												</p>
 											</div>
 										</CardContent>
