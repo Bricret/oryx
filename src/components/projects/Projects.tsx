@@ -41,7 +41,7 @@ export default function Projects() {
 			id: 2,
 			title: dictionary.projects.list[1].title,
 			description: dictionary.projects.list[1].description,
-			image: '/images/taxibargain-app.png',
+			image: '/images/taxiBargain-app.png',
 			category: 'mobile',
 			tags: [
 				'React Native',
