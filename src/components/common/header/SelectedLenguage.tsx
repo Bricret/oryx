@@ -44,7 +44,7 @@ export default function SelectedLenguage({
 				<SelectTrigger
 					id={id}
 					aria-label={`${dictionary.header.labelSelectLanguage}`}
-					className='cursor-pointer [&>span_svg]:text-muted-foreground/80 rounded-sm [&>span]:flex [&>span]:items-center [&>span]:gap-2 [&>span_svg]:shrink-0 py-5 bg-white shadow-md border border-[#4A4A4A]/30'
+					className='cursor-pointer [&>span_svg]:text-muted-foreground/80 rounded-sm [&>span]:flex [&>span]:items-center [&>span]:gap-2 [&>span_svg]:shrink-0 bg-white shadow-md border border-[#4A4A4A]/30'
 				>
 					<SelectValue
 						placeholder={`${dictionary.header.labelSelectLanguage}`}
@@ -56,7 +56,6 @@ export default function SelectedLenguage({
 							<SelectLabel className='ps-2'>{continent.continent}</SelectLabel>
 							{continent.items.map((item) => (
 								<SelectItem key={item.value} value={item.value}>
-									<span className='text-lg leading-none'>{item.flag}</span>{' '}
 									<span className='truncate'>{item.label}</span>
 								</SelectItem>
 							))}

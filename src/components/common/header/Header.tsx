@@ -13,6 +13,7 @@ import {
 import { useState } from 'react'
 import SelectedLenguage from './SelectedLenguage'
 import { useDictionary } from '@/context/LanguageContext'
+import { Button } from '@/components/ui/button'
 
 export function Header() {
 	const dictionary = useDictionary()
@@ -40,11 +41,13 @@ export function Header() {
 				<NavBody>
 					<NavbarLogo />
 					<NavItems items={navItems} />
-					<div className='flex items-center gap-4'>
+					<div className='flex items-center gap-2'>
 						<NavbarButton variant='secondary'>
 							<SelectedLenguage dictionary={dictionary} />
 						</NavbarButton>
-						<NavbarButton variant='primary'>Book a call</NavbarButton>
+						<Button size='lg' className='z-20 relative'>
+							{dictionary.header.button}
+						</Button>
 					</div>
 				</NavBody>
 
