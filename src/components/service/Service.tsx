@@ -257,10 +257,7 @@ export default function ServicesRedesigned() {
 						viewport={{ once: true }}
 						transition={{ duration: 0.5, delay: 0.8 }}
 					>
-						<Button
-							size='lg'
-							className='bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary'
-						>
+						<Button size='lg'>
 							{dictionary.ourService?.button ?? 'View All Services'}
 						</Button>
 					</motion.div>

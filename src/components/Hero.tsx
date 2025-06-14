@@ -7,6 +7,7 @@ import { useScrollAnimation } from './hooks/useScrollAnimation'
 import { HoverBorderGradient } from './ui/hover-border-gradient'
 import { motion } from 'motion/react'
 import Image from 'next/image'
+import { Button, buttonVariants } from './ui/button'
 
 const Hero = () => {
 	const heroRef = useRef<HTMLDivElement>(null)
@@ -226,20 +227,22 @@ const Hero = () => {
 						{dictionary.hero.subtitle}
 					</p>
 
-					<div className='flex flex-col sm:flex-row items-center justify-center gap-4'>
-						<a
-							href='#contact'
-							className='inline-flex h-12 items-center justify-center rounded-md bg-[#6a958c] px-8 text-base font-medium text-primary-foreground shadow transition-all hover:scale-105 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring w-full sm:w-auto'
+					<div className='flex flex-col sm:flex-row items-center justify-center max-w-[280px] mx-auto gap-4'>
+						<Button
+							size='lg'
+							className='text-lg py-6 px-8 w-full hover:scale-105 transition-all duration-300'
+							asChild
 						>
-							{dictionary.hero.btn_contactUs}{' '}
-							<ArrowRight className='ml-2 h-4 w-4' />
-						</a>
-						<a
-							href='#services'
-							className='inline-flex h-12 items-center justify-center rounded-md bg-secondary px-8 text-base font-medium text-secondary-foreground transition-all hover:scale-105 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring w-full sm:w-auto'
+							<a href='#contact'>{dictionary.hero.btn_contactUs}</a>
+						</Button>
+						<Button
+							asChild
+							size='lg'
+							variant='outline'
+							className='text-lg py-6 px-8 w-full'
 						>
-							{dictionary.hero.btn_explore}
-						</a>
+							<a href='#services'>{dictionary.hero.btn_explore}</a>
+						</Button>
 					</div>
 				</div>
 				<div className='flex flex-col items-center'>

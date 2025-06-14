@@ -11,7 +11,7 @@
 		"title_Second": "robust software",
 		"title_Third": "that empowers your business",
 		"subtitle": "From concept to deployment, we create custom web and mobile solutions with precision and excellence for businesses that demand quality.",
-		"btn_contactUs": "Learn more",
+		"btn_contactUs": "Contact us",
 		"btn_explore": "Explore our services"
 	},
 	"services": {
@@ -240,8 +240,17 @@
 			"Consulting Services"
 		],
 		"companyTitle": "Company",
-		"company": ["About Us", "Our Team", "Careers", "Blog", "Contact"],
+		"company": [
+			"About Us",
+			"Our Team",
+			"Careers",
+			"Blog",
+			"Contact"
+		],
 		"rights": "All rights reserved.",
-		"legal": ["Privacy Policy", "Terms of Service"]
+		"legal": [
+			"Privacy Policy",
+			"Terms of Service"
+		]
 	}
 }
