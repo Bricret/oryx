@@ -19,24 +19,20 @@ export function Header() {
 	const dictionary = useDictionary()
 	const navItems = [
 		{
-			name: 'Servicios',
-			link: '#services',
+			name: 'Services',
+			link: '/services',
 		},
 		{
-			name: 'Proyectos',
-			link: '#projects',
+			name: 'Projects',
+			link: '/projects',
 		},
 		{
-			name: 'Proceso',
-			link: '#process',
+			name: 'Pricing',
+			link: '/pricing',
 		},
 		{
-			name: 'FAQ',
-			link: '#faq',
-		},
-		{
-			name: 'Contacto',
-			link: '#contact',
+			name: 'Contact Us',
+			link: '/contact',
 		},
 	]
 
@@ -54,7 +50,7 @@ export function Header() {
 							<SelectedLenguage dictionary={dictionary} />
 						</NavbarButton>
 						<Button size='lg' className='z-20 relative'>
-							{dictionary.header.button}
+							{dictionary.header.ctaButton}
 						</Button>
 					</div>
 				</NavBody>

@@ -3,13 +3,14 @@
 		"banner": "Desarrollo de Software para el Crecimiento Empresarial",
 		"button": "Agendar Consulta Gratuita",
 		"subtitle": "Esta es una aplicación de ejemplo",
-		"labelSelectLanguage": "Selecciona un idioma"
+		"labelSelectLanguage": "Selecciona un idioma",
+		"ctaButton": "Agenda ahora"
 	},
 	"hero": {
 		"banner": "Soluciones de Software que Impulsan Resultados",
-		"title_First": "Impulsamos el crecimiento",
-		"title_Second": "de tu negocio",
-		"title_Third": "con software a medida",
+		"title_First": "Transformamos tus ",
+		"title_Second": "ideas",
+		"title_Third": "en soluciones digitales",
 		"subtitle": "Creamos aplicaciones web y móviles que optimizan tus operaciones, aumentan tus ventas y te conectan con más clientes. Di adiós a los procesos manuales y hola a la eficiencia.",
 		"btn_contactUs": "Agendar Consulta Gratuita",
 		"btn_explore": "Explora Nuestros Servicios"
@@ -228,6 +229,161 @@
 		"formMessage": "Mensaje",
 		"formMessagePlaceholder": "Cuéntanos sobre tu proyecto, tus objetivos y tus desafíos.",
 		"formSend": "Enviar Mensaje"
+	},
+	"pricingCalculator": {
+		"calculatorCta": "Calculadora de Precios",
+		"mainTitle": "Calcula tu Cotización a Medida",
+		"mainDescription": "Selecciona las opciones que mejor se adapten a tu proyecto para obtener un estimado al instante.",
+		"steps": [
+			{
+				"title": "Tipo de Proyecto",
+				"description": "Elige el tipo"
+			},
+			{
+				"title": "Módulos",
+				"description": "Añade módulos"
+			},
+			{
+				"title": "Diseño y Alcance",
+				"description": "Define el diseño"
+			},
+			{
+				"title": "Mantenimiento",
+				"description": "Elige un plan"
+			},
+			{
+				"title": "Tus Datos",
+				"description": "Completa el formulario"
+			}
+		],
+		"projectTypes": {
+			"landing-page": {
+				"name": "Página de Aterrizaje / Sitio Informativo",
+				"description": "Un sitio profesional para mostrar tu marca y generar prospectos."
+			},
+			"ecommerce": {
+				"name": "Tienda E-commerce",
+				"description": "Una tienda en línea completa para vender tus productos."
+			},
+			"webapp": {
+				"name": "Aplicación Web",
+				"description": "Un SaaS, plataforma o aplicación funcional compleja a medida."
+			},
+			"mobileapp": {
+				"name": "App Móvil (iOS & Android)",
+				"description": "Una aplicación móvil multiplataforma dedicada."
+			}
+		},
+		"additionalFeatures": {
+			"landing-page": {
+				"cms": "Gestor de Contenidos (CMS)",
+				"multilanguage": "Soporte Multi-idioma",
+				"seo": "Configuración SEO Avanzada",
+				"analytics": "Integración de Analíticas",
+				"crm-integration": "Formulario de Contacto + Integración CRM"
+			},
+			"ecommerce": {
+				"inventory": "Gestión Avanzada de Inventario",
+				"customer-accounts": "Cuentas y Perfiles de Clientes",
+				"discounts": "Sistema de Descuentos y Cupones",
+				"reviews": "Reseñas y Calificaciones de Productos",
+				"subscription": "Suscripciones y Pagos Recurrentes"
+			},
+			"webapp": {
+				"auth": "Autenticación y Gestión de Usuarios",
+				"dashboard": "Panel de Administración a Medida",
+				"api-integration": "Integración de API de Terceros",
+				"reporting": "Reportes y Analíticas",
+				"realtime": "Funcionalidades en Tiempo Real (Chat, Notificaciones)"
+			},
+			"mobileapp": {
+				"offline-mode": "Modo Offline",
+				"push-notifications": "Notificaciones Push",
+				"geolocation": "Servicios de Geolocalización",
+				"in-app-purchases": "Compras In-App / Suscripciones",
+				"social-integration": "Integración con Redes Sociales"
+			}
+		},
+		"designOptions": {
+			"template": {
+				"name": "Diseño a Medida",
+				"description": "Diseño UI/UX atractivo y a la medida."
+			},
+			"premium": {
+				"name": "Premium",
+				"description": "Diseño exclusivo con animaciones avanzadas."
+			}
+		},
+		"maintenanceOptions": {
+			"none": {
+				"name": "Sin Plan de Mantenimiento",
+				"description": ""
+			},
+			"basic": {
+				"name": "Básico",
+				"description": "Actualizaciones de seguridad y monitoreo."
+			},
+			"standard": {
+				"name": "Estándar",
+				"description": "Básico + horas de desarrollo menores."
+			},
+			"premium": {
+				"name": "Premium",
+				"description": "Soporte dedicado 24/7."
+			}
+		},
+		"urgentDelivery": {
+			"title": "Entrega Urgente",
+			"description": "Reduce el tiempo de entrega un 40% (+30% costo)"
+		},
+		"pageHeadings": {
+			"designLevel": "Nivel de Diseño",
+			"screenCount": "Número de Páginas / Pantallas",
+			"maintenance": "Plan de Mantenimiento Mensual"
+		},
+		"summary": {
+			"title": "Resumen de Cotización",
+			"description": "Estimado basado en tus selecciones",
+			"projectType": "Tipo de Proyecto",
+			"features": "Módulos",
+			"design": "Diseño",
+			"additionalScreens": "Pantallas Adicionales",
+			"urgent": "Entrega Urgente",
+			"total": "Total (pago único)",
+			"maintenance": "Mantenimiento Mensual",
+			"disclaimer": "* Esta es una cotización estimada. El precio final puede variar según los requisitos específicos del proyecto."
+		},
+		"form": {
+			"name": "Nombre Completo",
+			"namePlaceholder": "Tu Nombre",
+			"email": "Correo Electrónico",
+			"emailPlaceholder": "tu@email.com",
+			"phone": "Teléfono",
+			"phonePlaceholder": "Tu Número de Teléfono",
+			"company": "Empresa",
+			"companyPlaceholder": "Nombre de tu Empresa",
+			"message": "Detalles Adicionales del Proyecto",
+			"messagePlaceholder": "Cuéntanos más sobre tu proyecto...",
+			"submitButton": "Solicitar Cotización Detallada",
+			"submittingButton": "Enviando..."
+		},
+		"submissionSuccess": {
+			"title": "¡Solicitud de Cotización Enviada!",
+			"description": "Hemos recibido tu solicitud. Nuestro equipo te contactará pronto para discutir los detalles de tu proyecto.",
+			"newQuoteButton": "Crear una Nueva Cotización"
+		},
+		"navigation": {
+			"next": "Siguiente",
+			"previous": "Anterior"
+		},
+		"from": "Desde",
+		"included": "Incluido",
+		"screens": "pantallas",
+		"screen": "pantalla",
+		"extraScreens": "pantallas adicionales",
+		"fasterDelivery": "Entrega 40% más rápida",
+		"noCost": "Sin costo",
+		"perMonth": "mes"
 	},
 	"footer": {
 		"description": "Impulsamos el crecimiento de tu negocio con soluciones de software innovadoras y a medida.",

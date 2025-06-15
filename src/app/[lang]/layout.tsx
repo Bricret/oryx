@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Big_Shoulders_Stencil_Display, Sora } from 'next/font/google'
+import { Sora } from 'next/font/google'
 import '../globals.css'
 import { LanguageProvider } from '@/components/common/LanguageProvider'
 
@@ -19,9 +19,9 @@ export default async function RootLayout({
 	params,
 }: Readonly<{
 	children: React.ReactNode
-	params: Promise<{ lang: string }>
+	params: { lang: string }
 }>) {
-	const { lang } = await params
+	const { lang } = params
 	const dictionary = await import(`@/app/dictionaries/${lang}.json`).then(
 		(m) => m.default,
 	)

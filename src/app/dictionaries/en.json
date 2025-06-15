@@ -3,7 +3,8 @@
 		"banner": "Custom Software Development",
 		"button": "Contact us",
 		"subtitle": "This is an example application",
-		"labelSelectLanguage": "Select a language"
+		"labelSelectLanguage": "Select a language",
+		"ctaButton": "Schedule now"
 	},
 	"hero": {
 		"banner": "Custom Software Development",
@@ -228,6 +229,165 @@
 		"formMessage": "Message",
 		"formMessagePlaceholder": "Tell us about your project",
 		"formSend": "Send Message"
+	},
+	"pricingCalculator": {
+		"calculatorCta": "Pricing Calculator",
+		"mainTitle": "Calculate Your Custom Quote",
+		"mainDescription": "Select the options that best fit your project to get an instant estimate.",
+		"steps": [
+			{
+				"title": "Project Type",
+				"description": "Choose the type"
+			},
+			{
+				"title": "Features",
+				"description": "Add features"
+			},
+			{
+				"title": "Design & Scope",
+				"description": "Define the design"
+			},
+			{
+				"title": "Maintenance",
+				"description": "Choose a plan"
+			},
+			{
+				"title": "Your Details",
+				"description": "Complete the form"
+			}
+		],
+		"projectTypes": {
+			"landing-page": {
+				"name": "Landing Page / Brochure Site",
+				"description": "A professional site to showcase your brand and generate leads."
+			},
+			"ecommerce": {
+				"name": "E-commerce Store",
+				"description": "A complete online store to sell your products."
+			},
+			"webapp": {
+				"name": "Web Application",
+				"description": "A custom SaaS, platform, or complex functional application."
+			},
+			"mobileapp": {
+				"name": "Mobile App (iOS & Android)",
+				"description": "A dedicated cross-platform mobile application."
+			}
+		},
+		"additionalFeatures": {
+			"landing-page": {
+				"cms": "Content Management System (CMS)",
+				"multilanguage": "Multi-language Support",
+				"seo": "Advanced SEO Setup",
+				"analytics": "Analytics Integration",
+				"crm-integration": "Contact Form + CRM Integration"
+			},
+			"ecommerce": {
+				"inventory": "Advanced Inventory Management",
+				"customer-accounts": "Customer Accounts & Profiles",
+				"discounts": "Discount & Coupon System",
+				"reviews": "Product Reviews & Ratings",
+				"subscription": "Subscription & Recurring Payments"
+			},
+			"webapp": {
+				"auth": "User Authentication & Management",
+				"dashboard": "Custom Admin Dashboard",
+				"api-integration": "Third-Party API Integration",
+				"reporting": "Reporting & Analytics",
+				"realtime": "Real-time Features (Chat, Notifications)"
+			},
+			"mobileapp": {
+				"offline-mode": "Offline Mode",
+				"push-notifications": "Push Notifications",
+				"geolocation": "Geolocation Services",
+				"in-app-purchases": "In-App Purchases / Subscriptions",
+				"social-integration": "Social Media Integration"
+			}
+		},
+		"designOptions": {
+			"template": {
+				"name": "Template-based",
+				"description": "Clean design using a pre-built template."
+			},
+			"professional": {
+				"name": "Professional",
+				"description": "Custom and attractive UI/UX design."
+			},
+			"premium": {
+				"name": "Premium",
+				"description": "Exclusive design with advanced animations."
+			}
+		},
+		"maintenanceOptions": {
+			"none": {
+				"name": "No Maintenance Plan",
+				"description": ""
+			},
+			"basic": {
+				"name": "Basic",
+				"description": "Security updates & monitoring."
+			},
+			"standard": {
+				"name": "Standard",
+				"description": "Basic + minor development hours."
+			},
+			"premium": {
+				"name": "Premium",
+				"description": "Dedicated 24/7 support."
+			}
+		},
+		"urgentDelivery": {
+			"title": "Urgent Delivery",
+			"description": "Reduce delivery time by 40% (+30% cost)"
+		},
+		"pageHeadings": {
+			"designLevel": "Design Level",
+			"screenCount": "Number of Pages / Screens",
+			"maintenance": "Monthly Maintenance Plan"
+		},
+		"summary": {
+			"title": "Quote Summary",
+			"description": "Estimate based on your selections",
+			"projectType": "Project Type",
+			"features": "Features",
+			"design": "Design",
+			"additionalScreens": "Additional Screens",
+			"urgent": "Urgent Delivery",
+			"total": "Total (one-time payment)",
+			"maintenance": "Monthly Maintenance",
+			"disclaimer": "* This is an estimated quote. The final price may vary based on specific project requirements."
+		},
+		"form": {
+			"name": "Full Name",
+			"namePlaceholder": "Your Name",
+			"email": "Email",
+			"emailPlaceholder": "your@email.com",
+			"phone": "Phone",
+			"phonePlaceholder": "Your Phone Number",
+			"company": "Company",
+			"companyPlaceholder": "Your Company Name",
+			"message": "Additional Project Details",
+			"messagePlaceholder": "Tell us more about your project...",
+			"submitButton": "Request Detailed Quote",
+			"submittingButton": "Submitting..."
+		},
+		"submissionSuccess": {
+			"title": "Quote Request Sent!",
+			"description": "We have received your request. Our team will contact you shortly to discuss your project details.",
+			"newQuoteButton": "Create a New Quote"
+		},
+		"navigation": {
+			"next": "Next",
+			"previous": "Previous"
+		},
+		"from": "From",
+		"included": "Included",
+		"screens": "screens",
+		"screen": "screen",
+		"extraScreens": "additional screens",
+		"fasterDelivery": "40% faster delivery",
+		"noCost": "No cost",
+		"perMonth": "mo"
 	},
 	"footer": {
 		"description": "We craft exceptional digital experiences with innovative solutions tailored to your business needs.",
