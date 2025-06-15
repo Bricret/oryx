@@ -36,6 +36,7 @@ export default function Projects() {
 			category: 'web',
 			tags: ['Next.js', 'Tailwind CSS', 'Shadcn UI', 'Typescript'],
 			link: 'https://www.taxibargain.com/',
+			codeLink: 'https://github.com/oryx-development/taxi-bargain-web',
 		},
 		{
 			id: 2,
@@ -52,6 +53,7 @@ export default function Projects() {
 				'Expo',
 			],
 			link: '',
+			codeLink: 'https://github.com/oryx-development/taxi-bargain-app',
 		},
 		{
 			id: 3,
@@ -69,6 +71,7 @@ export default function Projects() {
 				'Shadcn UI',
 			],
 			link: '#',
+			codeLink: '',
 		},
 		{
 			id: 4,
@@ -78,6 +81,7 @@ export default function Projects() {
 			category: 'web',
 			tags: ['Next.js', 'Tailwind CSS', 'Shadcn UI', 'Typescript'],
 			link: 'https://melissataxipr.com/es',
+			codeLink: '',
 		},
 		{
 			id: 5,
@@ -87,6 +91,7 @@ export default function Projects() {
 			category: 'systems',
 			tags: ['Flutter', 'Firebase', 'Google Maps API'],
 			link: '',
+			codeLink: '',
 		},
 		{
 			id: 6,
@@ -96,6 +101,7 @@ export default function Projects() {
 			category: 'systems',
 			tags: ['Angular', 'Django', 'MySQL'],
 			link: '#',
+			codeLink: '',
 		},
 	]
 
@@ -227,24 +233,36 @@ export default function Projects() {
 																		variant='outline'
 																		className='gap-1'
 																		asChild
+																		disabled={!project.link || project.link === '#'}
 																	>
 																		<Link
-																			href={project.link}
+																			href={project.link || ''}
 																			target='_blank'
 																			rel='noopener'
 																		>
 																			<ExternalLink className='h-4 w-4' />{' '}
-																			{dictionary.projects.viewProject}
+																			{!project.link || project.link === '#'
+																				? 'Estudio de Caso Próximamente'
+																				: 'Ver Proyecto en Vivo'}
 																		</Link>
 																	</Button>
-																	<Button
-																		size='sm'
-																		variant='ghost'
-																		className='gap-1'
-																	>
-																		<Github className='h-4 w-4' />{' '}
-																		{dictionary.projects.code}
-																	</Button>
+																	{project.codeLink && (
+																		<Button
+																			size='sm'
+																			variant='ghost'
+																			className='gap-1'
+																			asChild
+																		>
+																			<Link
+																				href={project.codeLink}
+																				target='_blank'
+																				rel='noopener'
+																			>
+																				<Github className='h-4 w-4' />{' '}
+																				{dictionary.projects.code}
+																			</Link>
+																		</Button>
+																	)}
 																</div>
 															</CardContent>
 														</Card>

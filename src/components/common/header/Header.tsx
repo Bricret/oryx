@@ -19,15 +19,23 @@ export function Header() {
 	const dictionary = useDictionary()
 	const navItems = [
 		{
-			name: 'Features',
-			link: '#features',
+			name: 'Servicios',
+			link: '#services',
 		},
 		{
-			name: 'Pricing',
-			link: '#pricing',
+			name: 'Proyectos',
+			link: '#projects',
 		},
 		{
-			name: 'Contact',
+			name: 'Proceso',
+			link: '#process',
+		},
+		{
+			name: 'FAQ',
+			link: '#faq',
+		},
+		{
+			name: 'Contacto',
 			link: '#contact',
 		},
 	]
@@ -88,7 +96,7 @@ export function Header() {
 								variant='primary'
 								className='w-full'
 							>
-								Book a call
+								{dictionary.header.button}
 							</NavbarButton>
 						</div>
 					</MobileNavMenu>

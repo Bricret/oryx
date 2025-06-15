@@ -18,7 +18,7 @@ export default function FAQSection() {
 	const faqs = dictionary.faqSection.faqs
 
 	return (
-		<section className='py-24 relative overflow-hidden'>
+		<section id='faq' className='py-24 relative overflow-hidden'>
 			<section className='container mx-auto px-4'>
 				<div className='absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background' />
 				<div className='container px-4 md:px-6 relative z-10'>

@@ -1,18 +1,18 @@
 {
 	"header": {
-		"banner": "Desarrollo de software personalizado",
-		"button": "Agenda una cita",
+		"banner": "Desarrollo de Software para el Crecimiento Empresarial",
+		"button": "Agendar Consulta Gratuita",
 		"subtitle": "Esta es una aplicación de ejemplo",
 		"labelSelectLanguage": "Selecciona un idioma"
 	},
 	"hero": {
-		"banner": "Desarrollo de software personalizado",
-		"title_First": "Transformamos tus",
-		"title_Second": "ideas",
-		"title_Third": "en soluciones digitales",
-		"subtitle": "Desde el concepto hasta la implementación, creamos soluciones web y móviles personalizadas con precisión y excelencia para empresas que exigen calidad.",
-		"btn_contactUs": "Contáctanos",
-		"btn_explore": "Explora nuestros servicios"
+		"banner": "Soluciones de Software que Impulsan Resultados",
+		"title_First": "Impulsamos el crecimiento",
+		"title_Second": "de tu negocio",
+		"title_Third": "con software a medida",
+		"subtitle": "Creamos aplicaciones web y móviles que optimizan tus operaciones, aumentan tus ventas y te conectan con más clientes. Di adiós a los procesos manuales y hola a la eficiencia.",
+		"btn_contactUs": "Agendar Consulta Gratuita",
+		"btn_explore": "Explora Nuestros Servicios"
 	},
 	"services": {
 		"web": {
@@ -42,8 +42,8 @@
 	},
 	"ourService": {
 		"banner": "Nuestros Servicios",
-		"title": "Transformamos ideas en realidad digital",
-		"subtitle": "Ofrecemos soluciones digitales excepcionales adaptadas a tus necesidades, combinando experiencia técnica con innovación creativa para impulsar tu negocio.",
+		"title": "Soluciones Digitales para cada Desafío Empresarial",
+		"subtitle": "Desde la optimización de procesos internos hasta la expansión de tu alcance en el mercado, tenemos la experiencia técnica para construir la solución que necesitas.",
 		"button": "Ver todos los servicios"
 	},
 	"bentoServices": {
@@ -81,10 +81,10 @@
 		}
 	},
 	"globalReach": {
-		"banner": "Alcance Global",
-		"title_First": "Trabaja con nosotros desde",
+		"banner": "Alcance Global, Talento Local",
+		"title_First": "Colabora con nosotros desde",
 		"title_Second": "cualquier parte del mundo",
-		"description": "Nuestro equipo distribuido de desarrolladores senior trabaja en todas las zonas horarias, entregando soluciones de software robustas sin importar tu ubicación.",
+		"description": "Nuestro equipo de desarrolladores senior está distribuido para trabajar de manera eficiente en todas las zonas horarias. Te entregamos soluciones de software robustas, sin importar dónde te encuentres.",
 		"list": {
 			"text_First": "Colaboración remota sin complicaciones",
 			"text_Second": "Flexibilidad horaria",
@@ -131,8 +131,8 @@
 		"code": "Código"
 	},
 	"clientProcess": {
-		"title": "Nuestro Proceso con el Cliente",
-		"subtitle": "Un enfoque optimizado para entregar resultados excepcionales",
+		"title": "Nuestro Proceso Centrado en el Cliente",
+		"subtitle": "Un enfoque transparente y optimizado para entregar resultados excepcionales en tiempo y forma.",
 		"steps": [
 			{
 				"title": "Descubrimiento y Planificación",
@@ -167,8 +167,8 @@
 		]
 	},
 	"statsSection": {
-		"title": "Nuestro Impacto",
-		"subtitle": "Cifras que reflejan nuestro compromiso con la excelencia y la satisfacción del cliente",
+		"title": "Resultados que Hablan por Sí Mismos",
+		"subtitle": "Nuestros números reflejan nuestro compromiso con la excelencia y el éxito de nuestros clientes.",
 		"stats": {
 			"clients": "Clientes Satisfechos",
 			"projects": "Proyectos Completados",
@@ -178,8 +178,8 @@
 	},
 	"faqSection": {
 		"badge": "Preguntas Frecuentes",
-		"title": "¿Tienes preguntas? Tenemos respuestas",
-		"subtitle": "Encuentra respuestas a las preguntas más comunes sobre nuestros servicios, procesos y cómo podemos ayudar a tu negocio a tener éxito.",
+		"title": "¿Tienes Dudas? Tenemos las Respuestas",
+		"subtitle": "Aquí encontrarás respuestas a las preguntas más comunes sobre nuestros servicios, procesos y cómo podemos ayudarte a que tu negocio alcance el siguiente nivel.",
 		"faqs": [
 			{
 				"question": "¿Cuál es su proceso de desarrollo?",
@@ -187,15 +187,15 @@
 			},
 			{
 				"question": "¿Cuánto tiempo suele tomar completar un proyecto?",
-				"answer": "El tiempo varía según la complejidad y el alcance. Un sitio web sencillo puede tomar de 4 a 6 semanas, mientras que una aplicación web o móvil compleja puede tomar de 3 a 6 meses. Durante la consulta inicial, te proporcionaremos un cronograma detallado basado en tus requerimientos y objetivos."
+				"answer": "El tiempo de desarrollo depende de la complejidad del proyecto. Un sitio web informativo puede tardar entre 4 y 6 semanas, mientras que una aplicación web o móvil compleja puede requerir de 3 a 6 meses. Te proporcionaremos un cronograma detallado y transparente desde el inicio."
 			},
 			{
-				"question": "¿Ofrecen soporte continuo después de finalizar el proyecto?",
-				"answer": "Sí, ofrecemos varios paquetes de soporte y mantenimiento para asegurar que tu producto digital siga funcionando óptimamente. Incluyen actualizaciones regulares, parches de seguridad, monitoreo de rendimiento y soporte técnico. Podemos adaptar un plan de soporte a tus necesidades y presupuesto."
+				"question": "¿Ofrecen soporte y mantenimiento post-lanzamiento?",
+				"answer": "Sí, ofrecemos planes de soporte y mantenimiento para asegurar que tu solución digital funcione siempre de manera óptima. Esto incluye actualizaciones, parches de seguridad, monitoreo de rendimiento y soporte técnico adaptado a tus necesidades."
 			},
 			{
-				"question": "¿Cómo manejan la cotización de los proyectos?",
-				"answer": "Ofrecemos modelos de precios flexibles, incluyendo presupuestos fijos para proyectos bien definidos y facturación por tiempo y materiales para proyectos con requerimientos cambiantes. Durante la consulta inicial, discutiremos tus necesidades y recomendaremos la estructura de precios más adecuada. Proporcionamos estimaciones transparentes y actualizaciones regulares sobre el uso del presupuesto."
+				"question": "¿Cómo manejan los presupuestos de los proyectos?",
+				"answer": "Ofrecemos modelos de precios flexibles, incluyendo presupuestos fijos para proyectos con alcance bien definido y tarifas por tiempo y materiales para proyectos más dinámicos. Discutiremos tus necesidades para encontrar la opción más adecuada, siempre con total transparencia."
 			},
 			{
 				"question": "¿En qué tecnologías están especializados?",
@@ -208,8 +208,8 @@
 		]
 	},
 	"contact": {
-		"title": "Contáctanos",
-		"subtitle": "¿Listo para comenzar tu próximo proyecto? Contáctanos hoy para una consulta gratuita.",
+		"title": "¿Listo para Empezar?",
+		"subtitle": "Hablemos de tu próximo proyecto. Agenda una consulta gratuita y sin compromiso con nuestros expertos.",
 		"infoTitle": "Información de Contacto",
 		"emailLabel": "Correo electrónico",
 		"email": "help@oryxdevelopment.com",
@@ -226,11 +226,11 @@
 		"formSubject": "Asunto",
 		"formSubjectPlaceholder": "Consulta de proyecto",
 		"formMessage": "Mensaje",
-		"formMessagePlaceholder": "Cuéntanos sobre tu proyecto",
+		"formMessagePlaceholder": "Cuéntanos sobre tu proyecto, tus objetivos y tus desafíos.",
 		"formSend": "Enviar Mensaje"
 	},
 	"footer": {
-		"description": "Creamos experiencias digitales excepcionales con soluciones innovadoras adaptadas a las necesidades de tu negocio.",
+		"description": "Impulsamos el crecimiento de tu negocio con soluciones de software innovadoras y a medida.",
 		"servicesTitle": "Servicios",
 		"services": [
 			"Desarrollo Web",

@@ -5,10 +5,10 @@ import Footer from '@/components/footer'
 import Hero from '@/components/Hero'
 import ClientProcess from '@/components/process/Client-Process'
 import StatsSection from '@/components/process/Stats-Section'
-import ClientsApproached from '@/components/projectRelease/ClientsApproached'
 import Projects from '@/components/projects/Projects'
 import ServicesRedesigned from '@/components/service/Service'
 import { WorldWideSection } from '@/components/worldwide/WorldWideSection'
+import CustomVsTraditional from '@/components/home/custom-traditional'
 
 export default async function HomePage() {
 	return (
@@ -16,6 +16,7 @@ export default async function HomePage() {
 			<Header />
 			<Hero />
 			<ServicesRedesigned />
+			<CustomVsTraditional />
 			<WorldWideSection />
 			<Projects />
 			<ClientProcess />
@@ -23,7 +24,6 @@ export default async function HomePage() {
 			<FAQSection />
 			<Contact />
 			<Footer />
-			{/* <ClientsApproached /> */}
 		</main>
 	)
 }
