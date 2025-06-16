@@ -14,6 +14,7 @@ import { useState } from 'react'
 import SelectedLenguage from './SelectedLenguage'
 import { useDictionary } from '@/context/LanguageContext'
 import { Button } from '@/components/ui/button'
+import { CalEmbed } from '@/components/ui/cal-embed'
 
 export function Header() {
 	const dictionary = useDictionary()
@@ -57,9 +58,10 @@ export function Header() {
 						>
 							{dictionary.header.labelSelectLanguage}
 						</Button>
-						<Button size='lg' className='z-20 relative'>
-							{dictionary.header.ctaButton}
-						</Button>
+						<CalEmbed
+							calLink='https://cal.com/oryx-development/30min'
+							className='z-20 relative'
+						/>
 					</div>
 				</NavBody>
 
@@ -98,13 +100,10 @@ export function Header() {
 							>
 								{dictionary.header.labelSelectLanguage}
 							</NavbarButton>
-							<NavbarButton
-								onClick={() => setIsMobileMenuOpen(false)}
-								variant='primary'
+							<CalEmbed
+								calLink='https://cal.com/oryx-development/30min'
 								className='w-full'
-							>
-								{dictionary.header.button}
-							</NavbarButton>
+							/>
 						</div>
 					</MobileNavMenu>
 				</MobileNav>

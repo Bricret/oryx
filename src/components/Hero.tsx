@@ -8,6 +8,8 @@ import { HoverBorderGradient } from './ui/hover-border-gradient'
 import { motion } from 'motion/react'
 import Image from 'next/image'
 import { Button } from './ui/button'
+import { CalEmbed } from './ui/cal-embed'
+import Link from 'next/link'
 
 const Hero = () => {
 	const heroRef = useRef<HTMLDivElement>(null)
@@ -228,20 +230,18 @@ const Hero = () => {
 					</p>
 
 					<div className='flex flex-col sm:flex-row items-center justify-center max-w-[320px] mx-auto gap-4'>
-						<Button
-							size='lg'
-							className='text-lg py-6 px-8 w-full hover:scale-105 transition-all duration-300'
-							asChild
-						>
-							<a href='#contact'>{dictionary.hero.btn_contactUs}</a>
-						</Button>
+						<CalEmbed
+							calLink='https://cal.com/oryx-development/30min'
+							className='z-20 relative text-lg py-6 px-8 w-full'
+							buttonText={dictionary.hero.btn_contactUs}
+						/>
 						<Button
 							asChild
 							size='lg'
 							variant='outline'
 							className='text-lg py-6 px-8 w-full'
 						>
-							<a href='#services'>{dictionary.hero.btn_explore}</a>
+							<Link href='/services'>{dictionary.hero.btn_explore}</Link>
 						</Button>
 					</div>
 				</div>

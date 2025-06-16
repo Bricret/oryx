@@ -24,6 +24,7 @@ import ScrollReveal from '@/components/ui/scroll-reveal'
 import { useDictionary } from '@/context/LanguageContext'
 import { HoverBorderGradient } from '../ui/hover-border-gradient'
 import Link from 'next/link'
+import { CalEmbed } from '../ui/cal-embed'
 
 export default function CustomVsTraditional() {
 	const dictionary = useDictionary()
@@ -509,11 +510,14 @@ export default function CustomVsTraditional() {
 											'Descubre cómo un sistema personalizado puede transformar la eficiencia de tu negocio y reducir costos operativos hasta en un 40%.'}
 									</p>
 									<div className='flex flex-col sm:flex-row gap-4'>
-										<Button className='bg-gradient-to-r from-primary to-primary/80 gap-2'>
-											{dictionary.customTraditional?.cta?.primaryButton ||
-												'Solicitar demo gratuita'}{' '}
-											<ArrowRight className='h-4 w-4' />
-										</Button>
+										<CalEmbed
+											calLink='https://cal.com/oryx-development/30min'
+											className='z-20 relative'
+											buttonText={
+												dictionary.customTraditional?.cta?.primaryButton ||
+												'Solicitar demo gratuita'
+											}
+										/>
 										<Button asChild variant='outline' className='mr-4'>
 											<Link href='/services' className='gap-2'>
 												{dictionary.customTraditional?.cta?.secondaryButton ||
