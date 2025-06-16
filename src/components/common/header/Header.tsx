@@ -42,13 +42,21 @@ export function Header() {
 		<div className='relative w-full'>
 			<Navbar className=''>
 				{/* Desktop Navigation */}
-				<NavBody>
+				<NavBody className=''>
 					<NavbarLogo />
 					<NavItems items={navItems} />
 					<div className='flex items-center gap-2'>
-						<NavbarButton variant='secondary'>
-							<SelectedLenguage dictionary={dictionary} />
-						</NavbarButton>
+						<Button 
+							variant='secondary' 
+							size='lg'
+							onClick={() => {
+								const currentLang = window.location.pathname.split('/')[1];
+								const newLang = currentLang === 'en' ? 'es' : 'en';
+								window.location.href = `/${newLang}${window.location.pathname.substring(3)}`;
+							}}
+						>
+							{dictionary.header.labelSelectLanguage}
+						</Button>
 						<Button size='lg' className='z-20 relative'>
 							{dictionary.header.ctaButton}
 						</Button>
@@ -85,7 +93,17 @@ export function Header() {
 								variant='primary'
 								className='w-full'
 							>
-								<SelectedLenguage dictionary={dictionary} />
+							<Button 
+								variant='secondary' 
+								size='lg'
+								onClick={() => {
+									const currentLang = window.location.pathname.split('/')[1];
+									const newLang = currentLang === 'en' ? 'es' : 'en';
+									window.location.href = `/${newLang}${window.location.pathname.substring(3)}`;
+								}}
+							>
+								{dictionary.header.labelSelectLanguage}
+							</Button>
 							</NavbarButton>
 							<NavbarButton
 								onClick={() => setIsMobileMenuOpen(false)}

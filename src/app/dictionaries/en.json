@@ -3,7 +3,7 @@
 		"banner": "Custom Software Development",
 		"button": "Contact us",
 		"subtitle": "This is an example application",
-		"labelSelectLanguage": "Select a language",
+		"labelSelectLanguage": "En",
 		"ctaButton": "Schedule now"
 	},
 	"hero": {
@@ -98,9 +98,9 @@
 		"sectionSubtitle": "Explore our portfolio of successful projects across various industries",
 		"categories": {
 			"all": "All Projects",
-			"web": "Web Development",
+			"web": "Web Pages",
 			"mobile": "Mobile Apps",
-			"systems": "Web Systems"
+			"systems": "Web Apps"
 		},
 		"list": [
 			{
