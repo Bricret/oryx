@@ -465,7 +465,7 @@
 		"perMonth": "mo"
 	},
 	"footer": {
-		"description": "We craft exceptional digital experiences with innovative solutions tailored to your business needs.",
+		"description": "We transform ideas into digital solutions. We are your partner in custom software development for business success.",
 		"servicesTitle": "Services",
 		"services": [
 			"Web Development",
@@ -476,7 +476,7 @@
 		],
 		"companyTitle": "Company",
 		"company": ["About Us", "Our Team", "Careers", "Blog", "Contact"],
-		"rights": "All rights reserved.",
+		"rights": "© 2024 Oryx Development. All rights reserved.",
 		"legal": ["Privacy Policy", "Terms of Service"]
 	},
 	"customTraditional": {
@@ -1202,6 +1202,7 @@
 		}
 	},
 	"client_slider": {
-		"title": "Companies that trust our work"
+		"title": "Companies that trust us",
+		"description": "We have driven the growth of leading companies in their sector, transforming their ideas into high-impact digital solutions."
 	}
 }

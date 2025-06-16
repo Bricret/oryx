@@ -461,7 +461,7 @@
 		"perMonth": "mes"
 	},
 	"footer": {
-		"description": "Impulsamos el crecimiento de tu negocio con soluciones de software innovadoras y a medida.",
+		"description": "Transformamos ideas en soluciones digitales. Somos tu socio en el desarrollo de software a medida para el éxito empresarial.",
 		"servicesTitle": "Servicios",
 		"services": [
 			"Desarrollo Web",
@@ -478,7 +478,7 @@
 			"Blog",
 			"Contacto"
 		],
-		"rights": "Todos los derechos reservados.",
+		"rights": "© 2024 Oryx Development. Todos los derechos reservados.",
 		"legal": ["Política de Privacidad", "Términos de Servicio"]
 	},
 	"customTraditional": {
@@ -1218,6 +1218,7 @@
 		}
 	},
 	"client_slider": {
-		"title": "Empresas que confían en nuestro trabajo"
+		"title": "Empresas que confían en nosotros",
+		"description": "Hemos impulsado el crecimiento de empresas líderes en su sector, transformando sus ideas en soluciones digitales de alto impacto."
 	}
 }
