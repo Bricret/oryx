@@ -9,6 +9,7 @@ import Projects from '@/components/projects/Projects'
 import ServicesRedesigned from '@/components/service/Service'
 import { WorldWideSection } from '@/components/worldwide/WorldWideSection'
 import CustomVsTraditional from '@/components/home/custom-traditional'
+import ClientSlider from '@/components/home/ClientSlider'
 
 export default async function HomePage() {
 	return (
@@ -18,6 +19,7 @@ export default async function HomePage() {
 			<ServicesRedesigned />
 			<CustomVsTraditional />
 			<WorldWideSection />
+			<ClientSlider />
 			<Projects />
 			<ClientProcess />
 			<StatsSection />

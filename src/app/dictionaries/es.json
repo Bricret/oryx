@@ -236,7 +236,76 @@
 		"formMessagePlaceholder": "Cuéntanos sobre tu proyecto, tus objetivos y tus desafíos.",
 		"formSend": "Enviar Mensaje"
 	},
+	"contactPage": {
+		"metadata": {
+			"title": "Contacto | Oryx Development",
+			"description": "Ponte en contacto con nuestro equipo para discutir tu próximo proyecto digital."
+		},
+		"contactHeader": {
+			"badge": "Contacto",
+			"title": "Hablemos sobre tu proyecto",
+			"subtitle": "Estamos aquí para responder tus preguntas y ayudarte a convertir tus ideas en soluciones digitales excepcionales.",
+			"email": "info@oryxdevelopment.com",
+			"phone": "+52 (55) 5512 3456",
+			"schedule": "Lun - Vie: 9:00 - 18:00"
+		},
+		"contactForm": {
+			"title": "Envíanos un mensaje",
+			"nameLabel": "Nombre",
+			"namePlaceholder": "Tu nombre",
+			"emailLabel": "Correo electrónico",
+			"emailPlaceholder": "tu@email.com",
+			"subjectLabel": "Asunto",
+			"subjectPlaceholder": "¿En qué podemos ayudarte?",
+			"messageLabel": "Mensaje",
+			"messagePlaceholder": "Cuéntanos sobre tu proyecto o consulta...",
+			"submitButton": "Enviar mensaje",
+			"submittingButton": "Enviando...",
+			"validation": {
+				"name": "El nombre debe tener al menos 2 caracteres",
+				"email": "Ingresa un correo electrónico válido",
+				"subject": "El asunto debe tener al menos 5 caracteres",
+				"message": "El mensaje debe tener al menos 10 caracteres"
+			}
+		},
+		"contactInfo": {
+			"title": "Información de contacto",
+			"email": "Email",
+			"emailValue": "contact@oryx-development.com",
+			"phone": "Teléfono",
+			"phoneValue": "+505 5797 1984",
+			"hoursTitle": "Horario de atención",
+			"hoursLine1": "Lunes a Viernes: 9:00 - 18:00",
+			"hoursLine2": "Sábado: 10:00 - 14:00",
+			"socialTitle": "Síguenos en redes sociales",
+			"socialLabels": {
+				"facebook": "Facebook",
+				"twitter": "Twitter",
+				"instagram": "Instagram",
+				"linkedin": "LinkedIn"
+			},
+			"quickResponseTitle": "¿Necesitas una respuesta rápida?",
+			"quickResponseText": "Para consultas urgentes, te recomendamos llamarnos directamente o agendar una videollamada con nuestro equipo.",
+			"quickResponseButton": "Agendar videollamada"
+		},
+		"contactCta": {
+			"title": "¿Listo para iniciar tu proyecto?",
+			"subtitle": "Nuestro equipo está preparado para convertir tus ideas en soluciones digitales excepcionales. Contáctanos hoy para comenzar.",
+			"buttonSchedule": "Agendar consulta",
+			"buttonChat": "Chat en vivo",
+			"rapidResponseTitle": "Respuesta rápida",
+			"rapidResponseText": "Nos comprometemos a responder todas las consultas en un plazo máximo de 24 horas hábiles.",
+			"freeConsultationTitle": "Consulta gratuita",
+			"freeConsultationText": "Ofrecemos una consulta inicial sin costo para evaluar tu proyecto y brindarte la mejor solución.",
+			"freeConsultationLink": "Ver nuestros paquetes"
+		}
+	},
 	"pricingCalculator": {
+		"hero": {
+			"badge": "Estimador de Proyectos Interactivo",
+			"title": "Dale precio a tu próximo gran proyecto",
+			"description": "Nuestra herramienta te guía paso a paso para obtener una cotización detallada y transparente para tu proyecto de software. Sin compromisos."
+		},
 		"calculatorCta": "Calculadora de Precios",
 		"mainTitle": "Calcula tu Cotización a Medida",
 		"mainDescription": "Selecciona las opciones que mejor se adapten a tu proyecto para obtener un estimado al instante.",
@@ -916,7 +985,8 @@
 				]
 			}
 		],
-		"robust_title": "Prácticas Robustas por Defecto",
+		"robust_title": "Desarrollo Robusto",
+		"robust_description": "Implementamos las mejores prácticas de la industria para garantizar código de calidad, seguridad y mantenibilidad a largo plazo.",
 		"robustPractices": [
 			{
 				"title": "Control de versiones",
@@ -1146,5 +1216,8 @@
 				}
 			]
 		}
+	},
+	"client_slider": {
+		"title": "Empresas que confían en nuestro trabajo"
 	}
 }

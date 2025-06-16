@@ -236,7 +236,76 @@
 		"formMessagePlaceholder": "Tell us about your project",
 		"formSend": "Send Message"
 	},
+	"contactPage": {
+		"metadata": {
+			"title": "Contact | Oryx Development",
+			"description": "Get in touch with our team to discuss your next digital project."
+		},
+		"contactHeader": {
+			"badge": "Contact",
+			"title": "Let's talk about your project",
+			"subtitle": "We are here to answer your questions and help you turn your ideas into exceptional digital solutions.",
+			"email": "info@oryxdevelopment.com",
+			"phone": "+52 (55) 5512 3456",
+			"schedule": "Mon - Fri: 9:00 AM - 6:00 PM"
+		},
+		"contactForm": {
+			"title": "Send us a message",
+			"nameLabel": "Name",
+			"namePlaceholder": "Your name",
+			"emailLabel": "Email",
+			"emailPlaceholder": "you@email.com",
+			"subjectLabel": "Subject",
+			"subjectPlaceholder": "How can we help you?",
+			"messageLabel": "Message",
+			"messagePlaceholder": "Tell us about your project or inquiry...",
+			"submitButton": "Send message",
+			"submittingButton": "Sending...",
+			"validation": {
+				"name": "Name must be at least 2 characters",
+				"email": "Please enter a valid email",
+				"subject": "Subject must be at least 5 characters",
+				"message": "Message must be at least 10 characters"
+			}
+		},
+		"contactInfo": {
+			"title": "Contact Information",
+			"email": "Email",
+			"emailValue": "contact@oryx-development.com",
+			"phone": "Phone",
+			"phoneValue": "+505 5797 1984",
+			"hoursTitle": "Business Hours",
+			"hoursLine1": "Monday to Friday: 9:00 AM - 6:00 PM",
+			"hoursLine2": "Saturday: 10:00 AM - 2:00 PM",
+			"socialTitle": "Follow us on social media",
+			"socialLabels": {
+				"facebook": "Facebook",
+				"twitter": "Twitter",
+				"instagram": "Instagram",
+				"linkedin": "LinkedIn"
+			},
+			"quickResponseTitle": "Need a quick response?",
+			"quickResponseText": "For urgent inquiries, we recommend calling us directly or scheduling a video call with our team.",
+			"quickResponseButton": "Schedule video call"
+		},
+		"contactCta": {
+			"title": "Ready to start your project?",
+			"subtitle": "Our team is ready to turn your ideas into exceptional digital solutions. Contact us today to get started.",
+			"buttonSchedule": "Schedule consultation",
+			"buttonChat": "Live Chat",
+			"rapidResponseTitle": "Quick response",
+			"rapidResponseText": "We are committed to answering all inquiries within a maximum of 24 business hours.",
+			"freeConsultationTitle": "Free consultation",
+			"freeConsultationText": "We offer a free initial consultation to evaluate your project and provide you with the best solution.",
+			"freeConsultationLink": "See our packages"
+		}
+	},
 	"pricingCalculator": {
+		"hero": {
+			"badge": "Interactive Project Estimator",
+			"title": "Give price to your next great project",
+			"description": "Our tool guides you step by step to get a detailed and transparent quote for your software project. No commitments."
+		},
 		"calculatorCta": "Pricing Calculator",
 		"mainTitle": "Calculate Your Custom Quote",
 		"mainDescription": "Select the options that best fit your project to get an instant estimate.",
@@ -1131,5 +1200,8 @@
 				}
 			]
 		}
+	},
+	"client_slider": {
+		"title": "Companies that trust our work"
 	}
 }

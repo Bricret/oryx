@@ -8,7 +8,7 @@ import { useDictionary } from '@/context/LanguageContext'
 export default function Footer() {
 	const dictionary = useDictionary()
 	return (
-		<footer className='pt-24 pb-12 relative overflow-hidden'>
+		<footer className='pt-24 pb-12 relative overflow-hidden bg-accent'>
 			<div className='container mx-auto px-4'>
 				<div className='grid grid-cols-1 md:grid-cols-4 gap-8'>
 					<div className='md:col-span-2'>
@@ -102,7 +102,7 @@ export default function Footer() {
 						{dictionary.footer.rights}
 					</p>
 					<div className='flex space-x-6 mt-4 md:mt-0'>
-						{dictionary.footer.legal.map((item: string, idx: number) => (
+						{dictionary.footer.legal.map((item: string) => (
 							<Link
 								key={item}
 								href='#'

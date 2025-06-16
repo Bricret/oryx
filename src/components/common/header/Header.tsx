@@ -22,10 +22,10 @@ export function Header() {
 			name: dictionary.navbar.services,
 			link: '/services',
 		},
-		{
-			name: dictionary.navbar.projects,
-			link: '/projects',
-		},
+		// {
+		// 	name: dictionary.navbar.projects,
+		// 	link: '/projects',
+		// },
 		{
 			name: dictionary.navbar.pricing,
 			link: '/pricing',
@@ -40,9 +40,9 @@ export function Header() {
 
 	return (
 		<div className='relative w-full'>
-			<Navbar className=''>
+			<Navbar>
 				{/* Desktop Navigation */}
-				<NavBody className=''>
+				<NavBody>
 					<NavbarLogo />
 					<NavItems items={navItems} />
 					<div className='flex items-center gap-2'>

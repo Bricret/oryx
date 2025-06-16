@@ -288,64 +288,77 @@ export default function DevelopmentProcess() {
 					</div>
 				</div>
 
-				{/* Robust Practices */}
-				<div className='mb-24'>
-					<ScrollReveal>
-						<h3 className='text-3xl font-bold text-center mb-12'>
-							{dictionary.robust_title}
-						</h3>
+				<div className='grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16'>
+					{/* Robust Practices */}
+					<ScrollReveal direction='left'>
+						<div className='bg-background border border-border rounded-xl p-8'>
+							<div className='flex items-center mb-6'>
+								<Shield className='h-6 w-6 text-primary mr-3' />
+								<h3 className='text-2xl font-bold'>
+									{dictionary.robust_title}
+								</h3>
+							</div>
+							<p className='text-muted-foreground mb-6'>
+								{dictionary.robust_description}
+							</p>
+							<div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
+								{robustPractices.map((practice, index) => (
+									<motion.div
+										key={practice.title}
+										className='flex items-start p-3 rounded-lg border border-border hover:border-primary/30 transition-colors'
+										initial={{ opacity: 0, y: 20 }}
+										whileInView={{ opacity: 1, y: 0 }}
+										viewport={{ once: true }}
+										transition={{ duration: 0.3, delay: index * 0.1 }}
+									>
+										<div className='w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center mr-3 flex-shrink-0'>
+											<div className='text-primary'>{practice.icon}</div>
+										</div>
+										<div>
+											<h4 className='font-medium text-sm'>{practice.title}</h4>
+											<p className='text-xs text-muted-foreground'>
+												{practice.description}
+											</p>
+										</div>
+									</motion.div>
+								))}
+							</div>
+						</div>
 					</ScrollReveal>
-					<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
-						{robustPractices.map((practice, index) => (
-							<motion.div
-								key={practice.title}
-								initial={{ opacity: 0, y: 20 }}
-								whileInView={{ opacity: 1, y: 0 }}
-								viewport={{ once: true }}
-								transition={{ duration: 0.5, delay: index * 0.1 }}
-							>
-								<Card className='p-6 text-center h-full'>
-									<div className='inline-block bg-primary/10 p-3 rounded-lg mb-4 text-primary'>
-										{practice.icon}
-									</div>
-									<h4 className='text-lg font-bold mb-2'>{practice.title}</h4>
-									<p className='text-muted-foreground text-sm'>
-										{practice.description}
-									</p>
-								</Card>
-							</motion.div>
-						))}
-					</div>
-				</div>
 
-				{/* Rapid Development */}
-				<div className='mb-24'>
-					<ScrollReveal>
-						<h3 className='text-3xl font-bold text-center mb-12'>
-							{dictionary.rapid_title}
-						</h3>
+					{/* Rapid Development */}
+					<ScrollReveal direction='right'>
+						<div className='bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20 rounded-xl p-8'>
+							<div className='flex items-center mb-6'>
+								<Zap className='h-6 w-6 text-primary mr-3' />
+								<h3 className='text-2xl font-bold'>Desarrollo Rápido</h3>
+							</div>
+							<p className='text-muted-foreground mb-6'>
+								Metodologías ágiles y herramientas modernas nos permiten
+								entregar resultados de calidad en tiempos récord.
+							</p>
+							<div className='grid grid-cols-2 gap-6'>
+								{rapidDevelopment.map((metric, index) => (
+									<motion.div
+										key={metric.metric}
+										className='text-center'
+										initial={{ opacity: 0, scale: 0.8 }}
+										whileInView={{ opacity: 1, scale: 1 }}
+										viewport={{ once: true }}
+										transition={{ duration: 0.5, delay: index * 0.1 }}
+									>
+										<div className='text-3xl font-bold text-primary mb-1'>
+											{metric.metric}
+										</div>
+										<div className='font-medium mb-1'>{metric.label}</div>
+										<div className='text-xs text-muted-foreground'>
+											{metric.description}
+										</div>
+									</motion.div>
+								))}
+							</div>
+						</div>
 					</ScrollReveal>
-					<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'>
-						{rapidDevelopment.map((item, index) => (
-							<motion.div
-								key={item.metric}
-								initial={{ opacity: 0, y: 20 }}
-								whileInView={{ opacity: 1, y: 0 }}
-								viewport={{ once: true }}
-								transition={{ duration: 0.5, delay: index * 0.1 }}
-							>
-								<Card className='p-6 text-center h-full bg-muted/50'>
-									<p className='text-5xl font-bold text-primary mb-2'>
-										{item.metric}
-									</p>
-									<h4 className='text-lg font-bold mb-1'>{item.label}</h4>
-									<p className='text-muted-foreground text-sm'>
-										{item.description}
-									</p>
-								</Card>
-							</motion.div>
-						))}
-					</div>
 				</div>
 
 				{/* CTA */}
