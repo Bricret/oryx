@@ -19,19 +19,19 @@ export function Header() {
 	const dictionary = useDictionary()
 	const navItems = [
 		{
-			name: 'Services',
+			name: dictionary.navbar.services,
 			link: '/services',
 		},
 		{
-			name: 'Projects',
+			name: dictionary.navbar.projects,
 			link: '/projects',
 		},
 		{
-			name: 'Pricing',
+			name: dictionary.navbar.pricing,
 			link: '/pricing',
 		},
 		{
-			name: 'Contact Us',
+			name: dictionary.navbar.contact,
 			link: '/contact',
 		},
 	]
@@ -46,13 +46,13 @@ export function Header() {
 					<NavbarLogo />
 					<NavItems items={navItems} />
 					<div className='flex items-center gap-2'>
-						<Button 
-							variant='secondary' 
+						<Button
+							variant='secondary'
 							size='lg'
 							onClick={() => {
-								const currentLang = window.location.pathname.split('/')[1];
-								const newLang = currentLang === 'en' ? 'es' : 'en';
-								window.location.href = `/${newLang}${window.location.pathname.substring(3)}`;
+								const currentLang = window.location.pathname.split('/')[1]
+								const newLang = currentLang === 'en' ? 'es' : 'en'
+								window.location.href = `/${newLang}${window.location.pathname.substring(3)}`
 							}}
 						>
 							{dictionary.header.labelSelectLanguage}
@@ -89,21 +89,14 @@ export function Header() {
 						))}
 						<div className='flex w-full flex-col gap-4'>
 							<NavbarButton
-								onClick={() => setIsMobileMenuOpen(false)}
-								variant='primary'
+								onClick={() => {
+									const currentLang = window.location.pathname.split('/')[1]
+									const newLang = currentLang === 'en' ? 'es' : 'en'
+									window.location.href = `/${newLang}${window.location.pathname.substring(3)}`
+								}}
 								className='w-full'
 							>
-							<Button 
-								variant='secondary' 
-								size='lg'
-								onClick={() => {
-									const currentLang = window.location.pathname.split('/')[1];
-									const newLang = currentLang === 'en' ? 'es' : 'en';
-									window.location.href = `/${newLang}${window.location.pathname.substring(3)}`;
-								}}
-							>
 								{dictionary.header.labelSelectLanguage}
-							</Button>
 							</NavbarButton>
 							<NavbarButton
 								onClick={() => setIsMobileMenuOpen(false)}

@@ -6,6 +6,12 @@
 		"labelSelectLanguage": "En",
 		"ctaButton": "Schedule now"
 	},
+	"navbar": {
+		"services": "Services",
+		"projects": "Projects",
+		"pricing": "Pricing",
+		"contact": "Contact Us"
+	},
 	"hero": {
 		"banner": "Custom Software Development",
 		"title_First": "We build",
@@ -400,17 +406,108 @@
 			"Consulting Services"
 		],
 		"companyTitle": "Company",
-		"company": [
-			"About Us",
-			"Our Team",
-			"Careers",
-			"Blog",
-			"Contact"
-		],
+		"company": ["About Us", "Our Team", "Careers", "Blog", "Contact"],
 		"rights": "All rights reserved.",
-		"legal": [
-			"Privacy Policy",
-			"Terms of Service"
-		]
+		"legal": ["Privacy Policy", "Terms of Service"]
+	},
+	"customTraditional": {
+		"banner": "Custom System vs Traditional CRM",
+		"title": {
+			"first": "Why choose a",
+			"highlight": "custom system",
+			"last": "?"
+		},
+		"subtitle": "Discover the competitive advantages that a custom-developed system can offer your business compared to traditional market solutions.",
+		"tabs": {
+			"advantages": "Key Advantages",
+			"comparison": "Direct Comparison"
+		},
+		"table": {
+			"feature": "Feature",
+			"traditional": "Traditional CRM",
+			"custom": "Custom System"
+		},
+		"advantages": {
+			"flexibility": {
+				"title": "Total Flexibility",
+				"description": "Adapt each function to your specific processes without limitations of predefined templates.",
+				"traditional": "Functions limited by rigid templates",
+				"custom": "Completely customizable design according to your needs"
+			},
+			"functionality": {
+				"title": "Tailored Functionality",
+				"description": "Each feature is specifically designed to optimize your unique workflow.",
+				"traditional": "Generic features that don't fit",
+				"custom": "Functions specifically designed for your industry"
+			},
+			"integration": {
+				"title": "Perfect Integration",
+				"description": "Seamlessly connect with all your existing tools and business systems.",
+				"traditional": "Limited integrations with additional costs",
+				"custom": "Native integration with all your current systems"
+			},
+			"dataControl": {
+				"title": "Total Data Control",
+				"description": "Maintain absolute control over your information without depending on external servers.",
+				"traditional": "Data stored on third-party servers",
+				"custom": "Complete control over data location and security"
+			},
+			"performance": {
+				"title": "Optimized Performance",
+				"description": "Light and fast system, specifically optimized for your operations.",
+				"traditional": "Unnecessary functions that slow down the system",
+				"custom": "Optimized code with only what you really need"
+			},
+			"scalability": {
+				"title": "Smart Scalability",
+				"description": "Grow and evolve with your business without license restrictions.",
+				"traditional": "Increasing costs for additional users and features",
+				"custom": "Scalability without limits or hidden costs"
+			}
+		},
+		"comparison": {
+			"customization": {
+				"feature": "Customization",
+				"traditional": "Limited",
+				"custom": "Unlimited"
+			},
+			"implementation": {
+				"feature": "Implementation Time",
+				"traditional": "Standard configuration",
+				"custom": "Custom development"
+			},
+			"costs": {
+				"feature": "Long-term Costs",
+				"traditional": "Increasing monthly licenses",
+				"custom": "One-time investment"
+			},
+			"dataControl": {
+				"feature": "Data Control",
+				"traditional": "Limited",
+				"custom": "Total"
+			},
+			"integrations": {
+				"feature": "Integrations",
+				"traditional": "Limited APIs",
+				"custom": "Native integration"
+			}
+		},
+		"cta": {
+			"badge": "Trusted by over 50 companies",
+			"title": "Ready for a system that adapts to you?",
+			"description": "Discover how a custom system can transform your business efficiency and reduce operational costs by up to 40%.",
+			"primaryButton": "Schedule now",
+			"secondaryButton": "View our services",
+			"features": {
+				"implementation": {
+					"title": "Fast Implementation",
+					"description": "Functional systems in 4-8 weeks vs 6+ months of traditional configuration"
+				},
+				"roi": {
+					"title": "Proven ROI",
+					"description": "Average return on investment of 300% in the first year of use"
+				}
+			}
+		}
 	}
 }

@@ -6,6 +6,12 @@
 		"labelSelectLanguage": "Es",
 		"ctaButton": "Agenda ahora"
 	},
+	"navbar": {
+		"services": "Servicios",
+		"projects": "Proyectos",
+		"pricing": "Precios",
+		"contact": "Contacto"
+	},
 	"hero": {
 		"banner": "Soluciones de Software que Impulsan Resultados",
 		"title_First": "Transformamos tus ",
@@ -404,9 +410,106 @@
 			"Contacto"
 		],
 		"rights": "Todos los derechos reservados.",
-		"legal": [
-			"Política de Privacidad",
-			"Términos de Servicio"
-		]
+		"legal": ["Política de Privacidad", "Términos de Servicio"]
+	},
+	"customTraditional": {
+		"banner": "Sistema Personalizado vs CRM Tradicional",
+		"title": {
+			"first": "¿Por qué elegir un",
+			"highlight": "sistema personalizado",
+			"last": "?"
+		},
+		"subtitle": "Descubre las ventajas competitivas que un sistema desarrollado a medida puede ofrecer a tu negocio frente a las soluciones tradicionales del mercado.",
+		"tabs": {
+			"advantages": "Ventajas Clave",
+			"comparison": "Comparación Directa"
+		},
+		"table": {
+			"feature": "Característica",
+			"traditional": "CRM Tradicional",
+			"custom": "Sistema Personalizado"
+		},
+		"advantages": {
+			"flexibility": {
+				"title": "Flexibilidad Total",
+				"description": "Adapta cada función a tus procesos específicos sin limitaciones de plantillas predefinidas.",
+				"traditional": "Funciones limitadas por plantillas rígidas",
+				"custom": "Diseño completamente personalizable según tus necesidades"
+			},
+			"functionality": {
+				"title": "Funcionalidad a Medida",
+				"description": "Cada característica está diseñada específicamente para optimizar tu flujo de trabajo único.",
+				"traditional": "Características genéricas que no se ajustan",
+				"custom": "Funciones diseñadas específicamente para tu industria"
+			},
+			"integration": {
+				"title": "Integración Perfecta",
+				"description": "Conecta sin problemas con todas tus herramientas existentes y sistemas empresariales.",
+				"traditional": "Integraciones limitadas con costos adicionales",
+				"custom": "Integración nativa con todos tus sistemas actuales"
+			},
+			"dataControl": {
+				"title": "Control Total de Datos",
+				"description": "Mantén el control absoluto sobre tu información sin depender de servidores externos.",
+				"traditional": "Datos almacenados en servidores de terceros",
+				"custom": "Control completo sobre ubicación y seguridad de datos"
+			},
+			"performance": {
+				"title": "Rendimiento Optimizado",
+				"description": "Sistema ligero y rápido, optimizado específicamente para tus operaciones.",
+				"traditional": "Funciones innecesarias que ralentizan el sistema",
+				"custom": "Código optimizado solo con lo que realmente necesitas"
+			},
+			"scalability": {
+				"title": "Escalabilidad Inteligente",
+				"description": "Crece y evoluciona junto con tu negocio sin restricciones de licencias.",
+				"traditional": "Costos crecientes por usuarios y funciones adicionales",
+				"custom": "Escalabilidad sin límites ni costos ocultos"
+			}
+		},
+		"comparison": {
+			"customization": {
+				"feature": "Personalización",
+				"traditional": "Limitada",
+				"custom": "Ilimitada"
+			},
+			"implementation": {
+				"feature": "Tiempo de implementación",
+				"traditional": "Configuración estándar",
+				"custom": "Desarrollo personalizado"
+			},
+			"costs": {
+				"feature": "Costos a largo plazo",
+				"traditional": "Licencias mensuales crecientes",
+				"custom": "Inversión única"
+			},
+			"dataControl": {
+				"feature": "Control de datos",
+				"traditional": "Limitado",
+				"custom": "Total"
+			},
+			"integrations": {
+				"feature": "Integraciones",
+				"traditional": "APIs limitadas",
+				"custom": "Integración nativa"
+			}
+		},
+		"cta": {
+			"badge": "Más de 50 empresas confían en nosotros",
+			"title": "¿Listo para un sistema que se adapte a ti?",
+			"description": "Descubre cómo un sistema personalizado puede transformar la eficiencia de tu negocio y reducir costos operativos hasta en un 40%.",
+			"primaryButton": "Agenda ahora",
+			"secondaryButton": "Ver nuestros servicios",
+			"features": {
+				"implementation": {
+					"title": "Implementación rápida",
+					"description": "Sistemas funcionales en 4-8 semanas vs 6+ meses de configuración tradicional"
+				},
+				"roi": {
+					"title": "ROI comprobado",
+					"description": "Retorno de inversión promedio del 300% en el primer año de uso"
+				}
+			}
+		}
 	}
 }

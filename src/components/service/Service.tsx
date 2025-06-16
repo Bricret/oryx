@@ -15,6 +15,7 @@ import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { HoverBorderGradient } from '../ui/hover-border-gradient'
 import { useDictionary } from '@/context/LanguageContext'
+import Link from 'next/link'
 
 export default function ServicesRedesigned() {
 	const dictionary = useDictionary()
@@ -257,8 +258,14 @@ export default function ServicesRedesigned() {
 						viewport={{ once: true }}
 						transition={{ duration: 0.5, delay: 0.8 }}
 					>
-						<Button size='lg'>
-							{dictionary.ourService?.button ?? 'View All Services'}
+						<Button
+							asChild
+							size='lg'
+							className='bg-gradient-to-r from-primary to-primary/80 gap-2 text-white hover:text-white py-6 px-12'
+						>
+							<Link href='/services'>
+								{dictionary.ourService?.button ?? 'View All Services'}
+							</Link>
 						</Button>
 					</motion.div>
 				</div>
