@@ -19,6 +19,7 @@ import {
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import ScrollReveal from '@/components/ui/scroll-reveal'
+import { HoverBorderGradient } from '../ui/hover-border-gradient'
 
 const services = [
 	{
@@ -34,7 +35,6 @@ const services = [
 			'Diseño responsivo y moderno',
 			'Optimización SEO avanzada',
 			'Velocidad de carga optimizada',
-			'Integración con CMS',
 			'E-commerce personalizado',
 			'Analíticas y métricas',
 		],
@@ -44,9 +44,9 @@ const services = [
 			'Posicionamiento SEO mejorado',
 			'Experiencia de usuario excepcional',
 		],
-		technologies: ['React', 'Next.js', 'WordPress', 'Shopify', 'Tailwind CSS'],
-		timeline: '2-6 semanas',
-		startingPrice: '$2,500',
+		technologies: ['React', 'Next.js', 'WordPress', 'Tailwind CSS', 'Astro'],
+		timeline: '1-3 semanas',
+		startingPrice: '$ 400',
 		process: [
 			{
 				step: 'Consulta inicial',
@@ -77,7 +77,7 @@ const services = [
 		color: 'from-emerald-500 to-green-400',
 		shadowColor: 'shadow-emerald-500/20',
 		features: [
-			'CRM personalizado',
+			'Multiplataforma',
 			'Gestión de inventarios',
 			'Automatización de procesos',
 			'Reportes en tiempo real',
@@ -90,9 +90,16 @@ const services = [
 			'Datos centralizados y accesibles',
 			'Procesos estandarizados',
 		],
-		technologies: ['Node.js', 'Python', 'PostgreSQL', 'MongoDB', 'Docker'],
-		timeline: '6-16 semanas',
-		startingPrice: '$8,000',
+		technologies: [
+			'Nest.js',
+			'TypeScript',
+			'PostgreSQL',
+			'Docker',
+			'Next.js',
+			'Tailwind CSS',
+		],
+		timeline: '3-6 semanas',
+		startingPrice: '$ 1,000',
 		process: [
 			{
 				step: 'Análisis de procesos',
@@ -136,9 +143,16 @@ const services = [
 			'Funcionalidades offline',
 			'Experiencia nativa optimizada',
 		],
-		technologies: ['React Native', 'Flutter', 'Swift', 'Kotlin', 'Firebase'],
-		timeline: '8-20 semanas',
-		startingPrice: '$12,000',
+		technologies: [
+			'React Native',
+			'Flutter',
+			'Swift',
+			'Expo',
+			'Supabase',
+			'Firebase',
+		],
+		timeline: '4-12 semanas',
+		startingPrice: '$ 1,500',
 		process: [
 			{
 				step: 'Prototipado',
@@ -226,15 +240,12 @@ export default function CoreServices() {
 				<ScrollReveal>
 					<div className='text-center mb-16'>
 						<div className='inline-block'>
-							<motion.div
-								className='text-sm font-medium text-primary bg-primary/10 px-4 py-1 rounded-full mb-4 inline-block'
-								initial={{ opacity: 0, y: -20 }}
-								whileInView={{ opacity: 1, y: 0 }}
-								viewport={{ once: true }}
-								transition={{ duration: 0.5, delay: 0.2 }}
+							<HoverBorderGradient
+								containerClassName='rounded-full inline-flex items-center mb-8'
+								className='bg-secondary-background text-black/80 flex items-center space-x-2'
 							>
 								Nuestros Servicios
-							</motion.div>
+							</HoverBorderGradient>
 						</div>
 						<h2 className='text-4xl md:text-5xl font-bold tracking-tight mb-4'>
 							Tres servicios principales,{' '}
@@ -349,7 +360,7 @@ export default function CoreServices() {
 											<div className='grid grid-cols-1 gap-2'>
 												{service.features.slice(0, 4).map((feature, i) => (
 													<div
-														key={`feature-${feature}`}
+														key={`feature-${service.id}-${i}`}
 														className='flex items-center text-sm'
 													>
 														<div className='w-1.5 h-1.5 bg-primary rounded-full mr-2' />

@@ -5,15 +5,12 @@ import { Header } from '@/components/common/header/Header'
 import Footer from '@/components/footer'
 import type { Locale } from '@/i18n.config'
 
-interface CostosPageProps {
-	params: {
-		lang: Locale
-	}
-}
-
 export default async function CostosPage({
-	params: { lang },
-}: CostosPageProps) {
+	params,
+}: {
+	params: Promise<{ lang: Locale }>
+}) {
+	const { lang } = await params
 	const dictionary = await import(`@/app/dictionaries/${lang}.json`).then(
 		(m) => m.default,
 	)

@@ -17,7 +17,6 @@ export default function SectionDivider({
 	})
 
 	const rotate = useTransform(scrollYProgress, [0, 1], [0, 360])
-	const y = useTransform(scrollYProgress, [0, 1], ['0%', '100%'])
 	const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1.2, 0.8])
 
 	return (

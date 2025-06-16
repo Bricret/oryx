@@ -1,7 +1,7 @@
 'use client'
 
 import { type ReactNode, useRef } from 'react'
-import { motion, useInView } from 'motion/react'
+import { motion, useInView, type Easing } from 'motion/react'
 
 interface ScrollRevealProps {
 	children: ReactNode
@@ -54,7 +54,7 @@ export default function ScrollReveal({
 			transition: {
 				duration,
 				delay,
-				ease: 'easeOut',
+				ease: [0.25, 0.1, 0.25, 1] as Easing,
 			},
 		},
 	}

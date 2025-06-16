@@ -3,7 +3,6 @@
 import { useState, useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { Card, CardContent } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import {
 	Zap,
@@ -20,6 +19,8 @@ import {
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import ScrollReveal from '@/components/ui/scroll-reveal'
+import Link from 'next/link'
+import { HoverBorderGradient } from '../ui/hover-border-gradient'
 
 const processPhases = [
 	{
@@ -238,16 +239,13 @@ export default function DevelopmentProcess() {
 				<ScrollReveal>
 					<div className='text-center mb-16'>
 						<div className='inline-block'>
-							<motion.div
-								className='text-sm font-medium text-primary bg-primary/10 px-4 py-1 rounded-full mb-4 inline-block'
-								initial={{ opacity: 0, y: -20 }}
-								whileInView={{ opacity: 1, y: 0 }}
-								viewport={{ once: true }}
-								transition={{ duration: 0.5, delay: 0.2 }}
+							<HoverBorderGradient
+								containerClassName='rounded-full inline-flex items-center mb-8'
+								className='bg-secondary-background text-black/80 flex items-center space-x-2'
 							>
 								<Zap className='h-4 w-4 inline mr-2' />
 								Desarrollo Robusto y Rápido
-							</motion.div>
+							</HoverBorderGradient>
 						</div>
 						<h2 className='text-4xl md:text-5xl font-bold tracking-tight mb-4'>
 							Proceso probado,{' '}
@@ -359,7 +357,6 @@ export default function DevelopmentProcess() {
 
 													<div className='flex items-center justify-between mb-3'>
 														<h3 className='text-xl font-bold'>{phase.title}</h3>
-														<Badge variant='outline'>{phase.duration}</Badge>
 													</div>
 													<p className='text-primary font-medium mb-2'>
 														{phase.subtitle}
@@ -527,8 +524,8 @@ export default function DevelopmentProcess() {
 							>
 								Iniciar proyecto
 							</Button>
-							<Button size='lg' variant='outline'>
-								Ver casos de éxito
+							<Button size='lg' variant='outline' asChild>
+								<Link href='/projects'>Ver casos de éxito</Link>
 							</Button>
 						</div>
 					</div>

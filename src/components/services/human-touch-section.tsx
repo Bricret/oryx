@@ -17,6 +17,7 @@ import {
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import ScrollReveal from '@/components/ui/scroll-reveal'
+import { HoverBorderGradient } from '../ui/hover-border-gradient'
 
 const humanTouchFeatures = [
 	{
@@ -37,7 +38,7 @@ const humanTouchFeatures = [
 		description: 'Acceso directo a tu equipo sin intermediarios ni bots',
 		details: [
 			'WhatsApp directo con el equipo',
-			'Slack workspace compartido',
+			'Linear workspace compartido',
 			'Email directo con desarrolladores',
 			'Respuesta en menos de 4 horas',
 		],
@@ -60,10 +61,10 @@ const humanTouchFeatures = [
 		title: 'Transparencia Total',
 		description: 'Visibilidad completa del proceso y progreso del proyecto',
 		details: [
+			'Link de acceso a la aplicación en construcción (si aplica)',
 			'Dashboard de progreso en tiempo real',
 			'Acceso al repositorio de código',
 			'Reportes semanales detallados',
-			'Métricas de calidad transparentes',
 		],
 		color: 'from-amber-500 to-orange-400',
 	},
@@ -77,46 +78,17 @@ const communicationChannels = [
 		availability: 'Lun-Vie 9:00-18:00',
 	},
 	{
-		icon: <Video className='h-5 w-5' />,
-		channel: 'Videollamadas',
-		description: 'Reuniones programadas y de emergencia',
-		availability: 'Bajo cita previa',
-	},
-	{
 		icon: <MessageSquare className='h-5 w-5' />,
 		channel: 'Chat directo',
-		description: 'WhatsApp y Slack para comunicación rápida',
+		description: 'WhatsApp y Telegram para comunicación rápida',
 		availability: 'Respuesta < 4 horas',
 	},
 	{
 		icon: <Calendar className='h-5 w-5' />,
 		channel: 'Reuniones',
-		description: 'Sessions presenciales o virtuales regulares',
+		description:
+			'Sesiones presenciales o virtuales regulares (Kickoff, Reviews, etc.)',
 		availability: 'Semanales',
-	},
-]
-
-const testimonialQuotes = [
-	{
-		quote:
-			'Lo que más me gustó fue poder hablar directamente con el desarrollador. No hay nada como explicar tu idea cara a cara.',
-		author: 'María González',
-		role: 'CEO, TechStart',
-		project: 'Sistema de gestión',
-	},
-	{
-		quote:
-			'El equipo se sintió como una extensión de nuestra empresa. La comunicación fue excepcional durante todo el proyecto.',
-		author: 'Carlos Ruiz',
-		role: 'Director de IT',
-		project: 'Aplicación móvil',
-	},
-	{
-		quote:
-			'Nunca había trabajado con un equipo tan accesible. Podía llamar cuando tenía dudas y siempre había alguien disponible.',
-		author: 'Ana Martínez',
-		role: 'Fundadora',
-		project: 'E-commerce',
 	},
 ]
 
@@ -139,34 +111,40 @@ export default function HumanTouchSection() {
 				className='absolute inset-0 pointer-events-none w-full'
 				style={{ y: backgroundY }}
 			>
-				{Array.from({ length: 10 }).map((_, i) => (
-					<motion.div
-						key={`sparkle-${i + 1}`}
-						className='absolute rounded-full bg-primary/5'
-						style={{
-							width: Math.random() * 200 + 100,
-							height: Math.random() * 200 + 100,
-							top: `${Math.random() * 100}%`,
-							left: `${Math.random() * 100}%`,
-						}}
-					/>
-				))}
+				{Array.from({ length: 10 }).map((_, i) => {
+					const baseSize = 100
+					const sizeVariation = 100
+					const width = baseSize + sizeVariation * (i % 3)
+					const height = baseSize + sizeVariation * ((i + 1) % 3)
+					const top = (i * 10) % 100
+					const left = ((i + 5) * 10) % 100
+
+					return (
+						<motion.div
+							key={`sparkle-${i + 1}`}
+							className='absolute rounded-full bg-primary/5'
+							style={{
+								width,
+								height,
+								top: `${top}%`,
+								left: `${left}%`,
+							}}
+						/>
+					)
+				})}
 			</motion.div>
 
 			<div className='container px-4 md:px-6 relative z-10 mx-auto max-w-7xl'>
 				<ScrollReveal>
 					<div className='text-center max-w-4xl mx-auto mb-16'>
 						<div className='inline-block'>
-							<motion.div
-								className='text-sm font-medium text-primary bg-primary/10 px-4 py-1 rounded-full mb-4 inline-block'
-								initial={{ opacity: 0, y: -20 }}
-								whileInView={{ opacity: 1, y: 0 }}
-								viewport={{ once: true }}
-								transition={{ duration: 0.5, delay: 0.2 }}
+							<HoverBorderGradient
+								containerClassName='rounded-full inline-flex items-center mb-8'
+								className='bg-secondary-background text-black/80 flex items-center space-x-2'
 							>
 								<Heart className='h-4 w-4 inline mr-2' />
 								El Toque Humano
-							</motion.div>
+							</HoverBorderGradient>
 						</div>
 						<h2 className='text-4xl md:text-5xl font-bold tracking-tight mb-4'>
 							Personas reales,{' '}
@@ -193,7 +171,10 @@ export default function HumanTouchSection() {
 				<div className='grid grid-cols-1 md:grid-cols-2 gap-8 mb-16'>
 					{humanTouchFeatures.map((feature, index) => (
 						<ScrollReveal
-							key={`feature-${feature}`}
+							key={`feature-${
+								// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+								index
+							}`}
 							delay={index * 0.1}
 							threshold={0.1}
 							className='h-full'
@@ -255,7 +236,10 @@ export default function HumanTouchSection() {
 										<div className='space-y-2'>
 											{feature.details.map((detail, i) => (
 												<motion.div
-													key={`detail-${detail}`}
+													key={`detail-${index}-${
+														// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+														i
+													}`}
 													className='flex items-center text-sm'
 													initial={{ opacity: 0, x: -10 }}
 													whileInView={{ opacity: 1, x: 0 }}
@@ -288,10 +272,13 @@ export default function HumanTouchSection() {
 							</p>
 						</div>
 
-						<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
+						<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
 							{communicationChannels.map((channel, index) => (
 								<motion.div
-									key={`channel-${channel}`}
+									key={`channel-${
+										// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+										index
+									}`}
 									className='text-center p-4 rounded-lg border border-border hover:border-primary/30 transition-colors'
 									initial={{ opacity: 0, y: 20 }}
 									whileInView={{ opacity: 1, y: 0 }}
@@ -312,51 +299,6 @@ export default function HumanTouchSection() {
 								</motion.div>
 							))}
 						</div>
-					</div>
-				</ScrollReveal>
-
-				{/* Testimonials */}
-				<ScrollReveal>
-					<div className='text-center mb-8'>
-						<h3 className='text-2xl font-bold mb-4'>
-							Lo que dicen nuestros clientes
-						</h3>
-						<p className='text-muted-foreground'>
-							Experiencias reales de personas que han trabajado con nuestro
-							equipo
-						</p>
-					</div>
-
-					<div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
-						{testimonialQuotes.map((testimonial, index) => (
-							<motion.div
-								key={`testimonial-${testimonial}`}
-								initial={{ opacity: 0, y: 20 }}
-								whileInView={{ opacity: 1, y: 0 }}
-								viewport={{ once: true }}
-								transition={{ duration: 0.5, delay: index * 0.1 }}
-							>
-								<Card className='h-full'>
-									<CardContent className='p-6'>
-										<div className='mb-4'>
-											<div className='text-primary text-4xl mb-2'>"</div>
-											<p className='text-muted-foreground italic'>
-												{testimonial.quote}
-											</p>
-										</div>
-										<div className='border-t border-border pt-4'>
-											<div className='font-semibold'>{testimonial.author}</div>
-											<div className='text-sm text-muted-foreground'>
-												{testimonial.role}
-											</div>
-											<Badge variant='outline' className='mt-2 text-xs'>
-												{testimonial.project}
-											</Badge>
-										</div>
-									</CardContent>
-								</Card>
-							</motion.div>
-						))}
 					</div>
 				</ScrollReveal>
 			</div>

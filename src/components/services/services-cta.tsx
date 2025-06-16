@@ -14,9 +14,11 @@ import {
 	Zap,
 	Shield,
 	CheckCircle,
+	Mail,
 } from 'lucide-react'
 import Link from 'next/link'
 import ScrollReveal from '@/components/ui/scroll-reveal'
+import { HoverBorderGradient } from '../ui/hover-border-gradient'
 
 const guarantees = [
 	{
@@ -48,6 +50,7 @@ const contactOptions = [
 		description: 'Reunión de 30 min para discutir tu proyecto',
 		action: 'Agendar ahora',
 		highlight: true,
+		link: 'https://cal.com/oryx-development/30min',
 	},
 	{
 		icon: <MessageSquare className='h-6 w-6' />,
@@ -55,13 +58,15 @@ const contactOptions = [
 		description: 'Habla con nuestro equipo por WhatsApp',
 		action: 'Iniciar chat',
 		highlight: false,
+		link: 'https://wa.me/+50557971984',
 	},
 	{
-		icon: <Phone className='h-6 w-6' />,
-		title: 'Llamada rápida',
-		description: 'Conversación telefónica de 15 minutos',
-		action: 'Llamar ahora',
+		icon: <Mail className='h-6 w-6' />,
+		title: 'Email directo',
+		description: 'Envíanos un Email directo a nuestro correo	',
+		action: 'Enviar Email',
 		highlight: false,
+		link: 'mailto:contact@oryx-development.com',
 	},
 ]
 
@@ -74,16 +79,13 @@ export default function ServicesCTA() {
 				<ScrollReveal>
 					<div className='text-center mb-16'>
 						<div className='inline-block'>
-							<motion.div
-								className='text-sm font-medium text-primary bg-primary/10 px-4 py-1 rounded-full mb-4 inline-block'
-								initial={{ opacity: 0, y: -20 }}
-								whileInView={{ opacity: 1, y: 0 }}
-								viewport={{ once: true }}
-								transition={{ duration: 0.5, delay: 0.2 }}
+							<HoverBorderGradient
+								containerClassName='rounded-full inline-flex items-center mb-8'
+								className='bg-secondary-background text-black/80 flex items-center space-x-2'
 							>
 								<Heart className='h-4 w-4 inline mr-2' />
 								Comienza tu proyecto hoy
-							</motion.div>
+							</HoverBorderGradient>
 						</div>
 						<h2 className='text-4xl md:text-5xl font-bold tracking-tight mb-4'>
 							¿Listo para trabajar con{' '}
@@ -235,34 +237,20 @@ export default function ServicesCTA() {
 										<Button
 											variant={option.highlight ? 'default' : 'outline'}
 											className='w-full'
+											asChild
 										>
-											{option.action}
+											<Link
+												href={option.link}
+												target='_blank'
+												rel='noopener noreferrer'
+											>
+												{option.action}
+											</Link>
 										</Button>
 									</CardContent>
 								</Card>
 							</motion.div>
 						))}
-					</div>
-				</ScrollReveal>
-
-				{/* Final Message */}
-				<ScrollReveal>
-					<div className='text-center mt-16'>
-						<div className='max-w-2xl mx-auto'>
-							<p className='text-muted-foreground mb-4'>
-								<strong>¿Tienes preguntas específicas?</strong> Nuestro equipo
-								está disponible para resolver cualquier duda sobre nuestros
-								servicios, procesos o tecnologías.
-							</p>
-							<div className='flex flex-col sm:flex-row gap-4 justify-center'>
-								<Button variant='ghost' asChild>
-									<Link href='/costos'>Ver precios y paquetes</Link>
-								</Button>
-								<Button variant='ghost' asChild>
-									<Link href='#testimonials'>Leer más testimonios</Link>
-								</Button>
-							</div>
-						</div>
 					</div>
 				</ScrollReveal>
 			</div>

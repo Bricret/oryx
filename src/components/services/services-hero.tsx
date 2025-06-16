@@ -4,8 +4,31 @@ import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { ArrowRight, Users, Zap, Heart } from 'lucide-react'
 import Link from 'next/link'
+import { HoverBorderGradient } from '../ui/hover-border-gradient'
+import { useDictionary } from '@/context/LanguageContext'
+import { useEffect, useState } from 'react'
 
 export default function ServicesHero() {
+	const dictionary = useDictionary()
+	const [dimensions, setDimensions] = useState({ width: 0, height: 0 })
+
+	useEffect(() => {
+		setDimensions({
+			width: window.innerWidth,
+			height: window.innerHeight,
+		})
+
+		const handleResize = () => {
+			setDimensions({
+				width: window.innerWidth,
+				height: window.innerHeight,
+			})
+		}
+
+		window.addEventListener('resize', handleResize)
+		return () => window.removeEventListener('resize', handleResize)
+	}, [])
+
 	return (
 		<section className='py-20 relative overflow-hidden w-full'>
 			<div className='absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background mx-auto w-full' />
@@ -19,18 +42,18 @@ export default function ServicesHero() {
 						initial={{
 							width: Math.random() * 100 + 50,
 							height: Math.random() * 100 + 50,
-							x: Math.random() * window.innerWidth,
-							y: Math.random() * window.innerHeight,
+							x: Math.random() * dimensions.width,
+							y: Math.random() * dimensions.height,
 							opacity: 0,
 						}}
 						animate={{
 							x: [
-								Math.random() * window.innerWidth,
-								Math.random() * window.innerWidth,
+								Math.random() * dimensions.width,
+								Math.random() * dimensions.width,
 							],
 							y: [
-								Math.random() * window.innerHeight,
-								Math.random() * window.innerHeight,
+								Math.random() * dimensions.height,
+								Math.random() * dimensions.height,
 							],
 							opacity: [0, 0.3, 0],
 						}}
@@ -43,24 +66,20 @@ export default function ServicesHero() {
 				))}
 			</div>
 
-			<div className='container px-4 md:px-6 relative z-10 mx-auto'>
+			<div className='container px-4 md:px-6 relative z-10 mx-auto pt-10 md:pt-30'>
 				<motion.div
 					className='text-center max-w-4xl mx-auto'
 					initial={{ opacity: 0, y: 20 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.8 }}
 				>
-					<div className='inline-block'>
-						<motion.div
-							className='text-sm font-medium text-primary bg-primary/10 px-4 py-1 rounded-full mb-4 inline-block'
-							initial={{ opacity: 0, y: -20 }}
-							animate={{ opacity: 1, y: 0 }}
-							transition={{ duration: 0.5, delay: 0.2 }}
-						>
-							<Heart className='h-4 w-4 inline mr-2' />
-							Desarrollo con Toque Humano
-						</motion.div>
-					</div>
+					<HoverBorderGradient
+						containerClassName='rounded-full inline-flex items-center mb-8'
+						className='bg-secondary-background text-black/80 flex items-center space-x-2'
+					>
+						<Heart className='h-4 w-4 inline mr-2' />
+						Desarrollo con Toque Humano
+					</HoverBorderGradient>
 
 					<h1 className='text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6'>
 						Soluciones digitales que{' '}
@@ -130,7 +149,8 @@ export default function ServicesHero() {
 							className='bg-gradient-to-r from-primary to-primary/80'
 						>
 							<Link href='#servicios'>
-								Explorar servicios <ArrowRight className='ml-2 h-4 w-4' />
+								{dictionary.hero.btn_contactUs}{' '}
+								<ArrowRight className='ml-2 h-4 w-4' />
 							</Link>
 						</Button>
 						<Button size='lg' variant='outline' asChild>

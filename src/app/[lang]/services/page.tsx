@@ -19,15 +19,10 @@ export default function ServicesPage() {
 		<main className='relative'>
 			<Header />
 			<ServicesHero />
-			<SectionDivider />
 			<CoreServices />
-			<SectionDivider />
 			<HumanTouchSection />
-			<SectionDivider />
 			<DevelopmentProcess />
-			<SectionDivider />
 			<ServiceComparison />
-			<SectionDivider />
 			<ServicesCTA />
 			<Footer />
 		</main>

@@ -19,9 +19,9 @@ export default async function RootLayout({
 	params,
 }: Readonly<{
 	children: React.ReactNode
-	params: { lang: string }
+	params: Promise<{ lang: string }>
 }>) {
-	const { lang } = params
+	const { lang } = await params
 	const dictionary = await import(`@/app/dictionaries/${lang}.json`).then(
 		(m) => m.default,
 	)

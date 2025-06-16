@@ -222,17 +222,23 @@ export default function CustomVsTraditional() {
 				style={{ y: backgroundY, opacity }}
 			>
 				{Array.from({ length: 15 }).map((_, index) => {
-					const id = `background-circle-${Math.random().toString(36).substr(2, 9)}`
+					const id = `background-circle-${index}`
+					const width = 200 + index * 20
+					const height = 200 + index * 20
+					const top = (index * 7) % 100
+					const left = (index * 13) % 100
+					const opacity = 0.1 + index * 0.03
+
 					return (
 						<motion.div
 							key={id}
 							className='absolute rounded-full bg-primary/5'
 							style={{
-								width: Math.random() * 400 + 200,
-								height: Math.random() * 400 + 200,
-								top: `${Math.random() * 100}%`,
-								left: `${Math.random() * 100}%`,
-								opacity: Math.random() * 0.5,
+								width,
+								height,
+								top: `${top}%`,
+								left: `${left}%`,
+								opacity,
 							}}
 						/>
 					)

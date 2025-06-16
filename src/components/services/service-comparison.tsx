@@ -11,23 +11,25 @@ import {
 	Clock,
 	DollarSign,
 	Users,
+	Zap,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import ScrollReveal from '@/components/ui/scroll-reveal'
+import { HoverBorderGradient } from '../ui/hover-border-gradient'
 
 const comparisonData = [
 	{
 		feature: 'Tiempo de desarrollo',
-		website: '2-6 semanas',
-		systems: '6-16 semanas',
-		mobile: '8-20 semanas',
+		website: '1-3 semanas',
+		systems: '3-6 semanas',
+		mobile: '4-12 semanas',
 		icon: <Clock className='h-4 w-4' />,
 	},
 	{
 		feature: 'Inversión inicial',
-		website: 'Desde $2,500',
-		systems: 'Desde $8,000',
-		mobile: 'Desde $12,000',
+		website: 'Desde $ 400',
+		systems: 'Desde $ 1,000',
+		mobile: 'Desde $ 1,500',
 		icon: <DollarSign className='h-4 w-4' />,
 	},
 	{
@@ -71,12 +73,7 @@ const serviceFeatures = {
 			'Portafolios',
 			'Blogs corporativos',
 		],
-		includes: [
-			'Diseño responsivo',
-			'SEO optimizado',
-			'CMS integrado',
-			'Hosting incluido',
-		],
+		includes: ['Diseño responsivo', 'SEO optimizado', 'Hosting incluido'],
 		notIncludes: ['App móvil', 'Sistema complejo', 'Integraciones avanzadas'],
 	},
 	systems: {
@@ -119,15 +116,12 @@ export default function ServiceComparison() {
 				<ScrollReveal>
 					<div className='text-center mb-16'>
 						<div className='inline-block'>
-							<motion.div
-								className='text-sm font-medium text-primary bg-primary/10 px-4 py-1 rounded-full mb-4 inline-block'
-								initial={{ opacity: 0, y: -20 }}
-								whileInView={{ opacity: 1, y: 0 }}
-								viewport={{ once: true }}
-								transition={{ duration: 0.5, delay: 0.2 }}
+							<HoverBorderGradient
+								containerClassName='rounded-full inline-flex items-center mb-8'
+								className='bg-secondary-background text-black/80 flex items-center space-x-2'
 							>
 								Comparación de Servicios
-							</motion.div>
+							</HoverBorderGradient>
 						</div>
 						<h2 className='text-4xl md:text-5xl font-bold tracking-tight mb-4'>
 							¿Cuál es la{' '}
@@ -143,7 +137,7 @@ export default function ServiceComparison() {
 							</span>{' '}
 							para ti?
 						</h2>
-						<p className='text-muted-foreground text-lg max-w-3xl mx-auto'>
+						<p className='text-black/70 text-lg max-w-3xl mx-auto'>
 							Cada servicio está diseñado para diferentes necesidades y
 							objetivos. Aquí te ayudamos a entender cuál se adapta mejor a tu
 							proyecto.
@@ -294,7 +288,7 @@ export default function ServiceComparison() {
 					<div className='mt-16 text-center'>
 						<div className='bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20 rounded-2xl p-8 md:p-12 max-w-3xl mx-auto'>
 							<h3 className='text-2xl font-bold mb-4'>¿Aún no estás seguro?</h3>
-							<p className='text-muted-foreground mb-6'>
+							<p className='text-black/70 mb-6'>
 								Nuestro equipo puede ayudarte a identificar la mejor solución
 								para tu proyecto específico. Agenda una consulta gratuita y
 								recibe recomendaciones personalizadas.
