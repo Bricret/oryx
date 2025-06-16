@@ -1,7 +1,7 @@
 'use client'
 
 import { useDictionary } from '@/context/LanguageContext'
-import { ArrowRight, Sparkles } from 'lucide-react'
+import { Sparkles } from 'lucide-react'
 import { useEffect, useRef } from 'react'
 import { useScrollAnimation } from './hooks/useScrollAnimation'
 import { HoverBorderGradient } from './ui/hover-border-gradient'

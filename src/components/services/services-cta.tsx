@@ -5,10 +5,8 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import {
-	ArrowRight,
 	Calendar,
 	MessageSquare,
-	Phone,
 	Heart,
 	Users,
 	Zap,
@@ -19,58 +17,62 @@ import {
 import Link from 'next/link'
 import ScrollReveal from '@/components/ui/scroll-reveal'
 import { HoverBorderGradient } from '../ui/hover-border-gradient'
+import { CalEmbed } from '../ui/cal-embed'
+import { useDictionary } from '@/context/LanguageContext'
 
-const guarantees = [
-	{
-		icon: <Heart className='h-5 w-5' />,
-		title: 'Toque humano garantizado',
-		description: 'Interacción directa con personas reales en cada etapa',
-	},
-	{
-		icon: <Zap className='h-5 w-5' />,
-		title: 'Desarrollo ágil',
-		description: 'Entregas rápidas sin comprometer la calidad',
-	},
-	{
-		icon: <Shield className='h-5 w-5' />,
-		title: 'Código robusto',
-		description: 'Mejores prácticas y arquitectura escalable',
-	},
-	{
-		icon: <Users className='h-5 w-5' />,
-		title: 'Equipo dedicado',
-		description: 'Un equipo específico asignado a tu proyecto',
-	},
+type GuaranteeText = {
+	title: string
+	description: string
+}
+
+type ContactOptionText = {
+	title: string
+	description: string
+	action: string
+}
+
+const guaranteeIcons: React.ReactNode[] = [
+	<Heart key='heart' className='h-5 w-5' />,
+	<Zap key='zap' className='h-5 w-5' />,
+	<Shield key='shield' className='h-5 w-5' />,
+	<Users key='users' className='h-5 w-5' />,
 ]
 
-const contactOptions = [
+const contactConfig = [
 	{
-		icon: <Calendar className='h-6 w-6' />,
-		title: 'Agendar consulta',
-		description: 'Reunión de 30 min para discutir tu proyecto',
-		action: 'Agendar ahora',
-		highlight: true,
+		icon: <Calendar key='calendar' className='h-6 w-6' />,
 		link: 'https://cal.com/oryx-development/30min',
+		highlight: true,
 	},
 	{
-		icon: <MessageSquare className='h-6 w-6' />,
-		title: 'Chat directo',
-		description: 'Habla con nuestro equipo por WhatsApp',
-		action: 'Iniciar chat',
-		highlight: false,
+		icon: <MessageSquare key='chat' className='h-6 w-6' />,
 		link: 'https://wa.me/+50557971984',
+		highlight: false,
 	},
 	{
-		icon: <Mail className='h-6 w-6' />,
-		title: 'Email directo',
-		description: 'Envíanos un Email directo a nuestro correo	',
-		action: 'Enviar Email',
-		highlight: false,
+		icon: <Mail key='mail' className='h-6 w-6' />,
 		link: 'mailto:contact@oryx-development.com',
+		highlight: false,
 	},
 ]
 
 export default function ServicesCTA() {
+	const dictionary = useDictionary().servicesCTA
+
+	const guarantees = (dictionary.guarantees as GuaranteeText[]).map(
+		(guarantee, index) => ({
+			...guarantee,
+			icon: guaranteeIcons[index],
+		}),
+	)
+
+	const contactOptions = (
+		dictionary.contact.options as ContactOptionText[]
+	).map((option, index) => ({
+		...option,
+		...contactConfig[index],
+	}))
+
 	return (
 		<section className='py-24 relative overflow-hidden w-full mx-auto'>
 			<div className='absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background' />
@@ -84,13 +86,15 @@ export default function ServicesCTA() {
 								className='bg-secondary-background text-black/80 flex items-center space-x-2'
 							>
 								<Heart className='h-4 w-4 inline mr-2' />
-								Comienza tu proyecto hoy
+								{dictionary.banner}
 							</HoverBorderGradient>
 						</div>
 						<h2 className='text-4xl md:text-5xl font-bold tracking-tight mb-4'>
-							¿Listo para trabajar con{' '}
+							{dictionary.title_first}{' '}
 							<span className='relative inline-block'>
-								<span className='relative z-10'>personas reales</span>
+								<span className='relative z-10'>
+									{dictionary.title_highlight}
+								</span>
 								<motion.span
 									className='absolute bottom-2 left-0 h-3 bg-primary/20 w-full'
 									initial={{ width: 0 }}
@@ -99,12 +103,10 @@ export default function ServicesCTA() {
 									transition={{ duration: 0.8, delay: 0.5 }}
 								/>
 							</span>
-							?
+							{dictionary.title_last}
 						</h2>
 						<p className='text-muted-foreground text-lg max-w-3xl mx-auto'>
-							Nuestro equipo está preparado para convertir tu idea en una
-							solución digital exitosa. Comienza con una consulta gratuita y
-							descubre la diferencia del toque humano.
+							{dictionary.subtitle}
 						</p>
 					</div>
 				</ScrollReveal>
@@ -119,46 +121,29 @@ export default function ServicesCTA() {
 										<div>
 											<Badge className='mb-4 bg-primary/10 text-primary border-primary/20'>
 												<CheckCircle className='h-3 w-3 mr-1' />
-												Consulta gratuita incluida
+												{dictionary.main_cta.badge}
 											</Badge>
 											<h3 className='text-3xl font-bold mb-4'>
-												Comienza tu proyecto con una consulta gratuita
+												{dictionary.main_cta.title}
 											</h3>
 											<p className='text-muted-foreground mb-6 text-lg'>
-												En 30 minutos analizaremos tu proyecto, te daremos
-												recomendaciones personalizadas y conocerás al equipo que
-												trabajará contigo.
+												{dictionary.main_cta.description}
 											</p>
 
 											<div className='space-y-3 mb-8'>
-												<div className='flex items-center'>
-													<CheckCircle className='h-5 w-5 text-green-500 mr-3' />
-													<span>Análisis gratuito de requerimientos</span>
-												</div>
-												<div className='flex items-center'>
-													<CheckCircle className='h-5 w-5 text-green-500 mr-3' />
-													<span>Propuesta técnica personalizada</span>
-												</div>
-												<div className='flex items-center'>
-													<CheckCircle className='h-5 w-5 text-green-500 mr-3' />
-													<span>Conoce a tu equipo de desarrollo</span>
-												</div>
-												<div className='flex items-center'>
-													<CheckCircle className='h-5 w-5 text-green-500 mr-3' />
-													<span>Cronograma y presupuesto estimado</span>
-												</div>
+												{dictionary.main_cta.features.map((feature: string) => (
+													<div key={feature} className='flex items-center'>
+														<CheckCircle className='h-5 w-5 text-green-500 mr-3' />
+														<span>{feature}</span>
+													</div>
+												))}
 											</div>
 
-											<Button
-												size='lg'
-												className='bg-gradient-to-r from-primary to-primary/80 text-lg px-8 py-6'
-												asChild
-											>
-												<Link href='/contacto'>
-													Agendar consulta gratuita{' '}
-													<ArrowRight className='ml-2 h-5 w-5' />
-												</Link>
-											</Button>
+											<CalEmbed
+												calLink='https://cal.com/oryx-development/30min'
+												className='z-20 relative bg-gradient-to-r from-primary to-primary/80 text-lg px-8 py-6'
+												buttonText={dictionary.main_cta.button}
+											/>
 										</div>
 
 										<div className='space-y-4'>
@@ -200,21 +185,24 @@ export default function ServicesCTA() {
 				<ScrollReveal>
 					<div className='text-center mb-8'>
 						<h3 className='text-2xl font-bold mb-4'>
-							Múltiples formas de contactarnos
+							{dictionary.contact.title}
 						</h3>
 						<p className='text-muted-foreground'>
-							Elige la opción que más te convenga para comenzar la conversación
+							{dictionary.contact.subtitle}
 						</p>
 					</div>
 
 					<div className='grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto'>
-						{contactOptions.map((option, index) => (
+						{contactOptions.map((option) => (
 							<motion.div
 								key={`contact-${option.title}`}
 								initial={{ opacity: 0, y: 20 }}
 								whileInView={{ opacity: 1, y: 0 }}
 								viewport={{ once: true }}
-								transition={{ duration: 0.5, delay: index * 0.1 }}
+								transition={{
+									duration: 0.5,
+									delay: option.highlight ? 0.1 : 0.2,
+								}}
 								whileHover={{ y: -5 }}
 							>
 								<Card

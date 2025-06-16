@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef } from 'react'
+import { useState, useRef, type ReactNode } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
@@ -21,188 +21,88 @@ import { cn } from '@/lib/utils'
 import ScrollReveal from '@/components/ui/scroll-reveal'
 import Link from 'next/link'
 import { HoverBorderGradient } from '../ui/hover-border-gradient'
+import { useDictionary } from '@/context/LanguageContext'
 
-const processPhases = [
-	{
-		id: 'discovery',
-		icon: <Target className='h-6 w-6' />,
-		title: 'Descubrimiento',
-		subtitle: 'Entendemos tu visión',
-		duration: '1-2 semanas',
-		description:
-			'Análisis profundo de requerimientos, objetivos y contexto del proyecto',
-		activities: [
-			'Reunión de kickoff presencial/virtual',
-			'Análisis de requerimientos funcionales',
-			'Definición de objetivos y KPIs',
-			'Investigación de usuarios y mercado',
-			'Arquitectura de información',
-			'Planificación de cronograma',
-		],
-		deliverables: [
-			'Documento de requerimientos',
-			'Wireframes y flujos de usuario',
-			'Cronograma detallado',
-			'Propuesta técnica',
-		],
-		color: 'from-blue-500 to-cyan-400',
-	},
-	{
-		id: 'design',
-		icon: <Code className='h-6 w-6' />,
-		title: 'Diseño & Arquitectura',
-		subtitle: 'Creamos la base sólida',
-		duration: '2-3 semanas',
-		description:
-			'Diseño UX/UI y arquitectura técnica que garantiza escalabilidad y rendimiento',
-		activities: [
-			'Diseño de experiencia de usuario (UX)',
-			'Creación de interfaces visuales (UI)',
-			'Arquitectura de base de datos',
-			'Definición de APIs y servicios',
-			'Selección de tecnologías',
-			'Prototipado interactivo',
-		],
-		deliverables: [
-			'Diseños finales aprobados',
-			'Prototipo interactivo',
-			'Documentación técnica',
-			'Guía de estilos',
-		],
-		color: 'from-emerald-500 to-green-400',
-	},
-	{
-		id: 'development',
-		icon: <Rocket className='h-6 w-6' />,
-		title: 'Desarrollo',
-		subtitle: 'Construimos tu solución',
-		duration: '4-12 semanas',
-		description:
-			'Desarrollo ágil con entregas incrementales y comunicación constante',
-		activities: [
-			'Configuración del entorno de desarrollo',
-			'Desarrollo por sprints de 2 semanas',
-			'Integración continua (CI/CD)',
-			'Reviews semanales de progreso',
-			'Testing automatizado',
-			'Optimización de rendimiento',
-		],
-		deliverables: [
-			'Código fuente documentado',
-			'Aplicación funcional',
-			'Tests automatizados',
-			'Documentación técnica',
-		],
-		color: 'from-violet-500 to-purple-400',
-	},
-	{
-		id: 'testing',
-		icon: <TestTube className='h-6 w-6' />,
-		title: 'Testing & QA',
-		subtitle: 'Garantizamos la calidad',
-		duration: '1-2 semanas',
-		description:
-			'Pruebas exhaustivas para asegurar funcionamiento perfecto en todos los escenarios',
-		activities: [
-			'Testing funcional completo',
-			'Pruebas de rendimiento',
-			'Testing de seguridad',
-			'Pruebas en múltiples dispositivos',
-			'Testing de usabilidad',
-			'Corrección de bugs',
-		],
-		deliverables: [
-			'Reporte de testing',
-			'Aplicación libre de bugs',
-			'Documentación de pruebas',
-			'Certificado de calidad',
-		],
-		color: 'from-amber-500 to-orange-400',
-	},
-	{
-		id: 'deployment',
-		icon: <Shield className='h-6 w-6' />,
-		title: 'Despliegue',
-		subtitle: 'Llevamos tu proyecto al mundo',
-		duration: '1 semana',
-		description:
-			'Lanzamiento seguro y monitoreo continuo para garantizar estabilidad',
-		activities: [
-			'Configuración de servidores',
-			'Despliegue en producción',
-			'Configuración de dominios y SSL',
-			'Monitoreo y alertas',
-			'Capacitación del equipo',
-			'Documentación de usuario',
-		],
-		deliverables: [
-			'Aplicación en producción',
-			'Manual de usuario',
-			'Credenciales de acceso',
-			'Plan de mantenimiento',
-		],
-		color: 'from-rose-500 to-pink-400',
-	},
-]
+type ProcessPhaseText = {
+	id: string
+	title: string
+	subtitle: string
+	duration: string
+	description: string
+	activities_title: string
+	activities: string[]
+	deliverables_title: string
+	deliverables: string[]
+}
 
-const robustPractices = [
-	{
-		icon: <GitBranch className='h-5 w-5' />,
-		title: 'Control de versiones',
-		description: 'Git con branching strategy y code reviews',
-	},
-	{
-		icon: <TestTube className='h-5 w-5' />,
-		title: 'Testing automatizado',
-		description: 'Unit tests, integration tests y E2E testing',
-	},
-	{
-		icon: <Database className='h-5 w-5' />,
-		title: 'Backups automáticos',
-		description: 'Respaldos diarios y recuperación ante desastres',
-	},
-	{
-		icon: <Shield className='h-5 w-5' />,
-		title: 'Seguridad integrada',
-		description: 'Encriptación, autenticación y mejores prácticas',
-	},
-	{
-		icon: <Zap className='h-5 w-5' />,
-		title: 'CI/CD Pipeline',
-		description: 'Integración y despliegue continuo automatizado',
-	},
-	{
-		icon: <Smartphone className='h-5 w-5' />,
-		title: 'Responsive design',
-		description: 'Optimización para todos los dispositivos',
-	},
-]
+type RobustPracticeText = {
+	title: string
+	description: string
+}
 
-const rapidDevelopment = [
-	{
-		metric: '50%',
-		label: 'Más rápido',
-		description: 'que el promedio de la industria',
-	},
-	{
-		metric: '2 semanas',
-		label: 'Sprints',
-		description: 'entregas incrementales constantes',
-	},
-	{
-		metric: '24h',
-		label: 'Respuesta',
-		description: 'tiempo máximo de respuesta',
-	},
-	{
-		metric: '99.9%',
-		label: 'Uptime',
-		description: 'disponibilidad garantizada',
-	},
+type RapidDevelopmentText = {
+	metric: string
+	label: string
+	description: string
+}
+
+type ProcessPhase = ProcessPhaseText & {
+	icon: ReactNode
+	color: string
+}
+
+type RobustPractice = RobustPracticeText & {
+	icon: ReactNode
+}
+
+const phaseIcons: { [key: string]: ReactNode } = {
+	discovery: <Target className='h-6 w-6' />,
+	design: <Code className='h-6 w-6' />,
+	development: <Rocket className='h-6 w-6' />,
+	testing: <TestTube className='h-6 w-6' />,
+	deployment: <Shield className='h-6 w-6' />,
+}
+
+const phaseColors: { [key: string]: string } = {
+	discovery: 'from-blue-500 to-cyan-400',
+	design: 'from-emerald-500 to-green-400',
+	development: 'from-violet-500 to-purple-400',
+	testing: 'from-amber-500 to-orange-400',
+	deployment: 'from-rose-500 to-pink-400',
+}
+
+const robustPracticesIcons: ReactNode[] = [
+	<GitBranch key='git' className='h-5 w-5' />,
+	<TestTube key='test' className='h-5 w-5' />,
+	<Database key='db' className='h-5 w-5' />,
+	<Shield key='shield' className='h-5 w-5' />,
+	<Zap key='zap' className='h-5 w-5' />,
+	<Smartphone key='smartphone' className='h-5 w-5' />,
 ]
 
 export default function DevelopmentProcess() {
-	const [activePhase, setActivePhase] = useState<string | null>(null)
+	const dictionary = useDictionary().developmentProcess
+
+	const processPhases: ProcessPhase[] = (
+		dictionary.processPhases as ProcessPhaseText[]
+	).map((phase) => ({
+		...phase,
+		icon: phaseIcons[phase.id],
+		color: phaseColors[phase.id],
+	}))
+
+	const robustPractices: RobustPractice[] = (
+		dictionary.robustPractices as RobustPracticeText[]
+	).map((practice, index) => ({
+		...practice,
+		icon: robustPracticesIcons[index],
+	}))
+
+	const rapidDevelopment: RapidDevelopmentText[] = dictionary.rapidDevelopment
+
+	const [activePhase, setActivePhase] = useState<string | null>(
+		processPhases[0]?.id || null,
+	)
 	const ref = useRef<HTMLDivElement>(null)
 	const { scrollYProgress } = useScroll({
 		target: ref,
@@ -244,291 +144,229 @@ export default function DevelopmentProcess() {
 								className='bg-secondary-background text-black/80 flex items-center space-x-2'
 							>
 								<Zap className='h-4 w-4 inline mr-2' />
-								Desarrollo Robusto y Rápido
+								{dictionary.banner}
 							</HoverBorderGradient>
 						</div>
 						<h2 className='text-4xl md:text-5xl font-bold tracking-tight mb-4'>
-							Proceso probado,{' '}
-							<span className='relative inline-block'>
-								<span className='relative z-10'>resultados garantizados</span>
-								<motion.span
-									className='absolute bottom-2 left-0 h-3 bg-primary/20 w-full'
-									initial={{ width: 0 }}
-									whileInView={{ width: '100%' }}
-									viewport={{ once: true }}
-									transition={{ duration: 0.8, delay: 0.5 }}
-								/>
-							</span>
+							{dictionary.title}
 						</h2>
 						<p className='text-muted-foreground text-lg max-w-3xl mx-auto'>
-							Nuestro proceso de desarrollo combina metodologías ágiles con las
-							mejores prácticas de la industria, garantizando entregas rápidas
-							sin comprometer la calidad.
+							{dictionary.subtitle}
 						</p>
 					</div>
 				</ScrollReveal>
 
-				{/* Process Timeline */}
-				<div className='mb-16'>
-					<div className='relative'>
-						{/* Timeline line */}
-						<div className='absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-muted hidden lg:block'>
-							<motion.div
-								className='absolute top-0 left-0 w-full bg-primary'
-								initial={{ height: '0%' }}
-								whileInView={{ height: '100%' }}
-								viewport={{ once: true }}
-								transition={{ duration: 2, ease: 'easeInOut' }}
-							/>
-						</div>
-
-						{processPhases.map((phase, index) => (
-							<ScrollReveal
-								key={phase.id}
-								className='mb-12 last:mb-0'
-								direction={index % 2 === 0 ? 'left' : 'right'}
-								threshold={0.2}
-							>
-								<div
-									className={`flex flex-col ${
-										index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
-									} items-center gap-8`}
+				{/* Process Phases */}
+				<div className='mb-24'>
+					<ScrollReveal>
+						<h3 className='text-3xl font-bold text-center mb-12'>
+							{dictionary.phases_title}
+						</h3>
+					</ScrollReveal>
+					<div className='flex flex-col lg:flex-row gap-8'>
+						{/* Phase List */}
+						<div className='w-full lg:w-1/3 space-y-4'>
+							{processPhases.map((phase) => (
+								<motion.div
+									key={phase.id}
+									onClick={() => setActivePhase(phase.id)}
+									className={cn(
+										'p-4 rounded-lg cursor-pointer transition-all duration-300 relative overflow-hidden border-2',
+										activePhase === phase.id
+											? 'border-primary/50 shadow-xl'
+											: 'border-border hover:border-primary/30',
+									)}
+									whileHover={{ y: -5 }}
 								>
-									{/* Timeline dot */}
-									<motion.div
-										className='relative z-10 rounded-full bg-background p-2 border-4 border-primary hidden lg:flex items-center justify-center'
-										initial={{ scale: 0 }}
-										whileInView={{ scale: 1 }}
-										viewport={{ once: true }}
-										transition={{
-											type: 'spring',
-											stiffness: 300,
-											delay: index * 0.2,
-										}}
+									<div
+										className={cn(
+											'absolute inset-0 opacity-0 transition-opacity duration-500',
+											activePhase === phase.id && 'opacity-100',
+										)}
 									>
 										<div
 											className={cn(
-												'rounded-full p-3 bg-gradient-to-br',
+												'absolute inset-0 bg-gradient-to-br opacity-5',
+												phase.color,
+											)}
+										/>
+									</div>
+									<div className='flex items-center space-x-4 relative z-10'>
+										<div
+											className={cn(
+												'p-3 rounded-md text-white bg-gradient-to-br',
 												phase.color,
 											)}
 										>
-											<div className='text-white'>{phase.icon}</div>
+											{phase.icon}
 										</div>
-									</motion.div>
-
-									{/* Content */}
-									<div
-										className={`w-full lg:w-5/12 ${index % 2 === 0 ? 'lg:text-right' : 'lg:text-left'}`}
-									>
-										<motion.div
-											className='cursor-pointer'
-											onClick={() =>
-												setActivePhase(
-													activePhase === phase.id ? null : phase.id,
-												)
-											}
-											whileHover={{ y: -5 }}
-											transition={{
-												type: 'spring',
-												stiffness: 400,
-												damping: 10,
-											}}
-										>
-											<Card
-												className={cn(
-													'border-2 transition-all duration-300',
-													activePhase === phase.id
-														? 'border-primary shadow-xl'
-														: 'border-border hover:border-primary/30',
-												)}
-											>
-												<CardContent className='p-6'>
-													{/* Mobile icon */}
-													<div className='lg:hidden mb-4 flex justify-center'>
-														<div
-															className={cn(
-																'rounded-full p-3 bg-gradient-to-br',
-																phase.color,
-															)}
-														>
-															<div className='text-white'>{phase.icon}</div>
-														</div>
-													</div>
-
-													<div className='flex items-center justify-between mb-3'>
-														<h3 className='text-xl font-bold'>{phase.title}</h3>
-													</div>
-													<p className='text-primary font-medium mb-2'>
-														{phase.subtitle}
-													</p>
-													<p className='text-muted-foreground mb-4'>
-														{phase.description}
-													</p>
-
-													<Button
-														variant='ghost'
-														size='sm'
-														className='text-primary hover:bg-primary/10'
-													>
-														{activePhase === phase.id
-															? 'Ver menos'
-															: 'Ver detalles'}
-														<ArrowRight className='ml-1 h-3 w-3' />
-													</Button>
-
-													{/* Expanded content */}
-													{activePhase === phase.id && (
-														<motion.div
-															initial={{ opacity: 0, height: 0 }}
-															animate={{ opacity: 1, height: 'auto' }}
-															exit={{ opacity: 0, height: 0 }}
-															transition={{ duration: 0.3 }}
-															className='mt-6 pt-6 border-t border-border'
-														>
-															<div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
-																<div>
-																	<h5 className='font-semibold mb-3'>
-																		Actividades principales
-																	</h5>
-																	<ul className='space-y-2'>
-																		{phase.activities.map((activity, i) => (
-																			<li
-																				key={`activity-${activity}`}
-																				className='flex items-start text-sm'
-																			>
-																				<CheckCircle className='h-4 w-4 text-primary mr-2 mt-0.5 flex-shrink-0' />
-																				{activity}
-																			</li>
-																		))}
-																	</ul>
-																</div>
-																<div>
-																	<h5 className='font-semibold mb-3'>
-																		Entregables
-																	</h5>
-																	<ul className='space-y-2'>
-																		{phase.deliverables.map(
-																			(deliverable, i) => (
-																				<li
-																					key={`deliverable-${deliverable}`}
-																					className='flex items-start text-sm'
-																				>
-																					<div className='w-1.5 h-1.5 bg-primary rounded-full mr-2 mt-2 flex-shrink-0' />
-																					{deliverable}
-																				</li>
-																			),
-																		)}
-																	</ul>
-																</div>
-															</div>
-														</motion.div>
-													)}
-												</CardContent>
-											</Card>
-										</motion.div>
+										<div>
+											<h4 className='font-bold text-lg'>{phase.title}</h4>
+											<p className='text-sm text-muted-foreground'>
+												{phase.subtitle}
+											</p>
+										</div>
 									</div>
-								</div>
-							</ScrollReveal>
+								</motion.div>
+							))}
+						</div>
+
+						{/* Phase Details */}
+						<div className='w-full lg:w-2/3'>
+							{processPhases.map((phase) =>
+								activePhase === phase.id ? (
+									<motion.div
+										key={phase.id}
+										initial={{ opacity: 0, y: 20 }}
+										animate={{ opacity: 1, y: 0 }}
+										exit={{ opacity: 0, y: -20 }}
+										transition={{ duration: 0.5 }}
+									>
+										<Card
+											className={cn(
+												'p-8 border-2 relative overflow-hidden h-full',
+												'border-primary/30',
+											)}
+										>
+											<div
+												className={cn(
+													'absolute inset-0 bg-gradient-to-br opacity-5',
+													phase.color,
+												)}
+											/>
+											<div className='relative z-10'>
+												<div className='flex justify-between items-start mb-4'>
+													<div>
+														<h4 className='text-2xl font-bold mb-1'>
+															{phase.title}
+														</h4>
+														<p className='text-muted-foreground'>
+															{phase.description}
+														</p>
+													</div>
+													<span className='text-sm font-medium bg-secondary text-secondary-foreground py-1 px-3 rounded-full'>
+														{phase.duration}
+													</span>
+												</div>
+												<div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
+													<div>
+														<h5 className='font-bold mb-3'>
+															{phase.activities_title}
+														</h5>
+														<ul className='space-y-2'>
+															{phase.activities.map((activity) => (
+																<li key={activity} className='flex items-start'>
+																	<CheckCircle className='h-4 w-4 text-primary mr-2 mt-1 flex-shrink-0' />
+																	<span>{activity}</span>
+																</li>
+															))}
+														</ul>
+													</div>
+													<div>
+														<h5 className='font-bold mb-3'>
+															{phase.deliverables_title}
+														</h5>
+														<ul className='space-y-2'>
+															{phase.deliverables.map((deliverable) => (
+																<li
+																	key={deliverable}
+																	className='flex items-start'
+																>
+																	<CheckCircle className='h-4 w-4 text-primary mr-2 mt-1 flex-shrink-0' />
+																	<span>{deliverable}</span>
+																</li>
+															))}
+														</ul>
+													</div>
+												</div>
+											</div>
+										</Card>
+									</motion.div>
+								) : null,
+							)}
+						</div>
+					</div>
+				</div>
+
+				{/* Robust Practices */}
+				<div className='mb-24'>
+					<ScrollReveal>
+						<h3 className='text-3xl font-bold text-center mb-12'>
+							{dictionary.robust_title}
+						</h3>
+					</ScrollReveal>
+					<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+						{robustPractices.map((practice, index) => (
+							<motion.div
+								key={practice.title}
+								initial={{ opacity: 0, y: 20 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								viewport={{ once: true }}
+								transition={{ duration: 0.5, delay: index * 0.1 }}
+							>
+								<Card className='p-6 text-center h-full'>
+									<div className='inline-block bg-primary/10 p-3 rounded-lg mb-4 text-primary'>
+										{practice.icon}
+									</div>
+									<h4 className='text-lg font-bold mb-2'>{practice.title}</h4>
+									<p className='text-muted-foreground text-sm'>
+										{practice.description}
+									</p>
+								</Card>
+							</motion.div>
 						))}
 					</div>
 				</div>
 
-				{/* Robust & Rapid Development */}
-				<div className='grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16'>
-					{/* Robust Practices */}
-					<ScrollReveal direction='left'>
-						<div className='bg-background border border-border rounded-xl p-8'>
-							<div className='flex items-center mb-6'>
-								<Shield className='h-6 w-6 text-primary mr-3' />
-								<h3 className='text-2xl font-bold'>Desarrollo Robusto</h3>
-							</div>
-							<p className='text-muted-foreground mb-6'>
-								Implementamos las mejores prácticas de la industria para
-								garantizar código de calidad, seguridad y mantenibilidad a largo
-								plazo.
-							</p>
-							<div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
-								{robustPractices.map((practice, index) => (
-									<motion.div
-										key={`practice-${practice.title}`}
-										className='flex items-start p-3 rounded-lg border border-border hover:border-primary/30 transition-colors'
-										initial={{ opacity: 0, y: 20 }}
-										whileInView={{ opacity: 1, y: 0 }}
-										viewport={{ once: true }}
-										transition={{ duration: 0.3, delay: index * 0.1 }}
-									>
-										<div className='w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center mr-3 flex-shrink-0'>
-											<div className='text-primary'>{practice.icon}</div>
-										</div>
-										<div>
-											<h4 className='font-medium text-sm'>{practice.title}</h4>
-											<p className='text-xs text-muted-foreground'>
-												{practice.description}
-											</p>
-										</div>
-									</motion.div>
-								))}
-							</div>
-						</div>
+				{/* Rapid Development */}
+				<div className='mb-24'>
+					<ScrollReveal>
+						<h3 className='text-3xl font-bold text-center mb-12'>
+							{dictionary.rapid_title}
+						</h3>
 					</ScrollReveal>
-
-					{/* Rapid Development */}
-					<ScrollReveal direction='right'>
-						<div className='bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20 rounded-xl p-8'>
-							<div className='flex items-center mb-6'>
-								<Zap className='h-6 w-6 text-primary mr-3' />
-								<h3 className='text-2xl font-bold'>Desarrollo Rápido</h3>
-							</div>
-							<p className='text-muted-foreground mb-6'>
-								Metodologías ágiles y herramientas modernas nos permiten
-								entregar resultados de calidad en tiempos récord.
-							</p>
-							<div className='grid grid-cols-2 gap-6'>
-								{rapidDevelopment.map((metric, index) => (
-									<motion.div
-										key={`metric-${metric.metric}`}
-										className='text-center'
-										initial={{ opacity: 0, scale: 0.8 }}
-										whileInView={{ opacity: 1, scale: 1 }}
-										viewport={{ once: true }}
-										transition={{ duration: 0.5, delay: index * 0.1 }}
-									>
-										<div className='text-3xl font-bold text-primary mb-1'>
-											{metric.metric}
-										</div>
-										<div className='font-medium mb-1'>{metric.label}</div>
-										<div className='text-xs text-muted-foreground'>
-											{metric.description}
-										</div>
-									</motion.div>
-								))}
-							</div>
-						</div>
-					</ScrollReveal>
+					<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'>
+						{rapidDevelopment.map((item, index) => (
+							<motion.div
+								key={item.metric}
+								initial={{ opacity: 0, y: 20 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								viewport={{ once: true }}
+								transition={{ duration: 0.5, delay: index * 0.1 }}
+							>
+								<Card className='p-6 text-center h-full bg-muted/50'>
+									<p className='text-5xl font-bold text-primary mb-2'>
+										{item.metric}
+									</p>
+									<h4 className='text-lg font-bold mb-1'>{item.label}</h4>
+									<p className='text-muted-foreground text-sm'>
+										{item.description}
+									</p>
+								</Card>
+							</motion.div>
+						))}
+					</div>
 				</div>
 
 				{/* CTA */}
 				<ScrollReveal>
-					<div className='text-center'>
-						<h3 className='text-2xl font-bold mb-4'>
-							¿Listo para comenzar tu proyecto?
-						</h3>
-						<p className='text-muted-foreground mb-6 max-w-2xl mx-auto'>
-							Nuestro equipo está preparado para convertir tu idea en una
-							solución digital robusta y exitosa.
-						</p>
-						<div className='flex flex-col sm:flex-row gap-4 justify-center'>
-							<Button
-								size='lg'
-								className='bg-gradient-to-r from-primary to-primary/80'
-							>
-								Iniciar proyecto
-							</Button>
-							<Button size='lg' variant='outline' asChild>
-								<Link href='/projects'>Ver casos de éxito</Link>
-							</Button>
+					<Card className='bg-primary/5 border-primary/20 p-8 md:p-12'>
+						<div className='flex flex-col md:flex-row justify-between items-center text-center md:text-left'>
+							<div className='mb-6 md:mb-0'>
+								<h3 className='text-3xl font-bold mb-2'>
+									{dictionary.cta.title}
+								</h3>
+							</div>
+							<div>
+								<Button size='lg' asChild>
+									<Link href='/contact'>
+										{dictionary.cta.button}
+										<ArrowRight className='ml-2 h-5 w-5' />
+									</Link>
+								</Button>
+							</div>
 						</div>
-					</div>
+					</Card>
 				</ScrollReveal>
 			</div>
 		</section>

@@ -1,5 +1,4 @@
 import { Header } from '@/components/common/header/Header'
-import SectionDivider from '@/components/common/section-divider'
 import Footer from '@/components/footer'
 import CoreServices from '@/components/services/core-services'
 import DevelopmentProcess from '@/components/services/development-process'

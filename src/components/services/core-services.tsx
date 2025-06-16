@@ -1,7 +1,7 @@
 'use client'
 
-import { useState, useRef } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { useState, useRef, type ReactNode } from 'react'
+import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -20,187 +20,91 @@ import {
 import { cn } from '@/lib/utils'
 import ScrollReveal from '@/components/ui/scroll-reveal'
 import { HoverBorderGradient } from '../ui/hover-border-gradient'
+import Link from 'next/link'
+import { useDictionary } from '@/context/LanguageContext'
 
-const services = [
-	{
-		id: 'website',
+type ServiceFromDict = {
+	id: string
+	title: string
+	subtitle: string
+	description: string
+	features_title: string
+	features: string[]
+	benefits_title: string
+	benefits: string[]
+	technologies_title: string
+	technologies: string[]
+	timeline_title: string
+	timeline: string
+	price_title: string
+	startingPrice: string
+	process_title: string
+	process: {
+		step: string
+		description: string
+	}[]
+}
+
+type Service = ServiceFromDict & {
+	icon: ReactNode
+	color: string
+	shadowColor: string
+}
+
+type HumanTouchPointFromDict = {
+	title: string
+	description: string
+}
+
+type HumanTouchPoint = HumanTouchPointFromDict & {
+	icon: ReactNode
+}
+
+const serviceDetails: {
+	[key: string]: { icon: ReactNode; color: string; shadowColor: string }
+} = {
+	website: {
 		icon: <Globe className='h-8 w-8' />,
-		title: 'Desarrollo Web',
-		subtitle: 'Sitios web que impactan y convierten',
-		description:
-			'Creamos sitios web modernos, responsivos y optimizados que no solo se ven increíbles, sino que también generan resultados reales para tu negocio.',
 		color: 'from-blue-500 to-cyan-400',
 		shadowColor: 'shadow-blue-500/20',
-		features: [
-			'Diseño responsivo y moderno',
-			'Optimización SEO avanzada',
-			'Velocidad de carga optimizada',
-			'E-commerce personalizado',
-			'Analíticas y métricas',
-		],
-		benefits: [
-			'Aumento del 40% en conversiones promedio',
-			'Mejora del 60% en velocidad de carga',
-			'Posicionamiento SEO mejorado',
-			'Experiencia de usuario excepcional',
-		],
-		technologies: ['React', 'Next.js', 'WordPress', 'Tailwind CSS', 'Astro'],
-		timeline: '1-3 semanas',
-		startingPrice: '$ 400',
-		process: [
-			{
-				step: 'Consulta inicial',
-				description: 'Entendemos tu visión y objetivos',
-			},
-			{
-				step: 'Diseño UX/UI',
-				description: 'Creamos wireframes y diseños visuales',
-			},
-			{
-				step: 'Desarrollo',
-				description: 'Programamos con las mejores prácticas',
-			},
-			{
-				step: 'Testing',
-				description: 'Pruebas exhaustivas en todos los dispositivos',
-			},
-			{ step: 'Lanzamiento', description: 'Despliegue y configuración final' },
-		],
 	},
-	{
-		id: 'systems',
+	systems: {
 		icon: <Database className='h-8 w-8' />,
-		title: 'Sistemas Empresariales',
-		subtitle: 'Automatización que transforma tu negocio',
-		description:
-			'Desarrollamos sistemas web personalizados que automatizan procesos, mejoran la eficiencia y proporcionan insights valiosos para la toma de decisiones.',
 		color: 'from-emerald-500 to-green-400',
 		shadowColor: 'shadow-emerald-500/20',
-		features: [
-			'Multiplataforma',
-			'Gestión de inventarios',
-			'Automatización de procesos',
-			'Reportes en tiempo real',
-			'Integraciones API',
-			'Panel de administración',
-		],
-		benefits: [
-			'Reducción del 50% en tareas manuales',
-			'Mejora del 35% en productividad',
-			'Datos centralizados y accesibles',
-			'Procesos estandarizados',
-		],
-		technologies: [
-			'Nest.js',
-			'TypeScript',
-			'PostgreSQL',
-			'Docker',
-			'Next.js',
-			'Tailwind CSS',
-		],
-		timeline: '3-6 semanas',
-		startingPrice: '$ 1,000',
-		process: [
-			{
-				step: 'Análisis de procesos',
-				description: 'Mapeo detallado de flujos de trabajo',
-			},
-			{
-				step: 'Arquitectura del sistema',
-				description: 'Diseño de base de datos y APIs',
-			},
-			{
-				step: 'Desarrollo modular',
-				description: 'Construcción por módulos funcionales',
-			},
-			{ step: 'Integración', description: 'Conexión con sistemas existentes' },
-			{
-				step: 'Capacitación',
-				description: 'Entrenamiento del equipo y documentación',
-			},
-		],
 	},
-	{
-		id: 'mobile',
+	mobile: {
 		icon: <Smartphone className='h-8 w-8' />,
-		title: 'Aplicaciones Móviles',
-		subtitle: 'Experiencias móviles que enamoran',
-		description:
-			'Desarrollamos aplicaciones móviles nativas y multiplataforma que ofrecen experiencias fluidas, intuitivas y que mantienen a tus usuarios comprometidos.',
 		color: 'from-violet-500 to-purple-400',
 		shadowColor: 'shadow-violet-500/20',
-		features: [
-			'Apps nativas iOS/Android',
-			'Desarrollo multiplataforma',
-			'Diseño UX centrado en móvil',
-			'Notificaciones push',
-			'Integración con APIs',
-			'Publicación en stores',
-		],
-		benefits: [
-			'Alcance del 95% de usuarios móviles',
-			'Engagement 3x mayor que web',
-			'Funcionalidades offline',
-			'Experiencia nativa optimizada',
-		],
-		technologies: [
-			'React Native',
-			'Flutter',
-			'Swift',
-			'Expo',
-			'Supabase',
-			'Firebase',
-		],
-		timeline: '4-12 semanas',
-		startingPrice: '$ 1,500',
-		process: [
-			{
-				step: 'Prototipado',
-				description: 'Wireframes y flujos de usuario móvil',
-			},
-			{
-				step: 'Diseño UI/UX',
-				description: 'Interfaces optimizadas para móvil',
-			},
-			{
-				step: 'Desarrollo nativo',
-				description: 'Programación para cada plataforma',
-			},
-			{ step: 'Testing QA', description: 'Pruebas en dispositivos reales' },
-			{
-				step: 'Publicación',
-				description: 'Lanzamiento en App Store y Google Play',
-			},
-		],
 	},
-]
+}
 
-const humanTouchPoints = [
-	{
-		icon: <Users className='h-5 w-5' />,
-		title: 'Equipo dedicado',
-		description: 'Un equipo específico asignado a tu proyecto desde el día uno',
-	},
-	{
-		icon: <Target className='h-5 w-5' />,
-		title: 'Comunicación directa',
-		description:
-			'Acceso directo a desarrolladores y diseñadores, sin intermediarios',
-	},
-	{
-		icon: <Clock className='h-5 w-5' />,
-		title: 'Updates regulares',
-		description: 'Reuniones semanales y reportes de progreso en tiempo real',
-	},
-	{
-		icon: <Shield className='h-5 w-5' />,
-		title: 'Soporte continuo',
-		description:
-			'Acompañamiento personal durante todo el ciclo de vida del proyecto',
-	},
+const humanTouchIcons = [
+	<Users key='users-icon' className='h-5 w-5' />,
+	<Target key='target-icon' className='h-5 w-5' />,
+	<Clock key='clock-icon' className='h-5 w-5' />,
+	<Shield key='shield-icon' className='h-5 w-5' />,
 ]
 
 export default function CoreServices() {
+	const dictionary = useDictionary()
+
+	const services: Service[] = dictionary.coreServices.services.map(
+		(s: ServiceFromDict) => ({
+			...s,
+			...(serviceDetails[s.id] || {}),
+		}),
+	)
+
+	const humanTouchPoints: HumanTouchPoint[] =
+		dictionary.coreServices.humanTouch.points.map(
+			(point: HumanTouchPointFromDict, index: number) => ({
+				...point,
+				icon: humanTouchIcons[index],
+			}),
+		)
+
 	const [activeService, setActiveService] = useState<string | null>(null)
 	const [hoveredService, setHoveredService] = useState<string | null>(null)
 	const ref = useRef<HTMLDivElement>(null)
@@ -244,41 +148,31 @@ export default function CoreServices() {
 								containerClassName='rounded-full inline-flex items-center mb-8'
 								className='bg-secondary-background text-black/80 flex items-center space-x-2'
 							>
-								Nuestros Servicios
+								{dictionary.coreServices.banner}
 							</HoverBorderGradient>
 						</div>
 						<h2 className='text-4xl md:text-5xl font-bold tracking-tight mb-4'>
-							Tres servicios principales,{' '}
-							<span className='relative inline-block'>
-								<span className='relative z-10'>infinitas posibilidades</span>
-								<motion.span
-									className='absolute bottom-2 left-0 h-3 bg-primary/20 w-full'
-									initial={{ width: 0 }}
-									whileInView={{ width: '100%' }}
-									viewport={{ once: true }}
-									transition={{ duration: 0.8, delay: 0.5 }}
-								/>
-							</span>
+							{dictionary.coreServices.title}
 						</h2>
-						<p className='text-muted-foreground text-lg max-w-3xl mx-auto'>
-							Cada servicio está diseñado con un enfoque humano, donde la
-							comunicación directa y el desarrollo robusto se combinan para
-							crear soluciones que realmente transforman tu negocio.
+						<p className='text-muted-foreground text-lg max-w-4xl mx-auto'>
+							{dictionary.coreServices.subtitle}
 						</p>
 					</div>
 				</ScrollReveal>
 
 				{/* Services Grid */}
 				<div className='grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16'>
-					{services.map((service, index) => (
-						<ScrollReveal
-							key={service.id}
-							delay={index * 0.1}
-							threshold={0.1}
-							className='h-full'
-						>
-							<motion.div
-								className='h-full'
+					{services.map((service: Service) => (
+						<ScrollReveal key={service.id} className='h-full'>
+							<Card
+								className={cn(
+									'h-full border-2 rounded-2xl transition-all duration-300 flex flex-col',
+									hoveredService === service.id
+										? 'border-primary/50 shadow-2xl'
+										: 'border-border hover:border-primary/20',
+									activeService === service.id &&
+										'border-primary/50 shadow-2xl',
+								)}
 								onMouseEnter={() => setHoveredService(service.id)}
 								onMouseLeave={() => setHoveredService(null)}
 								onClick={() =>
@@ -286,229 +180,190 @@ export default function CoreServices() {
 										activeService === service.id ? null : service.id,
 									)
 								}
-								whileHover={{ y: -5 }}
-								transition={{ type: 'spring', stiffness: 400, damping: 10 }}
 							>
-								<Card
-									className={cn(
-										'h-full border-2 transition-all duration-300 cursor-pointer relative overflow-hidden',
-										hoveredService === service.id ||
-											activeService === service.id
-											? 'border-primary/50 shadow-xl'
-											: 'border-border hover:border-primary/30',
-									)}
-								>
-									{/* Background gradient overlay */}
-									<div
-										className={cn(
-											'absolute inset-0 opacity-0 transition-opacity duration-500',
-											(hoveredService === service.id ||
-												activeService === service.id) &&
-												'opacity-100',
-										)}
-									>
+								<CardHeader className='flex-shrink-0'>
+									<div className='flex items-center justify-between mb-4'>
 										<div
 											className={cn(
-												'absolute inset-0 bg-gradient-to-br opacity-5',
+												'w-16 h-16 rounded-lg bg-gradient-to-br flex items-center justify-center',
 												service.color,
+												service.shadowColor,
 											)}
-										/>
-									</div>
-
-									<CardHeader className='relative z-10'>
-										{/* Icon and Badge */}
-										<div className='flex items-center justify-between mb-4'>
-											<motion.div
+										>
+											<div className='text-white'>{service.icon}</div>
+										</div>
+										<div className='p-2'>
+											<ArrowRight
 												className={cn(
-													'relative w-16 h-16 rounded-lg flex items-center justify-center',
-													'bg-gradient-to-br',
-													service.color,
-													service.shadowColor,
+													'h-6 w-6 transition-transform duration-300',
+													activeService === service.id && 'rotate-90',
 												)}
-												whileHover={{ scale: 1.05, rotate: 5 }}
-												transition={{
-													type: 'spring',
-													stiffness: 400,
-													damping: 10,
-												}}
-											>
-												<div className='text-white'>{service.icon}</div>
-											</motion.div>
-											<Badge variant='outline' className='bg-background/80'>
-												Desde {service.startingPrice}
-											</Badge>
+											/>
 										</div>
-
-										<CardTitle className='text-2xl mb-2'>
-											{service.title}
-										</CardTitle>
-										<p className='text-primary font-medium mb-3'>
-											{service.subtitle}
-										</p>
-										<p className='text-muted-foreground'>
-											{service.description}
-										</p>
-									</CardHeader>
-
-									<CardContent className='relative z-10'>
-										{/* Key Features */}
-										<div className='mb-6'>
-											<h4 className='font-semibold mb-3 flex items-center'>
-												<Check className='h-4 w-4 text-primary mr-2' />
-												Características principales
-											</h4>
-											<div className='grid grid-cols-1 gap-2'>
-												{service.features.slice(0, 4).map((feature, i) => (
-													<div
-														key={`feature-${service.id}-${i}`}
-														className='flex items-center text-sm'
-													>
-														<div className='w-1.5 h-1.5 bg-primary rounded-full mr-2' />
-														{feature}
-													</div>
-												))}
-											</div>
-										</div>
-
-										{/* Timeline and CTA */}
-										<div className='flex items-center justify-between'>
-											<div className='flex items-center text-sm text-muted-foreground'>
-												<Clock className='h-4 w-4 mr-1' />
-												{service.timeline}
-											</div>
-											<Button
-												variant='ghost'
-												size='sm'
-												className='text-primary hover:bg-primary/10'
-												onClick={(e) => {
-													e.stopPropagation()
-													setActiveService(
-														activeService === service.id ? null : service.id,
-													)
-												}}
-											>
-												{activeService === service.id ? 'Ver menos' : 'Ver más'}
-												<ArrowRight className='ml-1 h-3 w-3' />
-											</Button>
-										</div>
-
-										{/* Expanded Content */}
-										{activeService === service.id && (
+									</div>
+									<CardTitle className='text-2xl font-bold'>
+										{service.title}
+									</CardTitle>
+									<p className='text-muted-foreground'>{service.subtitle}</p>
+								</CardHeader>
+								<CardContent className='flex-grow flex flex-col justify-between'>
+									<AnimatePresence>
+										{activeService === service.id ? (
 											<motion.div
 												initial={{ opacity: 0, height: 0 }}
 												animate={{ opacity: 1, height: 'auto' }}
 												exit={{ opacity: 0, height: 0 }}
 												transition={{ duration: 0.3 }}
-												className='mt-6 pt-6 border-t border-border'
+												className='overflow-hidden'
 											>
-												{/* Benefits */}
-												<div className='mb-6'>
-													<h5 className='font-semibold mb-3 text-green-600'>
-														Beneficios comprobados
-													</h5>
-													<div className='space-y-2'>
-														{service.benefits.map((benefit, i) => (
-															<div
-																key={`benefit-${benefit}`}
-																className='flex items-center text-sm'
-															>
-																<Zap className='h-3 w-3 text-green-500 mr-2' />
-																{benefit}
-															</div>
-														))}
+												<div className='pt-4 space-y-6'>
+													<div>
+														<h4 className='font-semibold mb-2'>
+															{service.features_title}
+														</h4>
+														<ul className='space-y-2'>
+															{service.features.map((feature) => (
+																<li key={feature} className='flex items-start'>
+																	<Check className='h-4 w-4 text-green-500 mr-2 mt-1 flex-shrink-0' />
+																	<span>{feature}</span>
+																</li>
+															))}
+														</ul>
 													</div>
-												</div>
-
-												{/* Technologies */}
-												<div className='mb-6'>
-													<h5 className='font-semibold mb-3'>Tecnologías</h5>
-													<div className='flex flex-wrap gap-2'>
-														{service.technologies.map((tech, i) => (
-															<Badge
-																key={`tech-${tech}`}
-																variant='outline'
-																className='text-xs'
-															>
-																{tech}
-															</Badge>
-														))}
+													<div>
+														<h4 className='font-semibold mb-2'>
+															{service.benefits_title}
+														</h4>
+														<ul className='space-y-2'>
+															{service.benefits.map((benefit) => (
+																<li key={benefit} className='flex items-start'>
+																	<Check className='h-4 w-4 text-primary mr-2 mt-1 flex-shrink-0' />
+																	<span>{benefit}</span>
+																</li>
+															))}
+														</ul>
 													</div>
-												</div>
-
-												{/* Process */}
-												<div className='mb-6'>
-													<h5 className='font-semibold mb-3'>
-														Proceso de desarrollo
-													</h5>
-													<div className='space-y-3'>
-														{service.process.map((step, i) => (
-															<div
-																key={`step-${step.step}`}
-																className='flex items-start'
-															>
-																<div className='w-6 h-6 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xs font-bold mr-3 mt-0.5'>
-																	{i + 1}
-																</div>
-																<div>
-																	<div className='font-medium text-sm'>
-																		{step.step}
-																	</div>
-																	<div className='text-xs text-muted-foreground'>
+													<div>
+														<h4 className='font-semibold mb-2'>
+															{service.technologies_title}
+														</h4>
+														<div className='flex flex-wrap gap-2'>
+															{service.technologies.map((tech) => (
+																<Badge key={tech} variant='secondary'>
+																	{tech}
+																</Badge>
+															))}
+														</div>
+													</div>
+													<div className='flex justify-between items-center text-sm bg-muted/50 p-3 rounded-lg'>
+														<div>
+															<p className='font-semibold'>
+																{service.timeline_title}
+															</p>
+															<p>{service.timeline}</p>
+														</div>
+														<div className='text-right'>
+															<p className='font-semibold'>
+																{service.price_title}
+															</p>
+															<p className='font-bold text-lg'>
+																{service.startingPrice}
+															</p>
+														</div>
+													</div>
+													<div>
+														<h5 className='font-semibold mb-3'>
+															{service.process_title}
+														</h5>
+														<div className='space-y-2'>
+															{service.process.map((step) => (
+																<div
+																	key={step.step}
+																	className='flex items-start text-xs'
+																>
+																	<Check className='h-3 w-3 text-primary mr-2 mt-0.5 flex-shrink-0' />
+																	<div>
+																		<span className='font-semibold'>
+																			{step.step}:
+																		</span>{' '}
 																		{step.description}
 																	</div>
 																</div>
-															</div>
-														))}
+															))}
+														</div>
 													</div>
 												</div>
-
-												<Button className='w-full bg-gradient-to-r from-primary to-primary/80'>
-													Solicitar cotización
-												</Button>
 											</motion.div>
+										) : (
+											<div className='space-y-4'>
+												<p className='text-muted-foreground'>
+													{service.description}
+												</p>
+												<div className='flex justify-between items-center text-sm bg-muted/50 p-3 rounded-lg'>
+													<div>
+														<p className='font-semibold'>
+															{service.timeline_title}
+														</p>
+														<p>{service.timeline}</p>
+													</div>
+													<div className='text-right'>
+														<p className='font-semibold'>
+															{service.price_title}
+														</p>
+														<p className='font-bold text-lg'>
+															{service.startingPrice}
+														</p>
+													</div>
+												</div>
+											</div>
 										)}
-									</CardContent>
-								</Card>
-							</motion.div>
+									</AnimatePresence>
+								</CardContent>
+							</Card>
 						</ScrollReveal>
 					))}
 				</div>
 
 				{/* Human Touch Highlights */}
-				<ScrollReveal>
-					<div className='bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20 rounded-2xl p-8 md:p-12'>
-						<div className='text-center mb-8'>
-							<h3 className='text-2xl font-bold mb-4'>
-								El toque humano que marca la diferencia
-							</h3>
-							<p className='text-muted-foreground max-w-2xl mx-auto'>
-								En cada proyecto, garantizamos interacción directa con personas
-								reales que entienden tu visión y se comprometen con tu éxito.
-							</p>
-						</div>
-
-						<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
-							{humanTouchPoints.map((point, index) => (
-								<motion.div
-									key={`touch-${point.title}`}
-									className='text-center'
-									initial={{ opacity: 0, y: 20 }}
-									whileInView={{ opacity: 1, y: 0 }}
-									viewport={{ once: true }}
-									transition={{ duration: 0.5, delay: index * 0.1 }}
-								>
-									<div className='w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4'>
-										<div className='text-primary'>{point.icon}</div>
+				<div className='bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20 rounded-2xl p-8 md:p-12 w-full'>
+					<div className='container mx-auto px-4 md:px-6 max-w-5xl'>
+						<ScrollReveal>
+							<div className='text-center mb-12'>
+								<h3 className='text-3xl font-bold mb-2'>
+									{dictionary.coreServices.humanTouch.title}
+								</h3>
+								<p className='text-lg text-muted-foreground'>
+									{dictionary.coreServices.humanTouch.subtitle}
+								</p>
+							</div>
+						</ScrollReveal>
+						<div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
+							{humanTouchPoints.map((point: HumanTouchPoint, index: number) => (
+								<ScrollReveal key={point.title} delay={index * 0.1}>
+									<div className='flex items-start'>
+										<div className='w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0'>
+											<div className='text-primary'>{point.icon}</div>
+										</div>
+										<div>
+											<h4 className='font-semibold'>{point.title}</h4>
+											<p className='text-sm text-muted-foreground'>
+												{point.description}
+											</p>
+										</div>
 									</div>
-									<h4 className='font-semibold mb-2'>{point.title}</h4>
-									<p className='text-sm text-muted-foreground'>
-										{point.description}
-									</p>
-								</motion.div>
+								</ScrollReveal>
 							))}
 						</div>
+						<ScrollReveal className='text-center mt-12'>
+							<Link href='/pricing' passHref>
+								<Button size='lg'>
+									{dictionary.coreServices.button}
+									<ArrowRight className='h-4 w-4 ml-2' />
+								</Button>
+							</Link>
+						</ScrollReveal>
 					</div>
-				</ScrollReveal>
+				</div>
 			</div>
 		</section>
 	)

@@ -11,7 +11,6 @@ import {
 	MobileNavMenu,
 } from '@/components/ui/resizable-navbar'
 import { useState } from 'react'
-import SelectedLenguage from './SelectedLenguage'
 import { useDictionary } from '@/context/LanguageContext'
 import { Button } from '@/components/ui/button'
 import { CalEmbed } from '@/components/ui/cal-embed'

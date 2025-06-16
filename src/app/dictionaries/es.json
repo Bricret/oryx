@@ -511,5 +511,640 @@
 				}
 			}
 		}
+	},
+	"servicesHero": {
+		"banner": "Desarrollo con Toque Humano",
+		"title_first": "Soluciones digitales que",
+		"title_highlight": "conectan",
+		"title_last": "con personas reales",
+		"subtitle": "Desarrollamos sitios web, sistemas empresariales y aplicaciones móviles con un enfoque único: cada proyecto cuenta con dedicación personal y comunicación directa en cada etapa.",
+		"feature1": "Equipo dedicado por proyecto",
+		"feature2": "Desarrollo ágil y robusto",
+		"feature3": "Comunicación transparente",
+		"button_talk": "Contactanos"
+	},
+	"coreServices": {
+		"title": "Nuestros Servicios Clave",
+		"subtitle": "Soluciones digitales integrales para potenciar tu negocio. Combinamos estrategia, diseño y tecnología para crear productos que no solo funcionan bien, sino que brindan experiencias inolvidables.",
+		"button": "Cotiza tu proyecto",
+		"services": [
+			{
+				"id": "website",
+				"title": "Desarrollo Web",
+				"subtitle": "Sitios web que impactan y convierten",
+				"description": "Creamos sitios web modernos, responsivos y optimizados que no solo se ven increíbles, sino que también generan resultados reales para tu negocio.",
+				"features_title": "Características Clave",
+				"features": [
+					"Diseño responsivo y moderno",
+					"Optimización SEO avanzada",
+					"Velocidad de carga optimizada",
+					"E-commerce personalizado",
+					"Analíticas y métricas"
+				],
+				"benefits_title": "Beneficios",
+				"benefits": [
+					"Aumento del 40% en conversiones promedio",
+					"Mejora del 60% en velocidad de carga",
+					"Posicionamiento SEO mejorado",
+					"Experiencia de usuario excepcional"
+				],
+				"technologies_title": "Tecnologías",
+				"technologies": [
+					"React",
+					"Next.js",
+					"WordPress",
+					"Tailwind CSS",
+					"Astro"
+				],
+				"timeline_title": "Tiempo Estimado",
+				"timeline": "1-3 semanas",
+				"price_title": "Desde",
+				"startingPrice": "$ 400",
+				"process_title": "Nuestro Proceso",
+				"process": [
+					{
+						"step": "Consulta inicial",
+						"description": "Entendemos tu visión y objetivos"
+					},
+					{
+						"step": "Diseño UX/UI",
+						"description": "Creamos wireframes y diseños visuales"
+					},
+					{
+						"step": "Desarrollo",
+						"description": "Programamos con las mejores prácticas"
+					},
+					{
+						"step": "Testing",
+						"description": "Pruebas exhaustivas en todos los dispositivos"
+					},
+					{
+						"step": "Lanzamiento",
+						"description": "Despliegue y configuración final"
+					}
+				]
+			},
+			{
+				"id": "systems",
+				"title": "Sistemas Empresariales",
+				"subtitle": "Automatización que transforma tu negocio",
+				"description": "Desarrollamos sistemas web personalizados que automatizan procesos, mejoran la eficiencia y proporcionan insights valiosos para la toma de decisiones.",
+				"features_title": "Características Clave",
+				"features": [
+					"Multiplataforma",
+					"Gestión de inventarios",
+					"Automatización de procesos",
+					"Reportes en tiempo real",
+					"Integraciones API",
+					"Panel de administración"
+				],
+				"benefits_title": "Beneficios",
+				"benefits": [
+					"Reducción del 50% en tareas manuales",
+					"Mejora del 35% en productividad",
+					"Datos centralizados y accesibles",
+					"Procesos estandarizados"
+				],
+				"technologies_title": "Tecnologías",
+				"technologies": [
+					"Nest.js",
+					"TypeScript",
+					"PostgreSQL",
+					"Docker",
+					"Next.js",
+					"Tailwind CSS"
+				],
+				"timeline_title": "Tiempo Estimado",
+				"timeline": "3-6 semanas",
+				"price_title": "Desde",
+				"startingPrice": "$ 1,000",
+				"process_title": "Nuestro Proceso",
+				"process": [
+					{
+						"step": "Análisis de procesos",
+						"description": "Mapeo detallado de flujos de trabajo"
+					},
+					{
+						"step": "Arquitectura del sistema",
+						"description": "Diseño de base de datos y APIs"
+					},
+					{
+						"step": "Desarrollo modular",
+						"description": "Construcción por módulos funcionales"
+					},
+					{
+						"step": "Integración",
+						"description": "Conexión con sistemas existentes"
+					},
+					{
+						"step": "Capacitación",
+						"description": "Entrenamiento del equipo y documentación"
+					}
+				]
+			},
+			{
+				"id": "mobile",
+				"title": "Aplicaciones Móviles",
+				"subtitle": "Experiencias móviles que enamoran",
+				"description": "Desarrollamos aplicaciones móviles nativas y multiplataforma que ofrecen experiencias fluidas, intuitivas y que mantienen a tus usuarios comprometidos.",
+				"features_title": "Características Clave",
+				"features": [
+					"Apps nativas iOS/Android",
+					"Desarrollo multiplataforma",
+					"Diseño UX centrado en móvil",
+					"Notificaciones push",
+					"Integración con APIs",
+					"Publicación en stores"
+				],
+				"benefits_title": "Beneficios",
+				"benefits": [
+					"Alcance del 95% de usuarios móviles",
+					"Engagement 3x mayor que web",
+					"Funcionalidades offline",
+					"Experiencia nativa optimizada"
+				],
+				"technologies_title": "Tecnologías",
+				"technologies": [
+					"React Native",
+					"Flutter",
+					"Swift",
+					"Expo",
+					"Supabase",
+					"Firebase"
+				],
+				"timeline_title": "Tiempo Estimado",
+				"timeline": "4-12 semanas",
+				"price_title": "Desde",
+				"startingPrice": "$ 1,500",
+				"process_title": "Nuestro Proceso",
+				"process": [
+					{
+						"step": "Prototipado",
+						"description": "Wireframes y flujos de usuario móvil"
+					},
+					{
+						"step": "Diseño UI/UX",
+						"description": "Interfaces optimizadas para móvil"
+					},
+					{
+						"step": "Desarrollo nativo",
+						"description": "Programación para cada plataforma"
+					},
+					{
+						"step": "Testing QA",
+						"description": "Pruebas en dispositivos reales"
+					},
+					{
+						"step": "Publicación",
+						"description": "Lanzamiento en App Store y Google Play"
+					}
+				]
+			}
+		],
+		"banner": "Nuestros Servicios",
+		"humanTouch": {
+			"title": "El Toque Humano en Cada Línea de Código",
+			"subtitle": "La tecnología es solo la herramienta. La verdadera diferencia está en la colaboración cercana, la comunicación directa y la dedicación que ponemos en cada proyecto.",
+			"points": [
+				{
+					"title": "Equipo dedicado",
+					"description": "Un equipo específico asignado a tu proyecto desde el día uno"
+				},
+				{
+					"title": "Comunicación directa",
+					"description": "Acceso directo a desarrolladores y diseñadores, sin intermediarios"
+				},
+				{
+					"title": "Updates regulares",
+					"description": "Reuniones semanales y reportes de progreso en tiempo real"
+				},
+				{
+					"title": "Soporte continuo",
+					"description": "Acompañamiento personal durante todo el ciclo de vida del proyecto"
+				}
+			]
+		}
+	},
+	"humanTouchSection": {
+		"banner": "El Toque Humano",
+		"title_first": "Personas reales,",
+		"title_last": "resultados reales",
+		"subtitle": "En un mundo cada vez más automatizado, nosotros creemos en el poder de la conexión humana. Cada proyecto cuenta con personas reales que se preocupan por tu éxito.",
+		"features": [
+			{
+				"title": "Equipo Dedicado",
+				"description": "Un equipo específico asignado exclusivamente a tu proyecto",
+				"details": [
+					"Project Manager personal",
+					"Desarrollador líder asignado",
+					"Diseñador UX/UI dedicado",
+					"Especialista en QA"
+				]
+			},
+			{
+				"title": "Comunicación Directa",
+				"description": "Acceso directo a tu equipo sin intermediarios ni bots",
+				"details": [
+					"WhatsApp directo con el equipo",
+					"Linear workspace compartido",
+					"Email directo con desarrolladores",
+					"Respuesta en menos de 4 horas"
+				]
+			},
+			{
+				"title": "Reuniones Regulares",
+				"description": "Sesiones cara a cara para mantener la conexión humana",
+				"details": [
+					"Kickoff meeting presencial/virtual",
+					"Reviews semanales por videollamada",
+					"Demos en vivo del progreso",
+					"Sesiones de feedback interactivas"
+				]
+			},
+			{
+				"title": "Transparencia Total",
+				"description": "Visibilidad completa del proceso y progreso del proyecto",
+				"details": [
+					"Link de acceso a la aplicación en construcción (si aplica)",
+					"Dashboard de progreso en tiempo real",
+					"Acceso al repositorio de código",
+					"Reportes semanales detallados"
+				]
+			}
+		],
+		"communication": {
+			"title": "Siempre Conectados, Siempre Humanos",
+			"subtitle": "Ofrecemos múltiples canales para que siempre puedas hablar con una persona, no con una máquina.",
+			"channels": [
+				{
+					"channel": "Llamadas",
+					"description": "Disponibilidad telefónica en horario laboral",
+					"availability": "Lun-Vie 9:00-18:00"
+				},
+				{
+					"channel": "Chat directo",
+					"description": "WhatsApp y Telegram para comunicación rápida",
+					"availability": "Respuesta < 4 horas"
+				},
+				{
+					"channel": "Reuniones",
+					"description": "Sesiones presenciales o virtuales regulares (Kickoff, Reviews, etc.)",
+					"availability": "Semanales"
+				}
+			]
+		}
+	},
+	"developmentProcess": {
+		"banner": "Desarrollo Robusto y Rápido",
+		"title": "Un Proceso que Garantiza el Éxito",
+		"subtitle": "Combinamos metodologías ágiles con las mejores prácticas de ingeniería para entregar productos de alta calidad en tiempo récord, sin comprometer estabilidad ni seguridad.",
+		"phases_title": "Nuestras Fases de Desarrollo",
+		"processPhases": [
+			{
+				"id": "discovery",
+				"title": "Descubrimiento",
+				"subtitle": "Entendemos tu visión",
+				"duration": "1-2 semanas",
+				"description": "Análisis profundo de requerimientos, objetivos y contexto del proyecto",
+				"activities_title": "Actividades",
+				"activities": [
+					"Reunión de kickoff presencial/virtual",
+					"Análisis de requerimientos funcionales",
+					"Definición de objetivos y KPIs",
+					"Investigación de usuarios y mercado",
+					"Arquitectura de información",
+					"Planificación de cronograma"
+				],
+				"deliverables_title": "Entregables",
+				"deliverables": [
+					"Documento de requerimientos",
+					"Wireframes y flujos de usuario",
+					"Cronograma detallado",
+					"Propuesta técnica"
+				]
+			},
+			{
+				"id": "design",
+				"title": "Diseño & Arquitectura",
+				"subtitle": "Creamos la base sólida",
+				"duration": "2-3 semanas",
+				"description": "Diseño UX/UI y arquitectura técnica que garantiza escalabilidad y rendimiento",
+				"activities_title": "Actividades",
+				"activities": [
+					"Diseño de experiencia de usuario (UX)",
+					"Creación de interfaces visuales (UI)",
+					"Arquitectura de base de datos",
+					"Definición de APIs y servicios",
+					"Selección de tecnologías",
+					"Prototipado interactivo"
+				],
+				"deliverables_title": "Entregables",
+				"deliverables": [
+					"Diseños finales aprobados",
+					"Prototipo interactivo",
+					"Documentación técnica",
+					"Guía de estilos"
+				]
+			},
+			{
+				"id": "development",
+				"title": "Desarrollo",
+				"subtitle": "Construimos tu solución",
+				"duration": "4-12 semanas",
+				"description": "Desarrollo ágil con entregas incrementales y comunicación constante",
+				"activities_title": "Actividades",
+				"activities": [
+					"Configuración del entorno de desarrollo",
+					"Desarrollo por sprints de 2 semanas",
+					"Integración continua (CI/CD)",
+					"Reviews semanales de progreso",
+					"Testing automatizado",
+					"Optimización de rendimiento"
+				],
+				"deliverables_title": "Entregables",
+				"deliverables": [
+					"Código fuente documentado",
+					"Aplicación funcional",
+					"Tests automatizados",
+					"Documentación técnica"
+				]
+			},
+			{
+				"id": "testing",
+				"title": "Testing & QA",
+				"subtitle": "Garantizamos la calidad",
+				"duration": "1-2 semanas",
+				"description": "Pruebas exhaustivas para asegurar funcionamiento perfecto en todos los escenarios",
+				"activities_title": "Actividades",
+				"activities": [
+					"Testing funcional completo",
+					"Pruebas de rendimiento",
+					"Testing de seguridad",
+					"Pruebas en múltiples dispositivos",
+					"Testing de usabilidad",
+					"Corrección de bugs"
+				],
+				"deliverables_title": "Entregables",
+				"deliverables": [
+					"Reporte de testing",
+					"Aplicación libre de bugs",
+					"Documentación de pruebas",
+					"Certificado de calidad"
+				]
+			},
+			{
+				"id": "deployment",
+				"title": "Despliegue",
+				"subtitle": "Llevamos tu proyecto al mundo",
+				"duration": "1 semana",
+				"description": "Lanzamiento seguro y monitoreo continuo para garantizar estabilidad",
+				"activities_title": "Actividades",
+				"activities": [
+					"Configuración de servidores",
+					"Despliegue en producción",
+					"Configuración de dominios y SSL",
+					"Monitoreo y alertas",
+					"Capacitación del equipo",
+					"Documentación de usuario"
+				],
+				"deliverables_title": "Entregables",
+				"deliverables": [
+					"Aplicación en producción",
+					"Manual de usuario",
+					"Credenciales de acceso",
+					"Plan de mantenimiento"
+				]
+			}
+		],
+		"robust_title": "Prácticas Robustas por Defecto",
+		"robustPractices": [
+			{
+				"title": "Control de versiones",
+				"description": "Git con branching strategy y code reviews"
+			},
+			{
+				"title": "Testing automatizado",
+				"description": "Unit tests, integration tests y E2E testing"
+			},
+			{
+				"title": "Backups automáticos",
+				"description": "Respaldos diarios y recuperación ante desastres"
+			},
+			{
+				"title": "Seguridad integrada",
+				"description": "Encriptación, autenticación y mejores prácticas"
+			},
+			{
+				"title": "CI/CD Pipeline",
+				"description": "Integración y despliegue continuo automatizado"
+			},
+			{
+				"title": "Responsive design",
+				"description": "Optimización para todos los dispositivos"
+			}
+		],
+		"rapid_title": "Desarrollo Rápido, Resultados Reales",
+		"rapidDevelopment": [
+			{
+				"metric": "50%",
+				"label": "Más rápido",
+				"description": "que el promedio de la industria"
+			},
+			{
+				"metric": "2 semanas",
+				"label": "Sprints",
+				"description": "entregas incrementales constantes"
+			},
+			{
+				"metric": "24h",
+				"label": "Respuesta",
+				"description": "tiempo máximo de respuesta"
+			},
+			{
+				"metric": "99.9%",
+				"label": "Uptime",
+				"description": "disponibilidad garantizada"
+			}
+		],
+		"cta": {
+			"title": "¿Listo para construir algo grande?",
+			"button": "Hablemos"
+		}
+	},
+	"serviceComparison": {
+		"banner": "Comparación de Servicios",
+		"title_first": "¿Cuál es la",
+		"title_last": "mejor opción",
+		"title_highlight": "para ti?",
+		"subtitle": "Cada servicio está diseñado para diferentes necesidades y objetivos. Aquí te ayudamos a entender cuál se adapta mejor a tu proyecto.",
+		"table": {
+			"feature": "Característica",
+			"web_dev": "Desarrollo Web",
+			"business_systems": "Sistemas Empresariales",
+			"mobile_apps": "Apps Móviles",
+			"data": [
+				{
+					"feature": "Tiempo de desarrollo",
+					"website": "1-3 semanas",
+					"systems": "3-6 semanas",
+					"mobile": "4-12 semanas"
+				},
+				{
+					"feature": "Inversión inicial",
+					"website": "Desde $ 400",
+					"systems": "Desde $ 1,000",
+					"mobile": "Desde $ 1,500"
+				},
+				{
+					"feature": "Usuarios objetivo",
+					"website": "Público general",
+					"systems": "Equipos internos",
+					"mobile": "Usuarios móviles"
+				},
+				{
+					"feature": "Complejidad técnica",
+					"website": "Baja-Media",
+					"systems": "Alta",
+					"mobile": "Media-Alta"
+				},
+				{
+					"feature": "Mantenimiento",
+					"website": "Básico",
+					"systems": "Avanzado",
+					"mobile": "Medio"
+				},
+				{
+					"feature": "ROI esperado",
+					"website": "3-6 meses",
+					"systems": "6-12 meses",
+					"mobile": "4-8 meses"
+				}
+			]
+		},
+		"serviceFeatures": {
+			"website": {
+				"title": "Desarrollo Web",
+				"idealFor_title": "Ideal para:",
+				"idealFor": [
+					"Presencia online",
+					"E-commerce",
+					"Portafolios",
+					"Blogs corporativos"
+				],
+				"includes_title": "Qué incluye:",
+				"includes": ["Diseño responsivo", "SEO optimizado", "Hosting incluido"],
+				"notIncludes_title": "Qué no incluye:",
+				"notIncludes": [
+					"App móvil",
+					"Sistema complejo",
+					"Integraciones avanzadas"
+				]
+			},
+			"systems": {
+				"title": "Sistemas Empresariales",
+				"idealFor_title": "Ideal para:",
+				"idealFor": [
+					"Automatización",
+					"Gestión interna",
+					"Procesos complejos",
+					"Reportes avanzados"
+				],
+				"includes_title": "Qué incluye:",
+				"includes": [
+					"CRM personalizado",
+					"Base de datos",
+					"APIs",
+					"Panel admin"
+				],
+				"notIncludes_title": "Qué no incluye:",
+				"notIncludes": ["Sitio web público", "App store", "Marketing digital"]
+			},
+			"mobile": {
+				"title": "Aplicaciones Móviles",
+				"idealFor_title": "Ideal para:",
+				"idealFor": [
+					"Engagement móvil",
+					"Funciones nativas",
+					"Notificaciones",
+					"Uso offline"
+				],
+				"includes_title": "Qué incluye:",
+				"includes": [
+					"iOS y Android",
+					"App stores",
+					"Push notifications",
+					"Diseño nativo"
+				],
+				"notIncludes_title": "Qué no incluye:",
+				"notIncludes": [
+					"Sitio web",
+					"Sistema interno",
+					"Funciones de escritorio"
+				]
+			}
+		},
+		"cta": {
+			"badge": "¿Aún no estás seguro?",
+			"title": "Encontremos juntos la solución perfecta para ti",
+			"subtitle": "Agenda una consulta gratuita y nuestros expertos te ayudarán a elegir el mejor camino para tu proyecto.",
+			"button": "Agendar consulta gratuita"
+		}
+	},
+	"servicesCTA": {
+		"banner": "Comienza tu proyecto hoy",
+		"title_first": "¿Listo para trabajar con",
+		"title_last": "personas reales?",
+		"subtitle": "Nuestro equipo está preparado para convertir tu idea en una solución digital exitosa. Comienza con una consulta gratuita y descubre la diferencia del toque humano.",
+		"main_cta": {
+			"badge": "Consulta gratuita incluida",
+			"title": "Comienza tu proyecto con una consulta gratuita",
+			"description": "En 30 minutos analizaremos tu proyecto, te daremos recomendaciones personalizadas y conocerás al equipo que trabajará contigo.",
+			"features": [
+				"Análisis gratuito de requerimientos",
+				"Propuesta técnica personalizada",
+				"Conoce a tu equipo de desarrollo",
+				"Cronograma y presupuesto estimado"
+			],
+			"button": "Agendar consulta gratuita"
+		},
+		"guarantees": [
+			{
+				"title": "Toque humano garantizado",
+				"description": "Interacción directa con personas reales en cada etapa"
+			},
+			{
+				"title": "Desarrollo ágil",
+				"description": "Entregas rápidas sin comprometer la calidad"
+			},
+			{
+				"title": "Código robusto",
+				"description": "Mejores prácticas y arquitectura escalable"
+			},
+			{
+				"title": "Equipo dedicado",
+				"description": "Un equipo específico asignado a tu proyecto"
+			}
+		],
+		"contact": {
+			"title": "Múltiples formas de contactarnos",
+			"subtitle": "Elige la opción que más te convenga para comenzar la conversación",
+			"options": [
+				{
+					"title": "Agendar consulta",
+					"description": "Reunión de 30 min para discutir tu proyecto",
+					"action": "Agendar ahora"
+				},
+				{
+					"title": "Chat directo",
+					"description": "Habla con nuestro equipo por WhatsApp",
+					"action": "Iniciar chat"
+				},
+				{
+					"title": "Email directo",
+					"description": "Envíanos un Email directo a nuestro correo",
+					"action": "Enviar Email"
+				}
+			]
+		}
 	}
 }
