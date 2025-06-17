@@ -234,7 +234,16 @@
 		"formSubjectPlaceholder": "Project inquiry",
 		"formMessage": "Message",
 		"formMessagePlaceholder": "Tell us about your project",
-		"formSend": "Send Message"
+		"formSend": "Send Message",
+		"submittingButton": "Sending...",
+		"successMessage": "Your message has been sent successfully! We will get back to you soon.",
+		"errorMessage": "There was an error sending your message. Please try again later.",
+		"validation": {
+			"name": "Name must be at least 2 characters.",
+			"email": "Please enter a valid email address.",
+			"subject": "Subject must be at least 5 characters.",
+			"message": "Message must be at least 10 characters."
+		}
 	},
 	"contactPage": {
 		"metadata": {
@@ -245,8 +254,8 @@
 			"badge": "Contact",
 			"title": "Let's talk about your project",
 			"subtitle": "We are here to answer your questions and help you turn your ideas into exceptional digital solutions.",
-			"email": "info@oryxdevelopment.com",
-			"phone": "+52 (55) 5512 3456",
+			"email": "contact@oryx-development.com",
+			"phone": "+505 5797 1984",
 			"schedule": "Mon - Fri: 9:00 AM - 6:00 PM"
 		},
 		"contactForm": {
@@ -254,50 +263,44 @@
 			"nameLabel": "Name",
 			"namePlaceholder": "Your name",
 			"emailLabel": "Email",
-			"emailPlaceholder": "you@email.com",
+			"emailPlaceholder": "Your email address",
 			"subjectLabel": "Subject",
-			"subjectPlaceholder": "How can we help you?",
+			"subjectPlaceholder": "What is your message about?",
 			"messageLabel": "Message",
-			"messagePlaceholder": "Tell us about your project or inquiry...",
-			"submitButton": "Send message",
+			"messagePlaceholder": "Tell us more about your project...",
+			"submitButton": "Send Message",
 			"submittingButton": "Sending...",
+			"successMessage": "Your message has been sent successfully! We will get back to you soon.",
+			"errorMessage": "There was an error sending your message. Please try again later.",
 			"validation": {
-				"name": "Name must be at least 2 characters",
-				"email": "Please enter a valid email",
-				"subject": "Subject must be at least 5 characters",
-				"message": "Message must be at least 10 characters"
+				"name": "Name must be at least 2 characters.",
+				"email": "Please enter a valid email address.",
+				"subject": "Subject must be at least 5 characters.",
+				"message": "Message must be at least 10 characters."
 			}
 		},
 		"contactInfo": {
 			"title": "Contact Information",
-			"email": "Email",
-			"emailValue": "contact@oryx-development.com",
-			"phone": "Phone",
-			"phoneValue": "+505 5797 1984",
-			"hoursTitle": "Business Hours",
-			"hoursLine1": "Monday to Friday: 9:00 AM - 6:00 PM",
-			"hoursLine2": "Saturday: 10:00 AM - 2:00 PM",
-			"socialTitle": "Follow us on social media",
+			"emailLabel": "Email",
+			"email": "contact@oryx-development.com",
+			"phoneLabel": "Phone",
+			"phone": "+505 5797 1984",
+			"officeLabel": "Office",
+			"addressLine1": "Paseo de la Reforma 296",
+			"addressLine2": "Juárez, 06600, Mexico City",
+			"scheduleTitle": "Business Hours",
+			"scheduleLine1": "Monday - Friday: 9:00 AM - 6:00 PM",
+			"scheduleLine2": "Saturday: 10:00 AM - 2:00 PM",
+			"socialTitle": "Follow Us",
 			"socialLabels": {
-				"facebook": "Facebook",
-				"twitter": "Twitter",
-				"instagram": "Instagram",
-				"linkedin": "LinkedIn"
+				"facebook": "Follow us on Facebook",
+				"twitter": "Follow us on Twitter",
+				"instagram": "Follow us on Instagram",
+				"linkedin": "Follow us on LinkedIn"
 			},
-			"quickResponseTitle": "Need a quick response?",
-			"quickResponseText": "For urgent inquiries, we recommend calling us directly or scheduling a video call with our team.",
-			"quickResponseButton": "Schedule video call"
-		},
-		"contactCta": {
-			"title": "Ready to start your project?",
-			"subtitle": "Our team is ready to turn your ideas into exceptional digital solutions. Contact us today to get started.",
-			"buttonSchedule": "Schedule consultation",
-			"buttonChat": "Live Chat",
-			"rapidResponseTitle": "Quick response",
-			"rapidResponseText": "We are committed to answering all inquiries within a maximum of 24 business hours.",
-			"freeConsultationTitle": "Free consultation",
-			"freeConsultationText": "We offer a free initial consultation to evaluate your project and provide you with the best solution.",
-			"freeConsultationLink": "See our packages"
+			"quickResponseTitle": "Quick Response",
+			"quickResponseText": "Schedule a 30-minute consultation with our team to discuss your project.",
+			"quickResponseButton": "Schedule Consultation"
 		}
 	},
 	"pricingCalculator": {
@@ -1204,5 +1207,11 @@
 	"client_slider": {
 		"title": "Companies that trust us",
 		"description": "We have driven the growth of leading companies in their sector, transforming their ideas into high-impact digital solutions."
+	},
+	"servicesPage": {
+		"metadata": {
+			"title": "Services | Oryx Development",
+			"description": "Discover the comprehensive range of services offered by Oryx Development."
+		}
 	}
 }

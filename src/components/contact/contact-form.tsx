@@ -41,8 +41,9 @@ type FormValues = z.infer<ReturnType<typeof formSchema>>
 export default function ContactForm() {
 	const dictionary = useDictionary()
 	const [isSubmitting, setIsSubmitting] = useState(false)
-	// Remove these lines:
-	// const [isSubmitted, setIsSubmitted] = useState(false)
+	const [submitStatus, setSubmitStatus] = useState<'success' | 'error' | null>(
+		null,
+	)
 
 	// Initialize form
 	const form = useForm<FormValues>({
@@ -56,16 +57,33 @@ export default function ContactForm() {
 	})
 
 	// Handle form submission
-	function onSubmit(data: FormValues) {
+	async function onSubmit(data: FormValues) {
 		setIsSubmitting(true)
+		setSubmitStatus(null)
 
-		// Simulate API call
-		setTimeout(() => {
-			console.log(data)
+		try {
+			const response = await fetch('/api/contact', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(data),
+			})
+
+			if (response.ok) {
+				setSubmitStatus('success')
+				form.reset()
+				// Optionally, redirect to a success page
+				// window.location.href = `/${dictionary.lang}/contact/success`;
+			} else {
+				setSubmitStatus('error')
+			}
+		} catch (error) {
+			console.error('Submission error:', error)
+			setSubmitStatus('error')
+		} finally {
 			setIsSubmitting(false)
-			// Redirect to success page instead of showing inline message
-			window.location.href = '/contacto/exito'
-		}, 1500)
+		}
 	}
 
 	return (
@@ -79,6 +97,17 @@ export default function ContactForm() {
 			<h2 className='text-2xl font-bold mb-6'>
 				{dictionary.contactPage.contactForm.title}
 			</h2>
+
+			{submitStatus === 'success' && (
+				<div className='mb-4 text-center bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative'>
+					{dictionary.contactPage.contactForm.successMessage}
+				</div>
+			)}
+			{submitStatus === 'error' && (
+				<div className='mb-4 text-center bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative'>
+					{dictionary.contactPage.contactForm.errorMessage}
+				</div>
+			)}
 
 			<Form {...form}>
 				<form onSubmit={form.handleSubmit(onSubmit)} className='space-y-6'>

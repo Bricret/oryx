@@ -43,16 +43,6 @@ export default function ContactInfo() {
 				</a>
 			),
 		},
-		{
-			icon: <Clock className='h-5 w-5' />,
-			title: dictionary.contactPage.contactInfo.hoursTitle,
-			content: (
-				<div>
-					<p>{dictionary.contactPage.contactInfo.hoursLine1}</p>
-					<p>{dictionary.contactPage.contactInfo.hoursLine2}</p>
-				</div>
-			),
-		},
 	]
 
 	const socialLinks = [

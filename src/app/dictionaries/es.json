@@ -234,7 +234,16 @@
 		"formSubjectPlaceholder": "Consulta de proyecto",
 		"formMessage": "Mensaje",
 		"formMessagePlaceholder": "Cuéntanos sobre tu proyecto, tus objetivos y tus desafíos.",
-		"formSend": "Enviar Mensaje"
+		"formSend": "Enviar Mensaje",
+		"submittingButton": "Enviando...",
+		"successMessage": "¡Tu mensaje ha sido enviado con éxito! Nos pondremos en contacto contigo pronto.",
+		"errorMessage": "Hubo un error al enviar tu mensaje. Por favor, inténtalo de nuevo más tarde.",
+		"validation": {
+			"name": "El nombre debe tener al menos 2 caracteres.",
+			"email": "Por favor, introduce una dirección de correo electrónico válida.",
+			"subject": "El asunto debe tener al menos 5 caracteres.",
+			"message": "El mensaje debe tener al menos 10 caracteres."
+		}
 	},
 	"contactPage": {
 		"metadata": {
@@ -245,8 +254,8 @@
 			"badge": "Contacto",
 			"title": "Hablemos sobre tu proyecto",
 			"subtitle": "Estamos aquí para responder tus preguntas y ayudarte a convertir tus ideas en soluciones digitales excepcionales.",
-			"email": "info@oryxdevelopment.com",
-			"phone": "+52 (55) 5512 3456",
+			"email": "contact@oryx-development.com",
+			"phone": "+505 5797 1984",
 			"schedule": "Lun - Vie: 9:00 - 18:00"
 		},
 		"contactForm": {
@@ -254,39 +263,44 @@
 			"nameLabel": "Nombre",
 			"namePlaceholder": "Tu nombre",
 			"emailLabel": "Correo electrónico",
-			"emailPlaceholder": "tu@email.com",
+			"emailPlaceholder": "Tu dirección de correo",
 			"subjectLabel": "Asunto",
-			"subjectPlaceholder": "¿En qué podemos ayudarte?",
+			"subjectPlaceholder": "¿Sobre qué es tu mensaje?",
 			"messageLabel": "Mensaje",
-			"messagePlaceholder": "Cuéntanos sobre tu proyecto o consulta...",
-			"submitButton": "Enviar mensaje",
+			"messagePlaceholder": "Cuéntanos más sobre tu proyecto...",
+			"submitButton": "Enviar Mensaje",
 			"submittingButton": "Enviando...",
+			"successMessage": "¡Tu mensaje ha sido enviado con éxito! Nos pondremos en contacto contigo pronto.",
+			"errorMessage": "Hubo un error al enviar tu mensaje. Por favor, inténtalo de nuevo más tarde.",
 			"validation": {
-				"name": "El nombre debe tener al menos 2 caracteres",
-				"email": "Ingresa un correo electrónico válido",
-				"subject": "El asunto debe tener al menos 5 caracteres",
-				"message": "El mensaje debe tener al menos 10 caracteres"
+				"name": "El nombre debe tener al menos 2 caracteres.",
+				"email": "Por favor, introduce una dirección de correo electrónico válida.",
+				"subject": "El asunto debe tener al menos 5 caracteres.",
+				"message": "El mensaje debe tener al menos 10 caracteres."
 			}
 		},
 		"contactInfo": {
-			"title": "Información de contacto",
-			"email": "Email",
-			"emailValue": "contact@oryx-development.com",
-			"phone": "Teléfono",
-			"phoneValue": "+505 5797 1984",
-			"hoursTitle": "Horario de atención",
-			"hoursLine1": "Lunes a Viernes: 9:00 - 18:00",
-			"hoursLine2": "Sábado: 10:00 - 14:00",
-			"socialTitle": "Síguenos en redes sociales",
+			"title": "Información de Contacto",
+			"emailLabel": "Correo Electrónico",
+			"email": "contact@oryx-development.com",
+			"phoneLabel": "Teléfono",
+			"phone": "+505 5797 1984",
+			"officeLabel": "Oficina",
+			"addressLine1": "Paseo de la Reforma 296",
+			"addressLine2": "Juárez, 06600, Ciudad de México",
+			"scheduleTitle": "Horario de Atención",
+			"scheduleLine1": "Lunes a Viernes: 9:00 - 18:00",
+			"scheduleLine2": "Sábado: 10:00 - 14:00",
+			"socialTitle": "Síguenos",
 			"socialLabels": {
-				"facebook": "Facebook",
-				"twitter": "Twitter",
-				"instagram": "Instagram",
-				"linkedin": "LinkedIn"
+				"facebook": "Síguenos en Facebook",
+				"twitter": "Síguenos en Twitter",
+				"instagram": "Síguenos en Instagram",
+				"linkedin": "Síguenos en LinkedIn"
 			},
-			"quickResponseTitle": "¿Necesitas una respuesta rápida?",
-			"quickResponseText": "Para consultas urgentes, te recomendamos llamarnos directamente o agendar una videollamada con nuestro equipo.",
-			"quickResponseButton": "Agendar videollamada"
+			"quickResponseTitle": "Respuesta Rápida",
+			"quickResponseText": "Agenda una consulta de 30 minutos con nuestro equipo para discutir tu proyecto.",
+			"quickResponseButton": "Agendar Consulta"
 		},
 		"contactCta": {
 			"title": "¿Listo para iniciar tu proyecto?",
