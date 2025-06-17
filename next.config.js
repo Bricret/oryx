@@ -73,16 +73,6 @@ const nextConfig = {
     return config;
   },
 
-  // Rewrites para manejar favicon específicamente en Vercel
-  async rewrites() {
-    return [
-      {
-        source: "/favicon.ico",
-        destination: "/favicon.ico",
-      },
-    ];
-  },
-
   // Headers para caché y performance
   async headers() {
     return [
