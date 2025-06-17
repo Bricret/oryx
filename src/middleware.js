@@ -32,8 +32,10 @@ export function middleware(request) {
   if (
     pathname.startsWith("/_next") ||
     pathname.startsWith("/api") ||
-    pathname.includes(".") || // Cualquier archivo con extensión
-    pathname === "/favicon.ico"
+    pathname === "/favicon.ico" ||
+    pathname === "/robots.txt" ||
+    pathname === "/sitemap.xml" ||
+    pathname.includes(".") // Cualquier archivo con extensión
   ) {
     return NextResponse.next();
   }

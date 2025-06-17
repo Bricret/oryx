@@ -12,6 +12,11 @@ export const metadata: Metadata = {
 	title: 'Oryx Development',
 	description:
 		'Crafting exceptional digital experiences with innovative solutions and a focus on quality.',
+	icons: {
+		icon: '/favicon.ico',
+		shortcut: '/favicon.ico',
+		apple: '/favicon.ico',
+	},
 }
 
 export default async function RootLayout({
