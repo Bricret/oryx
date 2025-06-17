@@ -73,7 +73,6 @@ export function middleware(request) {
 
 export const config = {
   matcher: [
-    "/",
-    "/((?!api|_next/static|_next/image|_next/webpack-hmr|favicon.ico|robots.txt|sitemap.xml|.*\\..*).*)",
+    "/((?!api|_next/static|_next/image|_next/webpack-hmr|favicon.ico|robots.txt|sitemap.xml|.*\\.).*)",
   ],
 };
