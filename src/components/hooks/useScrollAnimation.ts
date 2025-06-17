@@ -1,4 +1,6 @@
-import { useEffect, useRef } from 'react'
+'use client'
+
+import { useEffect, useState, useRef } from 'react'
 
 interface ScrollAnimationOptions {
 	threshold?: number
@@ -45,4 +47,40 @@ export const useScrollAnimation = (options: ScrollAnimationOptions = {}) => {
 	}, [threshold, rootMargin])
 
 	return ref
+}
+
+// Hook mejorado para lazy loading basado en viewport
+export function useInViewportLoading(threshold = 0.1, rootMargin = '50px') {
+	const [isInView, setIsInView] = useState(false)
+	const [hasLoaded, setHasLoaded] = useState(false)
+	const elementRef = useRef<HTMLDivElement>(null)
+
+	useEffect(() => {
+		const observer = new IntersectionObserver(
+			([entry]) => {
+				if (entry.isIntersecting && !hasLoaded) {
+					setIsInView(true)
+					setHasLoaded(true)
+					// Dejar de observar una vez cargado
+					observer.unobserve(entry.target)
+				}
+			},
+			{
+				threshold,
+				rootMargin,
+			},
+		)
+
+		if (elementRef.current) {
+			observer.observe(elementRef.current)
+		}
+
+		return () => {
+			if (elementRef.current) {
+				observer.unobserve(elementRef.current)
+			}
+		}
+	}, [threshold, rootMargin, hasLoaded])
+
+	return { isInView, hasLoaded, elementRef }
 }
